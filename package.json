@@ -5,10 +5,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev" : "node src/data/blogUpdateScript.js",
-    "prebuild" : "node src/data/blogUpdateScript.js",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist",
+    "predev": "node src/data/blogUpdateScript.js",
+    "prebuild": "node src/data/blogUpdateScript.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

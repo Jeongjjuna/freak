@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import BlogLoader from "../utils/BlogLoader.js";
 
-function Content() {
+function PostListPage(props) {
 
   const [blogInfos, setBlogInfos] = useState([]);
 
@@ -36,4 +36,4 @@ function Content() {
   );
 }
 
-export default Content;
+export default PostListPage;

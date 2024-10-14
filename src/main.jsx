@@ -1,10 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import App from './components/App.jsx'
+import NotFoundPage from "./pages/NotFoundPage.jsx";
+import PostDetailPage from "./pages/PostDetailPage.jsx";
+import PostListPage from "./pages/PostListPage.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter basename='/freak'>
+      <App>
+        <Routes>
+          <Route path="posts">
+            <Route index element={<PostListPage/>}/>
+            <Route path=":postInfo" element={<PostDetailPage/>}/>
+          </Route>
+          <Route path="*" element={<NotFoundPage/>}/>
+        </Routes>
+      </App>
+    </BrowserRouter>
   </StrictMode>,
-)
+);

@@ -1,40 +1,25 @@
+import blogFileNames from '../data/blogFileNames.json';
+import Blog from "../model/Blog.js";
+
 class BlogLoader {
 
-  static BLOG_FILE_PATH = '/blog'; // 여기에 경로를 입력하세요
+  static BLOG_FILE_PATH = '/blog/blogFileNames.json'; // 여기에 경로를 입력하세요
 
   static async loadBlogList() {
-
-    let fileNames = this.getFileNamesIn()
-    console.log(fileNames);
-
-    let fileInfo = this.extractFileInfo("[20240528]_[[백준] 17299(Glod3) - 오등큰수]_[다이아챌린지]_[kotlin python]_[boj.png].md");
-    console.log(fileInfo);
-
-    return [
-      { id: 1, title: "첫 번째 블로그" },
-      { id: 2, title: "두 번째 블로그" },
-      { id: 3, title: "세 번째 블로그" },
-    ];
+    return blogFileNames.map(blogFileName => this.extractFileInfo(blogFileName));
   }
-
-  static async getFileNamesIn() {
-    // TODO : 파일 제목 가져오기
-    // const response = await fetch(this.BLOG_FILE_PATH);
-    return null
-  };
 
   static extractFileInfo(filename) {
     let matches = this.parseFileName(filename);
 
     if (matches) {
-      return {
-        date: this.formatDate(matches[1]),
-        title: matches[2],
-        category: matches[3],
-        tag: matches[4].split(" "),
-        thumbnail: matches[5],
-        fileType: matches[6],
-      };
+      let date = this.formatDate(matches[1]);
+      let title = matches[2];
+      let category = matches[3];
+      let tag = matches[4].split(" ");
+      let thumbnail = matches[5];
+      let fileType = matches[6];
+      return new Blog(date, title, category, tag, thumbnail, fileType, fileType, fileType);
     }
     throw new Error("해당 파일이 존재하지 않습니다.");
   }

@@ -5,6 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev" : "node src/data/blogUpdateScript.js",
+    "prebuild" : "node src/data/blogUpdateScript.js",
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d dist",
     "dev": "vite",

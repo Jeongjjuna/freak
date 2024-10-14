@@ -1,20 +1,11 @@
-import {useEffect, useState} from "react";
 import styles from './App.module.css';
-import BlogLoader from "./utils/BlogLoader.js";
+import Content from "./components/Content.jsx";
 
 function App() {
-
-  const [blogList, setBlogList] = useState([]);
-
-  useEffect(() => {
-    const blogs = BlogLoader.loadBlogList();
-    setBlogList(blogs);
-  }, []);
-
   return (
     <>
       <div className={styles.header}></div>
-      <div className={styles.body}>freak blog</div>
+      <Content className={styles.body}/>
       <div className={styles.footer}></div>
     </>
   )

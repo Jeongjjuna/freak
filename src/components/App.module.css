@@ -1,18 +1,4 @@
-/**
- <body> => 최상위 <body> 태그는 display : flex 속성을 가집니다.
-    <div class="body">
-    <div>
- </body>
- */
-
-.header {
-
-}
-
-.body {
-
-}
-
-.footer {
-
+.container {
+    background-color: white;
+    min-height: 1000px;
 }

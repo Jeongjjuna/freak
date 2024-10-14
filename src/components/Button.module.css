@@ -1,0 +1,12 @@
+.Button {
+    display: inline-block;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+a.Button {
+    text-decoration: none;
+}

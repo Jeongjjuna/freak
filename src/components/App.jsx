@@ -5,9 +5,9 @@ import Header from "./Header.jsx";
 function App({children}) {
   return (
     <>
-      <Header className={styles.header}/>
-      <div className={styles.body}>{children}</div>
-      <Footer className={styles.footer}/>
+      <Header/>
+      <div className={styles.container}>{children}</div>
+      <Footer/>
     </>
   )
 }

@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    height: 200px;
+    color: #878787;
+    background-color: #494949;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 30px;
+}
+
+.links > li:first-child {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.info {
+    display: flex;
+}
+
+.info > li {
+    margin-left: 30px;
+}

@@ -1,0 +1,7 @@
+/**
+ 전역 css
+ */
+body {
+    margin: 0;
+    display: flex;
+}

@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 10px;  /* 원하는 값으로 변경 */
+        margin-right: 10px; /* 원하는 값으로 변경 */
+    }
+}

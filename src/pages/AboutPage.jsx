@@ -2,7 +2,7 @@ import React from 'react';
 
 function AboutPage(props) {
   return (
-    <div>AboutPage</div>
+    <div>소개</div>
   );
 }
 

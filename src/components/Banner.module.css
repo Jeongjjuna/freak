@@ -1,0 +1,18 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+    border-radius: 30px;
+    background-color: #ecfaf7;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 180px;
+    }
+}
+
+.content {
+
+}

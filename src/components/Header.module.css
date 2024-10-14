@@ -1,8 +1,15 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 .menu {

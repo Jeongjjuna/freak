@@ -22,8 +22,15 @@
 
 .info {
     display: flex;
+    margin-right: 30px;
 }
 
 .info > li {
     margin-left: 30px;
+}
+
+@media (max-width: 768px) {
+    .info > li {
+        margin-left: 4px;
+    }
 }

@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import Banner from "../components/Banner.jsx";
 import BlogLoader from "../utils/BlogLoader.js";
+import styles from './PostListPage.module.css';
 
 function PostListPage(props) {
 
@@ -14,7 +16,8 @@ function PostListPage(props) {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
+      <Banner/>
       <ul>
         {blogInfos.map((blogInfo, index) => (
           <li key={index}>

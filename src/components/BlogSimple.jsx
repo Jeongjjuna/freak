@@ -7,8 +7,8 @@ function BlogSimple(props) {
   return (
     <ul className={styles.blogSimple}>
       {blogInfos.map((blogInfo, index) => (
-        <Link to={`/posts/${blogInfo.title}`} key={index}>
-          <li className={styles.content}>
+        <li className={styles.content} key={index}>
+          <Link to={`/posts/${blogInfo.title}`}>
             <img
               src={`thumbnail/${blogInfo.thumbnail}`}
               width={100}
@@ -29,8 +29,8 @@ function BlogSimple(props) {
                 </li>
               ))}
             </ul>
-          </li>
-        </Link>
+          </Link>
+        </li>
       ))}
     </ul>
   );

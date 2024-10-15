@@ -15,6 +15,7 @@ createRoot(document.getElementById('root')).render(
         <ScrollToTop />
         <App>
           <Routes>
+            <Route index element={<PostListPage/>}/>
             <Route path="posts">
               <Route index element={<PostListPage/>}/>
               <Route path=":postInfo" element={<PostDetailPage/>}/>

@@ -1,0 +1,22 @@
+.category {
+    color: #595359;
+    background-color: #ece2f6;
+    border-radius: 30px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    padding: 8px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+@media (max-width: 780px) {
+    .category {
+        font-size: 12px;
+    }
+}
+
+.category:hover {
+    color: #ede6ed;
+    background-color: #c7a0e8;
+    transform: scale(1.1);
+    cursor: pointer;
+}

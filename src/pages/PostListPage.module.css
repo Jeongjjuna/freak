@@ -5,6 +5,10 @@
     margin-right: 80px;
 }
 
+.container > * {
+    margin-top: 16px;
+}
+
 @media (max-width: 768px) {
     .container {
         margin-left: 10px;  /* 원하는 값으로 변경 */

@@ -1,0 +1,22 @@
+.tag {
+    color: #595359;
+    background-color: #f3e3ef;
+    border-radius: 30px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 8px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+@media (max-width: 780px) {
+    .tag {
+        font-size: 12px;
+    }
+}
+
+.tag:hover {
+    color: #ede6ed;
+    background-color: lightcoral;
+    transform: scale(1.1);
+    cursor: pointer;
+}

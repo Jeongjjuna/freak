@@ -7,8 +7,8 @@ function BlogSimple(props) {
   return (
     <ul className={styles.blogSimple}>
       {blogInfos.map((blogInfo, index) => (
-        <li className={styles.content} key={index}>
-          <Link to={`/posts/${blogInfo.title}`}>
+        <Link className={styles.content} to={`/posts/${blogInfo.title}`} key={index}>
+          <li>
             <img
               src={`thumbnail/${blogInfo.thumbnail}`}
               width={100}
@@ -19,18 +19,20 @@ function BlogSimple(props) {
                 e.target.src = 'thumbnail/기본썸네일.png';
               }}
             />
-            <p>{blogInfo.title}</p>
-            <p>{blogInfo.date}</p>
-            <p>{blogInfo.category}</p>
-            <ul>
-              {blogInfo.tags.map((tag, index) => (
-                <li key={index}>
-                  <p>{tag}</p>
-                </li>
-              ))}
-            </ul>
-          </Link>
-        </li>
+            <div>
+              <p>{blogInfo.title}</p>
+              <p>{blogInfo.date}</p>
+              <p>{blogInfo.category}</p>
+              <ul>
+                {blogInfo.tags.map((tag, index) => (
+                  <li key={index}>
+                    <p>{tag}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        </Link>
       ))}
     </ul>
   );

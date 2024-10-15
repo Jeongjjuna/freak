@@ -8,28 +8,31 @@ function BlogSimple(props) {
     <ul className={styles.blogSimple}>
       {blogInfos.map((blogInfo, index) => (
         <Link className={styles.content} to={`/posts/${blogInfo.title}`} key={index}>
-          <li>
-            <img
-              src={`thumbnail/${blogInfo.thumbnail}`}
-              width={100}
-              height={100}
-              alt="thumbnail"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'thumbnail/기본썸네일.png';
-              }}
-            />
-            <div>
-              <p>{blogInfo.title}</p>
-              <p>{blogInfo.date}</p>
-              <p>{blogInfo.category}</p>
-              <ul>
+          <li className={styles.thumbnailSummaryContainer}>
+            <div className={styles.thumbnailContainer}>
+              <img
+                className={styles.thumbnail}
+                src={`thumbnail/${blogInfo.thumbnail}`}
+                alt="thumbnail"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'thumbnail/기본썸네일.png';
+                }}
+              />
+            </div>
+            <div className={styles.summary}>
+              <ul className={styles.tags}>
                 {blogInfo.tags.map((tag, index) => (
                   <li key={index}>
-                    <p>{tag}</p>
+                    <div className={styles.tag}>{tag}</div>
                   </li>
                 ))}
               </ul>
+              <div className={styles.options}>
+                <div className={styles.category}>{blogInfo.category}</div>
+                <div className={styles.date}>{blogInfo.date}</div>
+              </div>
+              <div className={styles.title}>{blogInfo.title}d와 아이오씨의 대한 이거럴 해보다.</div>
             </div>
           </li>
         </Link>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useTransition} from 'react';
+import {useEffect, useState} from 'react';
 import Banner from "../components/Banner.jsx";
 import BlogSimple from "../components/BlogSimple.jsx";
 import Options from "../components/Options.jsx";

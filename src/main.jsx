@@ -7,20 +7,22 @@ import AboutPage from "./pages/AboutPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import PostDetailPage from "./pages/PostDetailPage.jsx";
 import PostListPage from "./pages/PostListPage.jsx";
+import ScrollToTop from "./utils/ScrollToTop.js";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename='/freak'>
-      <App>
-        <Routes>
-          <Route path="posts">
-            <Route index element={<PostListPage/>}/>
-            <Route path=":postInfo" element={<PostDetailPage/>}/>
-          </Route>
-          <Route path="about" element={<AboutPage/>}/>
-          <Route path="*" element={<NotFoundPage/>}/>
-        </Routes>
-      </App>
+        <ScrollToTop />
+        <App>
+          <Routes>
+            <Route path="posts">
+              <Route index element={<PostListPage/>}/>
+              <Route path=":postInfo" element={<PostDetailPage/>}/>
+            </Route>
+            <Route path="about" element={<AboutPage/>}/>
+            <Route path="*" element={<NotFoundPage/>}/>
+          </Routes>
+        </App>
     </BrowserRouter>
   </StrictMode>,
 );

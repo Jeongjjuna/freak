@@ -7,7 +7,6 @@
     position: fixed; /* 화면에 고정 */
     bottom: 20px;    /* 하단에서 20px 떨어짐 */
     right: 20px;     /* 우측에서 20px 떨어짐 */
-    padding: 10px 15px;  /* 버튼 패딩 */
     cursor: pointer; /* 커서 모양을 포인터로 */
     z-index: 1000;   /* 다른 요소 위에 배치 */
     transition: background-color 0.3s ease, transform 0.3s;
@@ -32,7 +31,7 @@
 
 @media (max-width: 768px) {
     .scrollUpImg {
-        width: 80px;
-        height: 80px;
+        width: 0;
+        height: 0;
     }
 }

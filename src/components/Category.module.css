@@ -1,11 +1,11 @@
 .category {
-    color: #595359;
+    color: #6f2cb1;
     background-color: #ece2f6;
     border-radius: 30px;
     margin-right: 6px;
     margin-bottom: 4px;
     padding: 8px;
-    transition: background-color 0.3s ease, transform 0.3s;
+    transition: background-color 0.3s ease, transform 0.1s;
 }
 
 @media (max-width: 850px) {
@@ -15,7 +15,7 @@
 }
 
 .category:hover {
-    color: #ede6ed;
+    color: #f4f1f1;
     background-color: #c7a0e8;
     transform: scale(1.1);
     cursor: pointer;

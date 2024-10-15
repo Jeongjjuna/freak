@@ -1,13 +1,7 @@
 .options {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    height: 80px;
-}
-
-@media (max-width: 768px) {
-    .options {
-        height: 180px;
-    }
 }
 
 .content {
@@ -16,10 +10,17 @@
     align-items: flex-start;
 }
 
+@media (max-width: 780px) {
+    .content {
+        flex-direction: column;
+    }
+}
+
 .content > ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
 }

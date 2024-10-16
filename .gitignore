@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 테스트용 파일
+/public/blog/[20240101]_[제목을 입력합니다.]_[카테고리]_[kotlin java springboot mysql docker redis]_[책썸네일.png].md

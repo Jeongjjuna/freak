@@ -40,7 +40,7 @@
 }
 
 /**
- 블로그 게시글의 마크다운을 커스텀합니다.
+ 블로그 게시글의 코드 블럭 스타일을 커스텀 합니다.
  */
 .preContainer {
     width: 100%;
@@ -97,3 +97,53 @@
 .preBottom > code > span {
     font-family: "Mono";
 }
+
+
+/**
+ 블로그 게시글 여러 마크다운 요소들을 커스텀 합니다.
+ */
+.content > p {
+    margin: 0;
+    line-height: 1.5; /* 줄 간격을 1.5배로 설정 */
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    margin: 0 0 8px 0;
+}
+
+.content > blockquote {
+    margin: 10px 20px 0 20px;
+    padding: 10px;
+    border-left: solid 4px #3c5cff;
+    border-radius: 4px;
+    background-color: #eff0f4;
+}
+.content > blockquote > p {
+    margin: 0;
+    line-height: 1.5; /* 줄 간격을 1.5배로 설정 */
+}
+
+.ulContainer {
+}
+
+.liContainer {
+    display: flex;
+    align-items: self-start;
+    margin-bottom: 8px;
+}
+
+.dot {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid #7c5e87;
+}
+

@@ -27,9 +27,9 @@ function PostDetailPage() {
         <div className={styles.infos}>React에서 markdown 랜더링하기 코틀린을 기가막히게 파헤치기</div>
         <div className={styles.content}>
           <ReactMarkdown
-            rehypePlugins={[rehypeHighlight, remarkGfm, rehypeRaw]}
+            rehypePlugins={[rehypeHighlight, rehypeRaw, remarkGfm]}
             components={{
-              pre({ children, ...props }) { // Customizing <pre> tag
+              pre({children, ...props}) { // Customizing <pre> tag
                 return (
                   <div className={styles.preContainer}>
                     <div className={styles.preTop}>
@@ -41,6 +41,23 @@ function PostDetailPage() {
                     <pre className={styles.preBottom} {...props}>
                       {children}
                     </pre>
+                  </div>
+                );
+              },
+              ul({ children, ...props }) {
+                return (
+                    <ul className={styles.ulContainer} {...props}>
+                      {children}
+                    </ul>
+                );
+              },
+              li({ children, ...props }) {
+                return (
+                  <div className={styles.liContainer}> {/* 원하는 클래스명으로 div 감싸기 */}
+                    <div className={styles.dot}></div>
+                    <li {...props}>
+                      {children}
+                    </li>
                   </div>
                 );
               },

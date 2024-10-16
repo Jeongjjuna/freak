@@ -1,6 +1,11 @@
-import React from 'react';
+import {useParams} from "react-router-dom";
 
-function PostDetailPage(props) {
+function PostDetailPage() {
+
+  const { postTitle } = useParams();
+
+
+
   return (
     <div>PostDetailPage</div>
   );

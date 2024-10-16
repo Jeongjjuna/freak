@@ -32,7 +32,7 @@ function BlogSimple(props) {
                 <div className={styles.category}>{blogInfo.category}</div>
                 <div className={styles.date}>{blogInfo.date}</div>
               </div>
-              <div className={styles.title}>{blogInfo.title}d와 아이오씨의 대한 이거럴 해보다.</div>
+              <div className={styles.title}>{blogInfo.title}</div>
             </div>
           </li>
         </Link>

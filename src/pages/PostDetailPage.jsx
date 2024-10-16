@@ -44,7 +44,7 @@ function PostDetailPage() {
               alt="thumbnail"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = '../thumbnail/기본썸네일.png';
+                e.target.src = '../thumbnail/loading.gif';
               }}
             />
           </div>

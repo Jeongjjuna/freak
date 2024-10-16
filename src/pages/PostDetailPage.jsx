@@ -29,7 +29,6 @@ function PostDetailPage() {
         setMarkdown(text);
 
         let blog = BlogLoader.extractFileInfo(fileName + '.md');
-        console.log(blog);
         setBlogInfo(blog);
       });
   }, [blogName]);

@@ -15,7 +15,6 @@ function BlogSimple(props) {
         <Link className={styles.content} to={`/posts/${getBlogName(blogInfo)}`} key={index}>
           <li className={styles.thumbnailSummaryContainer}>
             <div className={styles.thumbnailContainer}>
-              <div>{blogInfo.thumbnail}</div>
               <img
                 className={styles.thumbnail}
                 src={`thumbnail/${blogInfo.thumbnail}`}

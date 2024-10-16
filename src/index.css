@@ -17,7 +17,6 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    border: solid 1px black;
     overscroll-behavior: none; /* 페이지 상단이나 하단에서 스크롤 튕김 방지 */
 }
 

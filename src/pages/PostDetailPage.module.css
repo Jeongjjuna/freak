@@ -1,0 +1,99 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+}
+
+.infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 580px;
+    font-size: 36px;
+    margin-bottom: 50px;
+    border: solid 1px red;
+}
+
+@media (max-width: 580px) {
+    .infos {
+        border: solid 1px green;
+        width: auto;
+    }
+}
+
+.content {
+    color: #434040;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    width: 580px;
+    border: solid 1px yellow;
+}
+
+@media (max-width: 580px) {
+    .content {
+        border: solid 1px green;
+        width: auto;
+    }
+}
+
+/**
+ 블로그 게시글의 마크다운을 커스텀합니다.
+ */
+.preContainer {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.preTop {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    background-color: #494949;
+    border-radius: 6px 6px 0 0;
+}
+
+.circle {
+    margin-left: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.circleRed {
+    background-color: #e83e3e;
+}
+
+.circleYellow {
+    background-color: #eccf21;
+}
+
+.circleGreen {
+    background-color: #16cf16;
+}
+
+.language {
+    font-family: "Mono";
+    color: #c1bfbf;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.preBottom {
+    margin: 0;
+    padding: 0;
+}
+
+.preBottom > code {
+    font-family: "Mono";
+    border-radius: 0 0 6px 6px;
+}
+
+.preBottom > code > span {
+    font-family: "Mono";
+}

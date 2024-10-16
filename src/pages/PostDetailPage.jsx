@@ -4,30 +4,68 @@ import {useParams} from "react-router-dom";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import remarkHtml from "remark-html";
+import BlogLoader from "../utils/BlogLoader.js";
 import styles from './PostDetailPage.module.css';
 import "highlight.js/styles/atom-one-dark.css";
 
 function PostDetailPage() {
 
-  const { postTitle } = useParams();
+  const {blogName} = useParams();
   const [markdown, setMarkdown] = useState("");
+  const [blogInfo, setBlogInfo] = useState({
+    title: '',
+    date: '',
+    category: '',
+    tags: [],
+    thumbnail: '기본썸네일.png',
+  });
 
   useEffect(() => {
-    fetch("../blog/[20241014]_[블로그만들기 - 시작]_[블로그만들기시리즈]_[react kotlin]_[boj.png].md")
+    const fileName = decodeURIComponent(blogName)
+    fetch(`../blog/${fileName}.md`)
       .then((response) => response.text())
       .then((text) => {
-        console.log(text);
         setMarkdown(text);
+
+        let blog = BlogLoader.extractFileInfo(fileName + '.md');
+        console.log(blog);
+        setBlogInfo(blog);
       });
-  }, []);
+  }, [blogName]);
 
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.infos}>React에서 markdown 랜더링하기 코틀린을 기가막히게 파헤치기</div>
+        <div className={styles.infos}>
+          <div className={styles.thumbnailContainer}>
+            <img
+              className={styles.thumbnail}
+              src={`../thumbnail/${blogInfo.thumbnail}`}
+              alt="thumbnail"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '../thumbnail/기본썸네일.png';
+              }}
+            />
+          </div>
+          <div className={styles.infoTitle}>{blogInfo.title}</div>
+          <div className={styles.infoSub}>
+            <div className={styles.infoCategoryTag}>
+              <div className={styles.infoCategory}>{blogInfo.category}</div>
+              <div className={styles.infoTags}>
+                {blogInfo.tags.map((tag, index) => (
+                  <div className={styles.infoTag} key={index}>{tag}</div>
+                ))}
+              </div>
+            </div>
+            <div className={styles.infoDate}>{blogInfo.date}</div>
+          </div>
+        </div>
         <div className={styles.content}>
           <ReactMarkdown
-            rehypePlugins={[rehypeHighlight, rehypeRaw, remarkGfm]}
+            remarkPlugins={[remarkGfm, remarkHtml]}
+            rehypePlugins={[rehypeHighlight, rehypeRaw]}
             components={{
               pre({children, ...props}) { // Customizing <pre> tag
                 return (
@@ -44,14 +82,14 @@ function PostDetailPage() {
                   </div>
                 );
               },
-              ul({ children, ...props }) {
+              ul({children, ...props}) {
                 return (
-                    <ul className={styles.ulContainer} {...props}>
-                      {children}
-                    </ul>
+                  <ul className={styles.ulContainer} {...props}>
+                    {children}
+                  </ul>
                 );
               },
-              li({ children, ...props }) {
+              li({children, ...props}) {
                 return (
                   <div className={styles.liContainer}> {/* 원하는 클래스명으로 div 감싸기 */}
                     <div className={styles.dot}></div>

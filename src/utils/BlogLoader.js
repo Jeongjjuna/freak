@@ -19,7 +19,7 @@ class BlogLoader {
       let tag = matches[4].split(" ");
       let thumbnail = matches[5];
       let fileType = matches[6];
-      return new Blog(date, title, category, tag, thumbnail, fileType, fileType, fileType);
+      return new Blog(date, title, category, tag, thumbnail, fileType);
     }
     throw new Error("해당 파일이 존재하지 않습니다.");
   }

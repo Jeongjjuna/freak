@@ -4,12 +4,18 @@ import styles from './BlogSimple.module.css';
 function BlogSimple(props) {
   const { blogInfos } = props;
 
+  function getBlogName(blogInfo) {
+    const rawFileName = blogInfo.getFileName();
+    return encodeURIComponent(rawFileName);
+  }
+
   return (
     <ul className={styles.blogSimple}>
       {blogInfos.map((blogInfo, index) => (
-        <Link className={styles.content} to={`/posts/${blogInfo.title}`} key={index}>
+        <Link className={styles.content} to={`/posts/${getBlogName(blogInfo)}`} key={index}>
           <li className={styles.thumbnailSummaryContainer}>
             <div className={styles.thumbnailContainer}>
+              <div>{blogInfo.thumbnail}</div>
               <img
                 className={styles.thumbnail}
                 src={`thumbnail/${blogInfo.thumbnail}`}

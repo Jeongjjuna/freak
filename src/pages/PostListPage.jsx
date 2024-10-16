@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import gif1 from "../assets/gif_1.gif";
 import Banner from "../components/Banner.jsx";
 import BlogSimple from "../components/BlogSimple.jsx";
 import Options from "../components/Options.jsx";
@@ -35,11 +36,16 @@ function PostListPage() {
   }, [blogInfos]);
 
   return (
-    <div className={styles.container}>
-      <Banner/>
-      <Options categories={categories} tags={tags}/>
-      <BlogSimple blogInfos={blogInfos}/>
-    </div>
+    <>
+      <div className={styles.gifContainer}>
+        <img src={gif1} alt="배너 커스텀 이미지" className={styles.gifImg}/>
+      </div>
+      <div className={styles.container}>
+        <Banner/>
+        <Options categories={categories} tags={tags}/>
+        <BlogSimple blogInfos={blogInfos}/>
+      </div>
+    </>
   );
 }
 

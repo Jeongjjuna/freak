@@ -246,3 +246,32 @@ blockquote {
 .preBottom > code > span {
     font-family: "Mono";
 }
+
+/**
+ 우측 스크롤 nav 바 커스텀
+ */
+.scrollNav {
+    position: fixed; /* 고정 위치 */
+    right: 50%; /* 오른쪽 여백 */
+    top: 30%; /* 위쪽 여백 */
+    transform: translate(300%);
+    background-color: white; /* 배경색 */
+    padding: 10px; /* 패딩 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+.scrollNav ul {
+    list-style: none; /* 기본 목록 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 0; /* 마진 제거 */
+}
+
+.scrollNavButton {
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}

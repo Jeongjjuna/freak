@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import ReactMarkdown from "react-markdown";
 import {useParams} from "react-router-dom";
 import rehypeHighlight from "rehype-highlight";
@@ -20,6 +20,9 @@ function PostDetailPage() {
     tags: [],
     thumbnail: '기본썸네일.png',
   });
+  const [currentHeading, setCurrentHeading] = useState('');
+  const headingsRef = useRef([]);
+
 
   useEffect(() => {
     const fileName = decodeURIComponent(blogName)
@@ -32,6 +35,32 @@ function PostDetailPage() {
         setBlogInfo(blog);
       });
   }, [blogName]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    headingsRef.current.forEach((heading) => {
+      if (heading) {
+        const { offsetTop, clientHeight } = heading;
+        if (scrollY >= offsetTop - clientHeight / 2 && scrollY < offsetTop + clientHeight / 2) {
+          setCurrentHeading(heading.id);
+        }
+      }
+    });
+  };
+
+  const handleClick = (id) => {
+    const headingElement = document.getElementById(id);
+    if (headingElement) {
+      headingElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -61,6 +90,30 @@ function PostDetailPage() {
             <div className={styles.infoDate}>{blogInfo.date}</div>
           </div>
         </div>
+        <nav className={styles.scrollNav}>
+          <ul>
+            {Array.from(markdown.matchAll(/(#{1,2})\s+(.*)/g)).map((match, index) => {
+              // const level = match[1].length;
+              const title = match[2];
+              const id = title.toLowerCase().replace(/ /g, '-'); // ID 생성
+
+              return (
+                <li key={index}>
+                  <button
+                    className={styles.scrollNavButton}
+                    onClick={() => handleClick(id)}
+                    style={{
+                      backgroundColor: currentHeading === id ? '#646265' : '#ffffff',
+                      color: currentHeading === id ? '#ffffff' : '#000000',
+                    }}
+                  >
+                    {title}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
         <div className={styles.content}>
           <ReactMarkdown
             remarkPlugins={[remarkGfm, remarkHtml]}
@@ -96,6 +149,24 @@ function PostDetailPage() {
                       {children}
                     </li>
                   </div>
+                );
+              },
+              h1(props) {
+                const title = props.children;
+                const id = title.toLowerCase().replace(/ /g, '-');
+                return (
+                  <h1 id={id} ref={(el) => (headingsRef.current.push(el))} {...props}>
+                    {title}
+                  </h1>
+                );
+              },
+              h2(props) {
+                const title = props.children;
+                const id = title.toLowerCase().replace(/ /g, '-');
+                return (
+                  <h2 id={id} ref={(el) => (headingsRef.current.push(el))} {...props}>
+                    {title}
+                  </h2>
                 );
               },
             }}

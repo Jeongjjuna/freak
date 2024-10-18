@@ -110,6 +110,34 @@
     margin-top: 4px;
 }
 
+.content mark {
+    color: white;
+    background-color: #7438d1;
+    /*background-color: #efc936;*/
+    padding: 2px 8px;
+    display: inline-block; /* 블록 속성으로 처리 */
+    /*transform: skew(-6deg); !* 배경을 왼쪽으로 10도 기울이기 *!*/
+    border-radius: 2px;
+}
+
+.content u {
+    text-decoration: none;
+    position: relative;
+}
+
+.content i {
+    text-decoration: none;
+    padding-left: 1px;
+    padding-right: 1px;
+
+    color: #e83263;
+}
+
+
+.content ul {
+ margin-top: 8px;
+}
+
 p {
     line-height: 1.5; /* 줄 간격을 1.5배로 설정 */
 }
@@ -181,8 +209,8 @@ blockquote {
 
 .circle {
     margin-left: 6px;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
 }
 

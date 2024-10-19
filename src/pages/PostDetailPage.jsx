@@ -21,6 +21,7 @@ function PostDetailPage() {
     thumbnail: '기본썸네일.png',
   });
   const [currentHeading, setCurrentHeading] = useState('');
+  const [activeButton, setActiveButton] = useState(null);
   const headingsRef = useRef([]);
 
 
@@ -43,6 +44,17 @@ function PostDetailPage() {
     };
   }, []);
 
+  /**
+   * h1, h2 이름으로부터 고유한 id를 생성한다.
+   * create element id
+   */
+  function getId(title) {
+    return title.toLowerCase()
+      .replace(/\s+/g, '-') // 모든 공백을 하이픈으로 변환
+      .replace(/-+$/, ''); // 문자열 끝의 하이픈 제거
+  }
+
+
   const handleScroll = () => {
     const scrollY = window.scrollY;
     headingsRef.current.forEach((heading) => {
@@ -59,6 +71,8 @@ function PostDetailPage() {
     const headingElement = document.getElementById(id);
     if (headingElement) {
       headingElement.scrollIntoView({ behavior: 'smooth' });
+      setCurrentHeading(id);
+      setActiveButton(id); // 클릭한 버튼 활성화
     }
   };
 
@@ -95,16 +109,15 @@ function PostDetailPage() {
             {Array.from(markdown.matchAll(/(#{1,2})\s+(.*)/g)).map((match, index) => {
               // const level = match[1].length;
               const title = match[2];
-              const id = title.toLowerCase().replace(/ /g, '-'); // ID 생성
-
+              const id = getId(title);
               return (
                 <li key={index}>
                   <button
                     className={styles.scrollNavButton}
                     onClick={() => handleClick(id)}
                     style={{
-                      backgroundColor: currentHeading === id ? '#646265' : '#ffffff',
-                      color: currentHeading === id ? '#ffffff' : '#000000',
+                      backgroundColor: activeButton === id ? '#646265' : '#ffffff',
+                      color: activeButton === id ? '#ffffff' : '#000000',
                     }}
                   >
                     {title}
@@ -153,7 +166,7 @@ function PostDetailPage() {
               },
               h1(props) {
                 const title = props.children;
-                const id = title.toLowerCase().replace(/ /g, '-');
+                const id = getId(title);
                 return (
                   <h1 id={id} ref={(el) => (headingsRef.current.push(el))} {...props}>
                     {title}
@@ -162,7 +175,7 @@ function PostDetailPage() {
               },
               h2(props) {
                 const title = props.children;
-                const id = title.toLowerCase().replace(/ /g, '-');
+                const id = getId(title);
                 return (
                   <h2 id={id} ref={(el) => (headingsRef.current.push(el))} {...props}>
                     {title}

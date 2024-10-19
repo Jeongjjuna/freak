@@ -262,6 +262,14 @@ blockquote {
     z-index: 1000; /* 다른 요소 위에 표시 */
 }
 
+@media (max-width: 1480px) {
+    .scrollNav {
+        display: none;
+    }
+}
+
+
+
 .scrollNav ul {
     list-style: none; /* 기본 목록 스타일 제거 */
     padding: 0; /* 패딩 제거 */

@@ -112,12 +112,13 @@
 
 .content mark {
     color: white;
-    background-color: #7438d1;
+    background-color: #e6a705;
     /*background-color: #efc936;*/
-    padding: 2px 8px;
+    padding: 2px 3px;
+    margin-right: 2px;
     display: inline-block; /* 블록 속성으로 처리 */
     /*transform: skew(-6deg); !* 배경을 왼쪽으로 10도 기울이기 *!*/
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
 .content u {

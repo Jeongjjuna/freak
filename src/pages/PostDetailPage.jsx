@@ -107,8 +107,8 @@ function PostDetailPage() {
         <nav className={styles.scrollNav}>
           <ul>
             {Array.from(markdown.matchAll(/(#{1,2})\s+(.*)/g)).map((match, index) => {
-              // const level = match[1].length;
               const title = match[2];
+              const level = match[1].length; // h1, h2 레벨 확인
               const id = getId(title);
               return (
                 <li key={index}>
@@ -120,6 +120,7 @@ function PostDetailPage() {
                       color: activeButton === id ? '#ffffff' : '#000000',
                     }}
                   >
+                    {level === 2 && <span style={{ paddingLeft: '20px' }}></span>}
                     {title}
                   </button>
                 </li>

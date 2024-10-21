@@ -115,10 +115,6 @@ function PostDetailPage() {
                   <button
                     className={styles.scrollNavButton}
                     onClick={() => handleClick(id)}
-                    style={{
-                      backgroundColor: activeButton === id ? '#646265' : '#ffffff',
-                      color: activeButton === id ? '#ffffff' : '#000000',
-                    }}
                   >
                     {level === 2 && <span style={{ paddingLeft: '20px' }}></span>}
                     {title}

@@ -1,11 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
     align-items: center;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 240px;
+    padding: 50px 10px 240px;
 }
 
 .infos {
@@ -93,9 +90,11 @@
  블로그 게시글 여러 마크다운 요소들을 커스텀 합니다.
  */
 .content * {
+    font-family: Noto Sans KR, sans-serif;
     margin: 0;
     padding: 0;
 }
+
 .content img {
     width: 100%;
     height: 100%;
@@ -111,14 +110,13 @@
 }
 
 .content mark {
-    color: white;
-    background-color: #e6a705;
+    background-color: #fff9bf;
     /*background-color: #efc936;*/
     padding: 2px 3px;
     margin-right: 2px;
     display: inline-block; /* 블록 속성으로 처리 */
     /*transform: skew(-6deg); !* 배경을 왼쪽으로 10도 기울이기 *!*/
-    border-radius: 1px;
+    border-radius: 4px;
 }
 
 .content u {
@@ -136,10 +134,12 @@
 
 
 .content ul {
- margin-top: 8px;
+    font-size: 12px;
+    margin-top: 8px;
 }
 
 p {
+    font-size: 12px;
     line-height: 1.5; /* 줄 간격을 1.5배로 설정 */
 }
 
@@ -181,7 +181,7 @@ blockquote {
 .dot {
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 7px;
+    margin-top: 4px;
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -193,6 +193,7 @@ blockquote {
  블로그 게시글의 코드 블럭 스타일을 커스텀 합니다.
  */
 .preContainer {
+    font-size: 12px;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -201,7 +202,7 @@ blockquote {
 .preTop {
     display: flex;
     align-items: center;
-    height: 36px;
+    height: 28px;
     margin: 0;
     padding: 0;
     background-color: #494949;
@@ -210,8 +211,8 @@ blockquote {
 
 .circle {
     margin-left: 6px;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
 }
 
@@ -240,44 +241,52 @@ blockquote {
 }
 
 .preBottom > code {
-    font-family: "Mono";
+    font-family: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
     border-radius: 0 0 6px 6px;
 }
 
 .preBottom > code > span {
-    font-family: "Mono";
+    font-family: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }
 
 /**
  우측 스크롤 nav 바 커스텀
  */
 .scrollNav {
+    width: 260px;
     position: fixed; /* 고정 위치 */
-    right: 50%; /* 오른쪽 여백 */
-    top: 30%; /* 위쪽 여백 */
-    transform: translate(300%);
-    background-color: white; /* 배경색 */
-    padding: 10px; /* 패딩 */
+    transform: translate(50%, 0) translateX(320px);
+    padding: 10px;
     border-radius: 8px; /* 모서리 둥글게 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
     z-index: 1000; /* 다른 요소 위에 표시 */
 }
 
-@media (max-width: 1480px) {
+@media (max-width: 1200px) {
     .scrollNav {
         display: none;
     }
 }
 
-
-
 .scrollNav ul {
-    list-style: none; /* 기본 목록 스타일 제거 */
-    padding: 0; /* 패딩 제거 */
-    margin: 0; /* 마진 제거 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scrollNav ul li button{
+    display: flex;
+    background-color: white;
+    padding: 0 0 10px 0;
+    text-align: left;
+}
+
+.scrollNav ul li button:hover {
+    color: #a69f9f;
 }
 
 .scrollNavButton {
+    font-family: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-size: 10px;
     border: none;
     padding: 8px 16px;
     cursor: pointer;

@@ -193,7 +193,7 @@ blockquote {
  블로그 게시글의 코드 블럭 스타일을 커스텀 합니다.
  */
 .preContainer {
-    font-size: 12px;
+    font-size: 10px;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -247,6 +247,7 @@ blockquote {
 
 .preBottom > code > span {
     font-family: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+
 }
 
 /**

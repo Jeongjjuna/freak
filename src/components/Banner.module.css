@@ -2,17 +2,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 320px;
+    /*height: 320px;*/
     border-radius: 30px;
     background-color: #ecfaf7;
 }
 
 @media (max-width: 768px) {
     .banner {
-        height: 180px;
+        /*height: 180px;*/
     }
 }
 
 .content {
 
+}
+
+.gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    /*max-width: 100%; !* 전체 화면 너비에 맞춰 확장 *!*/
+    margin: 20px;
+}
+
+.cell {
+    flex-basis: calc(100% / 40); /* 각 박스의 너비 (40등분) */
+    aspect-ratio: 1; /* 정사각형 유지 */
+    min-width: 15px; /* 최소 너비 */
+    max-width: 20px; /* 최대 너비 */
+    margin: 1px;
+    background-color: #ecfaf7; /* 기본 배경색 */
+    transition: background-color 0.3s ease;
+}
+
+.cell.active {
+    background-color: #575359;
+    /*background: linear-gradient(40deg, #575359, #66646a 40%, #7a7780 80%);*/
+
+    /*background-color: #7c2cdd;*/
+    /*background: linear-gradient(40deg, #6d3bed, #7c2cdd 40%, #8b5ce3 80%);*/
 }

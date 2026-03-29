@@ -24,4 +24,45 @@ dist-ssr
 *.sw?
 
 # 테스트용 파일
-/public/blog/[20240101]_[제목을 입력합니다.]_[카테고리]_[kotlin java springboot mysql docker redis]_[책썸네일.png].md
+/content/blog/[20240101]_[제목을 입력합니다.]_[카테고리]_[kotlin java springboot mysql docker redis]_[책썸네일.png].md
+
+# Created by https://www.toptal.com/developers/gitignore/api/nextjs
+# Edit at https://www.toptal.com/developers/gitignore?templates=nextjs
+
+### NextJS ###
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# End of https://www.toptal.com/developers/gitignore/api/nextjs

@@ -26,11 +26,11 @@ export default async function PostPage({params}: Props) {
   const recentPosts = getRecentPosts(5);
 
   return (
-    <div className="max-w-[1160px] mx-auto flex min-h-[calc(100vh-96px)] px-6">
+    <div className="max-w-290 mx-auto flex min-h-[calc(100vh-96px)] px-6">
       <Sidebar categories={categories} recentPosts={recentPosts}/>
       <main className="flex-1 min-w-0 bg-white px-10 py-10 max-[1200px]:px-3">
-        <p className="text-[13px] text-[#737373] mb-3">{post.category} · {post.date}</p>
-        <h1 className="text-[28px] font-bold leading-[1.4] text-[#3a4954] mb-8 pb-6 border-b border-[#e5e5e5]">
+        <p className="text-[14px] text-[#737373] mb-3">{post.category} · {post.date}</p>
+        <h1 className="text-[28px] font-medium leading-[1.4] text-[#3a4954] mb-8 pb-6 border-b border-[#e5e5e5]">
           {post.title}
         </h1>
         <TOC items={toc}/>

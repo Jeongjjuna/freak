@@ -92,26 +92,45 @@
 
 .prose code {
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 13px;
+    font-size: 13.5px;
     background: #f0f0f0;
     padding: 2px 6px;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .prose pre {
-    background: #1e1e1e;
-    color: #d4d4d4;
-    padding: 20px;
-    border-radius: 6px;
+    background: #282a36 !important;
+    padding: 24px 0;
+    border-radius: 12px;
     overflow-x: auto;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .prose pre code {
     background: none;
     padding: 0;
-    font-size: 13px;
+    font-size: 13.5px;
     color: inherit;
+    display: grid;
+    counter-reset: line;
+}
+
+.prose pre [data-line] {
+    padding: 0 24px 0 16px;
+    border-left: 3px solid transparent;
+}
+
+.prose pre [data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 2rem;
+    margin-right: 1.5rem;
+    text-align: right;
+    color: #6272a4;
+    border-right: 1px solid #44475a;
+    padding-right: 1rem;
 }
 
 .prose img {

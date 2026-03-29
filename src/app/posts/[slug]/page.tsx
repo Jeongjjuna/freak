@@ -5,7 +5,6 @@ import {extractToc} from '@/lib/toc';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import TOC from '@/components/TOC/TOC';
 import PostContent from '@/components/PostContent/PostContent';
-import 'highlight.js/styles/github.css';
 
 interface Props {
   params: Promise<{ slug: string }>;

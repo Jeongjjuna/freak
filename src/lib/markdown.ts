@@ -3,7 +3,7 @@ import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
-import rehypeHighlight from 'rehype-highlight';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
 
@@ -14,7 +14,10 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     .use(remarkRehype, {allowDangerousHtml: true})
     .use(rehypeRaw)
     .use(rehypeSlug)
-    .use(rehypeHighlight)
+    .use(rehypePrettyCode, {
+      theme: 'dracula',
+      keepBackground: true,
+    })
     .use(rehypeStringify)
     .process(markdown);
 

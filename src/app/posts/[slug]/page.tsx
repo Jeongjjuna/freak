@@ -1,10 +1,19 @@
 import {notFound} from 'next/navigation';
-import {getAllCategories, getAllSlugs, getPostBySlug, getRecentPosts} from '@/lib/posts';
+import Link from 'next/link';
+import {
+  getAllCategories,
+  getAllSlugs,
+  getPostBySlug,
+  getRecentPosts,
+  getPostsByCategory,
+  getCategoryEmoji
+} from '@/lib/posts';
 import {markdownToHtml} from '@/lib/markdown';
 import {extractToc} from '@/lib/toc';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import TOC from '@/components/TOC/TOC';
 import PostContent from '@/components/PostContent/PostContent';
+import PostInteraction from '@/components/PostInteraction/PostInteraction';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -24,6 +33,12 @@ export default async function PostPage({params}: Props) {
   const categories = getAllCategories();
   const recentPosts = getRecentPosts(5);
 
+  const relatedPosts = getPostsByCategory(post.category)
+    .filter((p) => p.slug !== slug)
+    .slice(0, 5);
+
+  const emoji = getCategoryEmoji(post.category);
+
   return (
     <div className="max-w-290 mx-auto flex min-h-[calc(100vh-96px)] px-6">
       <Sidebar categories={categories} recentPosts={recentPosts}/>
@@ -34,16 +49,50 @@ export default async function PostPage({params}: Props) {
         </h1>
         <TOC items={toc}/>
         <PostContent html={html}/>
+        <PostInteraction />
+
+        {/* 관련 글 목록 */}
+        <div>
+          <div className="py-4 border-b border-[#e5e5e5] mb-6">
+            <h3 className="text-[18px] text-[#737373] font-normal">
+              &apos;{post.category} {emoji}&apos; 카테고리의 다른 글
+            </h3>
+          </div>
+          <ul className="space-y-4">
+            {relatedPosts.map((rp) => (
+              <li key={rp.slug} className="flex justify-between items-center text-[15px]">
+                <Link
+                  href={`/posts/${rp.slug}`}
+                  className="text-[#737373] hover:text-[#3a4954] transition-colors line-clamp-1 mr-4"
+                >
+                  {rp.title}
+                </Link>
+                <span className="text-[#999] text-[13px] whitespace-nowrap">
+                  {rp.date.replace(/-/g, '.')}
+                </span>
+              </li>
+            ))}
+            {relatedPosts.length === 0 && (
+              <li className="text-[#999] text-[15px]">이 카테고리에 다른 글이 없습니다.</li>
+            )}
+          </ul>
+        </div>
+
+        {/* 태그 목록 */}
         {post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-10 pt-8 border-t border-[#e5e5e5]">
-            {post.tags.map((tag) => (
-              <a
-                key={tag}
-                href={`/tags/${encodeURIComponent(tag)}`}
-                className="text-[12px] text-[#737373] border border-[#e5e5e5] rounded-full px-3 py-0.5 hover:bg-[#f8f8f8] transition-colors"
-              >
-                #{tag}
-              </a>
+          <div className="flex flex-wrap gap-x-2 gap-y-1 mt-14 pt-8 border-t border-[#e5e5e5] font-serif">
+            {post.tags.map((tag, index) => (
+              <div key={tag} className="flex items-center">
+                <Link
+                  href={`/tags/${encodeURIComponent(tag)}`}
+                  className="text-[17px] text-[#023e8a] hover:underline"
+                >
+                  #{tag}
+                </Link>
+                {index < post.tags.length - 1 && (
+                  <span className="ml-2 text-[#737373]">,</span>
+                )}
+              </div>
             ))}
           </div>
         )}

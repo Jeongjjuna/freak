@@ -1,10 +1,20 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 export default function Header() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
+  const [query, setQuery] = useState('');
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      const trimmed = query.trim();
+      router.push(trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search');
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -39,7 +49,9 @@ export default function Header() {
               <input
                 type="text"
                 placeholder="키워드를 입력하세요."
-                readOnly
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
                 className="text-[14px] text-[#3a4954] placeholder:text-[#8b8b8b] bg-transparent outline-none w-full font-light"
               />
             </div>

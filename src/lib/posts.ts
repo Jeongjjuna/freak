@@ -82,6 +82,12 @@ export function getPostsByTag(tag: string): PostMeta[] {
   return getAllPosts().filter((p) => p.tags.includes(tag));
 }
 
+export function searchPostsByTitle(query: string): PostMeta[] {
+  if (!query.trim()) return [];
+  const lower = query.toLowerCase();
+  return getAllPosts().filter((p) => p.title.toLowerCase().includes(lower));
+}
+
 export function getAllSlugs(): string[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
   return fs.readdirSync(POSTS_DIR)

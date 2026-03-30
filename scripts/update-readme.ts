@@ -76,9 +76,9 @@ function generateHtmlTable(posts: PostSummary[]): string {
       const excerpt = truncate(post.excerpt);
       const date = formatDate(post.date);
 
-      return `<td style="width: 33%">
-    <a href="${url}">
-        <img width="100%" src="${img}" alt=""/><br/>
+      return `<td valign="top">
+    <a align="center" href="${url}">
+        <img width="150px" src="${img}" alt=""/><br/>
         <div>${post.title}</div>
     </a>
     <div>${excerpt}</div>

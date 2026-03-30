@@ -10,6 +10,8 @@ excerpt: "@Transactional만 붙이면 다 되는 줄 알았다. 트랜잭션이 
 
 Spring은 AOP 프록시로 트랜잭션을 관리한다.
 
+![Spring 트랜잭션 흐름](/images/posts/spring-transaction/proxy-flow.png)
+
 ```
 클라이언트 → 프록시 (트랜잭션 시작) → 실제 빈 → 프록시 (커밋/롤백)
 ```

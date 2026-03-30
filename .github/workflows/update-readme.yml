@@ -1,0 +1,42 @@
+name: Update Profile README
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/posts/**'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout blog repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Checkout profile repo
+        uses: actions/checkout@v4
+        with:
+          repository: Jeongjjuna/Jeongjjuna
+          token: ${{ secrets.PROFILE_REPO_TOKEN }}
+          path: profile-readme
+
+      - name: Update README
+        run: npx tsx scripts/update-readme.ts
+
+      - name: Commit and push
+        working-directory: profile-readme
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "docs: 최신 블로그 글 업데이트"
+          git push

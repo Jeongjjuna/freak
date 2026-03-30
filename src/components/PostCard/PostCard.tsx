@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type {PostMeta} from '@/types/post';
 import {getCategoryEmoji} from '@/lib/categoryEmoji';
+import {resolveImageSrc} from '@/lib/image';
 
 interface Props {
   post: PostMeta;
@@ -45,7 +46,7 @@ export default function PostCard({post}: Props) {
       </div>
       {post.thumbnail ? (
         <Image
-          src={post.thumbnail}
+          src={resolveImageSrc(post.thumbnail)}
           alt={post.title}
           width={120}
           height={88}

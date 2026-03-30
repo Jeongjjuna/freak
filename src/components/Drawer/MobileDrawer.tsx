@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useDrawer } from './DrawerProvider';
 import { getCategoryEmoji } from '@/lib/categoryEmoji';
+import { resolveImageSrc } from '@/lib/image';
 
 export default function MobileDrawer() {
   const { isOpen, close, categories, recentPosts } = useDrawer();
@@ -93,7 +94,7 @@ export default function MobileDrawer() {
                   <Link href={`/posts/${post.slug}`} className="flex gap-2.5 items-start group">
                     {post.thumbnail ? (
                       <Image
-                        src={post.thumbnail}
+                        src={resolveImageSrc(post.thumbnail)}
                         alt={post.title}
                         width={56}
                         height={44}

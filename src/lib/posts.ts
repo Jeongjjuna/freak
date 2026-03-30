@@ -9,6 +9,13 @@ function slugify(filename: string): string {
   return filename.replace(/\.md$/, '');
 }
 
+function categoryToFilename(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
 export function getAllPosts(): PostMeta[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
 
@@ -27,7 +34,7 @@ export function getAllPosts(): PostMeta[] {
         category: data.category ?? '',
         tags: data.tags ?? [],
         excerpt: data.excerpt ?? '',
-        thumbnail: data.thumbnail,
+        thumbnail: data.thumbnail ?? `/images/thumbnails/${categoryToFilename(data.category ?? '')}.png`,
       } satisfies PostMeta;
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -47,7 +54,7 @@ export function getPostBySlug(slug: string): Post | null {
     category: data.category ?? '',
     tags: data.tags ?? [],
     excerpt: data.excerpt ?? '',
-    thumbnail: data.thumbnail,
+    thumbnail: data.thumbnail ?? `/images/thumbnails/${categoryToFilename(data.category ?? '')}.png`,
     content,
   };
 }

@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { useDrawer } from '@/components/Drawer/DrawerProvider';
 
 export default function Header() {
   const router = useRouter();
+  const { open } = useDrawer();
   const [scrolled, setScrolled] = useState(false);
   const [query, setQuery] = useState('');
 
@@ -55,7 +57,7 @@ export default function Header() {
                 className="text-[14px] text-[#3a4954] placeholder:text-[#8b8b8b] bg-transparent outline-none w-full font-light"
               />
             </div>
-            <button className="flex flex-col gap-1.25 w-6 px-0.5 group cursor-pointer" aria-label="메뉴">
+            <button onClick={open} className="min-[1200px]:hidden flex flex-col gap-1.25 w-6 px-0.5 group cursor-pointer" aria-label="메뉴">
               <span className="w-full h-0.75 bg-[#666666] rounded-full"></span>
               <span className="w-full h-0.75 bg-[#666666] rounded-full"></span>
               <span className="w-full h-0.75 bg-[#666666] rounded-full"></span>

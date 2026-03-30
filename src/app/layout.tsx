@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import './globals.css';
 import Header from '@/components/Header/Header';
+import {DrawerProvider} from '@/components/Drawer/DrawerProvider';
+import {getAllCategories, getRecentPosts} from '@/lib/posts';
 
 export const metadata: Metadata = {
   title: 'Freak Blog',
@@ -9,17 +11,22 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
+  const categories = getAllCategories();
+  const recentPosts = getRecentPosts(5);
+
   return (
     <html lang="ko">
     <body>
-    <Header/>
-    <nav className="max-w-290 mx-auto px-6">
-      <div className="py-3 flex items-center gap-10 pl-11 max-[1200px]:pl-0 max-[1200px]:mx-3 border-t border-b border-[#e5e5e5]">
-        <Link href="/" className="text-[15px] text-[#3a4954] hover:opacity-60 transition-opacity">홈</Link>
-        <Link href="/tags" className="text-[15px] text-[#3a4954] hover:opacity-60 transition-opacity">태그</Link>
-      </div>
-    </nav>
-    {children}
+    <DrawerProvider categories={categories} recentPosts={recentPosts}>
+      <Header/>
+      <nav className="max-w-290 mx-auto px-6">
+        <div className="py-3 flex items-center gap-10 pl-11 max-[1200px]:pl-0 max-[1200px]:mx-3 border-t border-b border-[#e5e5e5]">
+          <Link href="/" className="text-[15px] text-[#3a4954] hover:opacity-60 transition-opacity">홈</Link>
+          <Link href="/tags" className="text-[15px] text-[#3a4954] hover:opacity-60 transition-opacity">태그</Link>
+        </div>
+      </nav>
+      {children}
+    </DrawerProvider>
     </body>
     </html>
   );

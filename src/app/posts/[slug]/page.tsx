@@ -3,10 +3,10 @@ import Link from 'next/link';
 import {
   getAllCategories,
   getAllSlugs,
+  getCategoryEmoji,
   getPostBySlug,
-  getRecentPosts,
   getPostsByCategory,
-  getCategoryEmoji
+  getRecentPosts
 } from '@/lib/posts';
 import {markdownToHtml} from '@/lib/markdown';
 import {extractToc} from '@/lib/toc';
@@ -14,6 +14,7 @@ import Sidebar from '@/components/Sidebar/Sidebar';
 import TOC from '@/components/TOC/TOC';
 import PostContent from '@/components/PostContent/PostContent';
 import PostInteraction from '@/components/PostInteraction/PostInteraction';
+import PostLayout from '@/components/PostLayout/PostLayout';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -40,63 +41,60 @@ export default async function PostPage({params}: Props) {
   const emoji = getCategoryEmoji(post.category);
 
   return (
-    <div className="max-w-290 mx-auto flex min-h-[calc(100vh-96px)] px-6">
-      <Sidebar categories={categories} recentPosts={recentPosts}/>
-      <main className="flex-1 min-w-0 bg-white px-10 py-10 max-[1200px]:px-3">
-        <p className="text-[14px] text-[#737373] mb-3">{post.category} · {post.date}</p>
-        <h1 className="text-[28px] font-medium leading-[1.4] text-[#3a4954] mb-8 pb-6 border-b border-[#e5e5e5]">
-          {post.title}
-        </h1>
-        <TOC items={toc}/>
-        <PostContent html={html}/>
-        <PostInteraction />
+    <PostLayout sidebar={<Sidebar categories={categories} recentPosts={recentPosts}/>}>
+      <p className="text-[14px] text-[#737373] mb-3">{post.category} · {post.date}</p>
+      <h1 className="text-[28px] font-medium leading-[1.4] text-[#3a4954] mb-8 pb-6 border-b border-[#e5e5e5]">
+        {post.title}
+      </h1>
+      <TOC items={toc}/>
+      <PostContent html={html}/>
+      <PostInteraction/>
 
-        {/* 관련 글 목록 */}
-        <div>
-          <div className="py-4 border-b border-[#e5e5e5] mb-6">
-            <h3 className="text-[18px] text-[#737373] font-normal">
-              &apos;{post.category} {emoji}&apos; 카테고리의 다른 글
-            </h3>
-          </div>
-          <ul className="space-y-4">
-            {relatedPosts.map((rp) => (
-              <li key={rp.slug} className="flex justify-between items-center text-[15px]">
-                <Link
-                  href={`/posts/${rp.slug}`}
-                  className="text-[#737373] hover:text-[#3a4954] transition-colors line-clamp-1 mr-4"
-                >
-                  {rp.title}
-                </Link>
-                <span className="text-[#999] text-[13px] whitespace-nowrap">
+      {/* 관련 글 목록 */}
+      <div>
+        <div className="py-4 border-b border-[#e5e5e5] mb-6">
+          <h3 className="text-[18px] text-[#737373] font-normal">
+            &apos;{post.category} {emoji}&apos; 카테고리의 다른 글
+          </h3>
+        </div>
+        <ul className="space-y-4">
+          {relatedPosts.map((rp) => (
+            <li key={rp.slug} className="flex justify-between items-center text-[15px]">
+              <Link
+                href={`/posts/${rp.slug}`}
+                className="text-[#737373] hover:text-[#3a4954] transition-colors line-clamp-1 mr-4"
+              >
+                {rp.title}
+              </Link>
+              <span className="text-[#999] text-[13px] whitespace-nowrap">
                   {rp.date.replace(/-/g, '.')}
                 </span>
-              </li>
-            ))}
-            {relatedPosts.length === 0 && (
-              <li className="text-[#999] text-[15px]">이 카테고리에 다른 글이 없습니다.</li>
-            )}
-          </ul>
-        </div>
+            </li>
+          ))}
+          {relatedPosts.length === 0 && (
+            <li className="text-[#999] text-[15px]">이 카테고리에 다른 글이 없습니다.</li>
+          )}
+        </ul>
+      </div>
 
-        {/* 태그 목록 */}
-        {post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-x-2 gap-y-1 mt-14 pt-8 border-t border-[#e5e5e5] font-serif">
-            {post.tags.map((tag, index) => (
-              <div key={tag} className="flex items-center">
-                <Link
-                  href={`/tags/${encodeURIComponent(tag)}`}
-                  className="text-[17px] text-[#023e8a] hover:underline"
-                >
-                  #{tag}
-                </Link>
-                {index < post.tags.length - 1 && (
-                  <span className="ml-2 text-[#737373]">,</span>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-      </main>
-    </div>
+      {/* 태그 목록 */}
+      {post.tags.length > 0 && (
+        <div className="flex flex-wrap gap-x-2 gap-y-1 mt-14 pt-8 border-t border-[#e5e5e5] font-serif">
+          {post.tags.map((tag, index) => (
+            <div key={tag} className="flex items-center">
+              <Link
+                href={`/tags/${encodeURIComponent(tag)}`}
+                className="text-[17px] text-[#023e8a] hover:underline"
+              >
+                #{tag}
+              </Link>
+              {index < post.tags.length - 1 && (
+                <span className="ml-2 text-[#737373]">,</span>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </PostLayout>
   );
 }

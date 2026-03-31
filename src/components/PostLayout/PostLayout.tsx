@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ReadingProgress from '@/components/ReadingProgress/ReadingProgress';
 
 interface Props {
   sidebar: React.ReactNode;
@@ -11,6 +12,8 @@ export default function PostLayout({ sidebar, children }: Props) {
   const [isWide, setIsWide] = useState(false);
 
   return (
+    <>
+    <ReadingProgress />
     <div className="max-w-290 mx-auto flex min-h-[calc(100vh-96px)] px-6">
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out max-[1200px]:hidden ${
@@ -45,5 +48,6 @@ export default function PostLayout({ sidebar, children }: Props) {
         {children}
       </main>
     </div>
+    </>
   );
 }

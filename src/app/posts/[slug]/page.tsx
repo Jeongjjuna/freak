@@ -10,6 +10,7 @@ import {
 } from '@/lib/posts';
 import {markdownToHtml} from '@/lib/markdown';
 import {extractToc} from '@/lib/toc';
+import {calcReadingTime} from '@/lib/reading-time';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import TOC from '@/components/TOC/TOC';
 import PostContent from '@/components/PostContent/PostContent';
@@ -39,10 +40,11 @@ export default async function PostPage({params}: Props) {
     .slice(0, 5);
 
   const emoji = getCategoryEmoji(post.category);
+  const readingTime = calcReadingTime(post.content);
 
   return (
     <PostLayout sidebar={<Sidebar categories={categories} recentPosts={recentPosts}/>}>
-      <p className="text-[14px] text-[#737373] mb-3">{post.category} · {post.date}</p>
+      <p className="text-[14px] text-[#737373] mb-3">{post.category} · {post.date} · {readingTime}분 읽기</p>
       <h1 className="text-[28px] font-medium leading-[1.4] text-[#3a4954] mb-8 pb-6 border-b border-[#e5e5e5]">
         {post.title}
       </h1>

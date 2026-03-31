@@ -22,10 +22,10 @@ export default async function CategoryPage({params}: Props) {
   return (
     <div className="max-w-[1160px] mx-auto flex min-h-[calc(100vh-96px)] px-6">
       <Sidebar categories={categories} recentPosts={recentPosts}/>
-      <main className="flex-1 min-w-0 bg-white px-10 py-10 max-[1200px]:px-3">
-        <div className="flex items-center gap-2 mb-7 text-[16px] text-[#737373]">
-          <span className="font-nomal text-[#3a4954]">카테고리</span>
-          <span className="font-light text-[#3a4954]">{decodedCategory}</span>
+      <main className="flex-1 min-w-0 bg-white dark:bg-[#111827] px-10 py-10 max-[1200px]:px-3">
+        <div className="flex items-center gap-2 mb-7 text-[16px] text-[#737373] dark:text-[#94a3b8]">
+          <span className="font-nomal text-[#3a4954] dark:text-[#e2e8f0]">카테고리</span>
+          <span className="font-light text-[#3a4954] dark:text-[#e2e8f0]">{decodedCategory}</span>
         </div>
         {posts.map((post) => (
           <PostCard key={post.slug} post={post}/>

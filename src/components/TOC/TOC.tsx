@@ -16,7 +16,7 @@ export default function TOC({items}: Props) {
   };
 
   return (
-    <div className="border border-[#e5e5e5] rounded-md px-6 py-5 mb-10 bg-[#f8f8f8]">
+    <div className="border border-[#e5e5e5] dark:border-[#374151] rounded-md px-6 py-5 mb-10 bg-[#f8f8f8] dark:bg-[#1f2937]">
       <span className="flex items-center gap-1">
         <svg
           width="13"
@@ -33,18 +33,18 @@ export default function TOC({items}: Props) {
         </svg>
         목차
       </span>
-      <ul className="flex flex-col gap-1.5 border-t border-[#e5e5e5] mt-3 pt-3">
+      <ul className="flex flex-col gap-1.5 border-t border-[#e5e5e5] dark:border-[#374151] mt-3 pt-3">
         {items.map((item) => (
           <li
             key={item.id}
             onClick={() => handleClick(item.id)}
             className={[
-              'flex items-center gap-1.5 text-[13px] text-[#3a4954] cursor-pointer hover:opacity-60 transition-opacity',
+              'flex items-center gap-1.5 text-[13px] text-[#3a4954] dark:text-[#e2e8f0] cursor-pointer hover:opacity-60 transition-opacity',
               item.level === 2 ? 'pl-4' : '',
-              item.level === 3 ? 'pl-8 text-[12px] text-[#737373]' : '',
+              item.level === 3 ? 'pl-8 text-[12px] text-[#737373] dark:text-[#94a3b8]' : '',
             ].join(' ')}
           >
-            <span className="text-[10px] text-[#737373]">›</span>
+            <span className="text-[10px] text-[#737373] dark:text-[#94a3b8]">›</span>
             {item.text}
           </li>
         ))}

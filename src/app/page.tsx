@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="max-w-[1160px] mx-auto flex min-h-[calc(100vh-96px)] px-6">
       <Sidebar categories={categories} recentPosts={recentPosts} />
-      <main className="flex-1 min-w-0 bg-white px-10 py-10 max-[1200px]:px-3">
+      <main className="flex-1 min-w-0 bg-white dark:bg-[#111827] px-10 py-10 max-[1200px]:px-3">
         <Suspense>
           <PostListWithPagination posts={allPosts} />
         </Suspense>

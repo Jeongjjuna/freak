@@ -10,20 +10,20 @@ interface Props {
 
 export default function PostCard({post}: Props) {
   return (
-    <article className="flex justify-between items-start gap-5 py-7 border-b border-[#e5e5e5] first:pt-0">
+    <article className="flex justify-between items-start gap-5 py-7 border-b border-[#e5e5e5] dark:border-[#374151] first:pt-0">
       <div className="flex-1 min-w-0">
         <Link
           href={`/posts/${post.slug}`}
-          className="block text-[17px] font-normal text-[#3a4954] leading-[1.4] mb-2.5 line-clamp-2 hover:opacity-60 transition-opacity"
+          className="block text-[17px] font-normal text-[#3a4954] dark:text-[#e2e8f0] leading-[1.4] mb-2.5 line-clamp-2 hover:opacity-60 transition-opacity"
         >
           {post.title}
         </Link>
         {post.excerpt && (
-          <p className="text-[15px] text-[#737373] leading-[1.7] line-clamp-2 mb-3">
+          <p className="text-[15px] text-[#737373] dark:text-[#94a3b8] leading-[1.7] line-clamp-2 mb-3">
             {post.excerpt}
           </p>
         )}
-        <div className="flex items-center gap-1.5 text-[12px] text-[#737373]">
+        <div className="flex items-center gap-1.5 text-[12px] text-[#737373] dark:text-[#94a3b8]">
           <span className="flex items-center gap-1">
             <svg
               width="13"
@@ -53,7 +53,7 @@ export default function PostCard({post}: Props) {
           className="w-[120px] h-[88px] object-cover rounded shrink-0"
         />
       ) : (
-        <div className="w-[120px] h-[88px] rounded shrink-0 bg-[#e5e5e5]"/>
+        <div className="w-[120px] h-[88px] rounded shrink-0 bg-[#e5e5e5] dark:bg-[#374151]"/>
       )}
     </article>
   );

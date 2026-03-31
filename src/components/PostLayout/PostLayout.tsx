@@ -22,11 +22,11 @@ export default function PostLayout({ sidebar, children }: Props) {
       >
         {sidebar}
       </div>
-      <main className="flex-1 min-w-0 bg-white px-10 py-10 max-[1200px]:px-3">
+      <main className="flex-1 min-w-0 bg-white dark:bg-[#111827] px-10 py-10 max-[1200px]:px-3">
         <div className="flex justify-end mb-4 max-[1200px]:hidden">
           <button
             onClick={() => setIsWide(!isWide)}
-            className="flex items-center gap-1.5 text-[13px] text-[#737373] hover:text-[#3a4954] transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 text-[13px] text-[#737373] dark:text-[#94a3b8] hover:text-[#3a4954] dark:hover:text-[#e2e8f0] transition-colors cursor-pointer"
           >
             {isWide ? (
               <>

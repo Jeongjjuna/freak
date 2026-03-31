@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { useDrawer } from '@/components/Drawer/DrawerProvider';
+import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
 
 export default function Header() {
   const router = useRouter();
@@ -25,15 +26,15 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/60 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]' : 'bg-white'}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/60 dark:bg-[#111827]/60 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]' : 'bg-white dark:bg-[#111827]'}`}>
       {/* 상단 로고 + 검색 */}
       <div className="max-w-290 mx-auto px-6">
         <div className="flex items-center justify-between h-14 mt-4 mb-4 pl-5 pr-10 max-[1200px]:pr-3">
-          <Link href="/" className="text-[20px] font-light text-[#3a4954] tracking-tight">
+          <Link href="/" className="text-[20px] font-light text-[#3a4954] dark:text-[#e2e8f0] tracking-tight">
             Freak Blog
           </Link>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 bg-[#f5f7f7] px-4 py-2.5 rounded-2xl w-60">
+            <div className="flex items-center gap-3 bg-[#f5f7f7] dark:bg-[#1e293b] px-4 py-2.5 rounded-2xl w-60">
               <svg
                 width="18"
                 height="18"
@@ -54,9 +55,10 @@ export default function Header() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="text-[14px] text-[#3a4954] placeholder:text-[#8b8b8b] bg-transparent outline-none w-full font-light"
+                className="text-[14px] text-[#3a4954] dark:text-[#e2e8f0] placeholder:text-[#8b8b8b] dark:placeholder:text-[#6b7280] bg-transparent outline-none w-full font-light"
               />
             </div>
+            <ThemeToggle />
             <button onClick={open} className="min-[1200px]:hidden flex flex-col gap-1.25 w-6 px-0.5 group cursor-pointer" aria-label="메뉴">
               <span className="w-full h-0.75 bg-[#666666] rounded-full"></span>
               <span className="w-full h-0.75 bg-[#666666] rounded-full"></span>

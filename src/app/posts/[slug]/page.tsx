@@ -44,8 +44,8 @@ export default async function PostPage({params}: Props) {
 
   return (
     <PostLayout sidebar={<Sidebar categories={categories} recentPosts={recentPosts}/>}>
-      <p className="text-[14px] text-[#737373] mb-3">{post.category} · {post.date} · {readingTime}분 읽기</p>
-      <h1 className="text-[28px] font-medium leading-[1.4] text-[#3a4954] mb-8 pb-6 border-b border-[#e5e5e5]">
+      <p className="text-[14px] text-[#737373] dark:text-[#94a3b8] mb-3">{post.category} · {post.date} · {readingTime}분 읽기</p>
+      <h1 className="text-[28px] font-medium leading-[1.4] text-[#3a4954] dark:text-[#e2e8f0] mb-8 pb-6 border-b border-[#e5e5e5] dark:border-[#374151]">
         {post.title}
       </h1>
       <TOC items={toc}/>
@@ -54,8 +54,8 @@ export default async function PostPage({params}: Props) {
 
       {/* 관련 글 목록 */}
       <div>
-        <div className="py-4 border-b border-[#e5e5e5] mb-6">
-          <h3 className="text-[18px] text-[#737373] font-normal">
+        <div className="py-4 border-b border-[#e5e5e5] dark:border-[#374151] mb-6">
+          <h3 className="text-[18px] text-[#737373] dark:text-[#94a3b8] font-normal">
             &apos;{post.category} {emoji}&apos; 카테고리의 다른 글
           </h3>
         </div>
@@ -64,11 +64,11 @@ export default async function PostPage({params}: Props) {
             <li key={rp.slug} className="flex justify-between items-center text-[15px]">
               <Link
                 href={`/posts/${rp.slug}`}
-                className="text-[#737373] hover:text-[#3a4954] transition-colors line-clamp-1 mr-4"
+                className="text-[#737373] dark:text-[#94a3b8] hover:text-[#3a4954] dark:hover:text-[#e2e8f0] transition-colors line-clamp-1 mr-4"
               >
                 {rp.title}
               </Link>
-              <span className="text-[#999] text-[13px] whitespace-nowrap">
+              <span className="text-[#999] dark:text-[#6b7280] text-[13px] whitespace-nowrap">
                   {rp.date.replace(/-/g, '.')}
                 </span>
             </li>
@@ -81,12 +81,12 @@ export default async function PostPage({params}: Props) {
 
       {/* 태그 목록 */}
       {post.tags.length > 0 && (
-        <div className="flex flex-wrap gap-x-2 gap-y-1 mt-14 pt-8 border-t border-[#e5e5e5] font-serif">
+        <div className="flex flex-wrap gap-x-2 gap-y-1 mt-14 pt-8 border-t border-[#e5e5e5] dark:border-[#374151] font-serif">
           {post.tags.map((tag, index) => (
             <div key={tag} className="flex items-center">
               <Link
                 href={`/tags/${encodeURIComponent(tag)}`}
-                className="text-[17px] text-[#023e8a] hover:underline"
+                className="text-[17px] text-[#023e8a] dark:text-[#7eb3f8] hover:underline"
               >
                 #{tag}
               </Link>

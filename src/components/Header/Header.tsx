@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/60 dark:bg-[#111827]/60 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]' : 'bg-white dark:bg-[#111827]'}`}>
+    <header className={`sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? 'bg-white/60 dark:bg-[#111827]/60 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]' : 'bg-white dark:bg-[#111827]'}`}>
       {/* 상단 로고 + 검색 */}
       <div className="max-w-290 mx-auto px-6">
         <div className="flex items-center justify-between h-14 mt-4 mb-4 pl-5 pr-10 max-[1200px]:pr-3">

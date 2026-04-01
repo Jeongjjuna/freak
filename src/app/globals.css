@@ -108,11 +108,24 @@
 .prose pre {
     position: relative;
     background: #282a36 !important;
-    padding: 24px 0;
+    padding: 44px 0 24px;
     border-radius: 12px;
     overflow-x: auto;
     margin-bottom: 32px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-label {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    font-size: 11px;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    color: #8b9dc3;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    pointer-events: none;
+    user-select: none;
 }
 
 .copy-btn {

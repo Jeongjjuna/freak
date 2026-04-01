@@ -10,6 +10,17 @@ export default function PostContent({ html }: Props) {
   useEffect(() => {
     const pres = document.querySelectorAll<HTMLElement>('.prose pre');
     pres.forEach((pre) => {
+      if (!pre.querySelector('.lang-label')) {
+        const code = pre.querySelector('code[data-language]');
+        const lang = code?.getAttribute('data-language');
+        if (lang) {
+          const label = document.createElement('span');
+          label.className = 'lang-label';
+          label.textContent = lang;
+          pre.prepend(label);
+        }
+      }
+
       if (pre.querySelector('.copy-btn')) return;
 
       const button = document.createElement('button');

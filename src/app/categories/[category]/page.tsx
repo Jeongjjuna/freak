@@ -8,7 +8,7 @@ interface Props {
 
 export async function generateStaticParams() {
   return getAllCategories().map((c) => ({
-    category: encodeURIComponent(c.name),
+    category: c.name,
   }));
 }
 

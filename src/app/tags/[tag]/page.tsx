@@ -7,7 +7,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return getAllTags().map((t) => ({tag: encodeURIComponent(t.name)}));
+  return getAllTags().map((t) => ({tag: t.name}));
 }
 
 export default async function TagPage({params}: Props) {

@@ -1,7 +1,7 @@
 'use client';
 
-import { createContext, useContext, useState } from 'react';
-import type { PostMeta } from '@/types/post';
+import {createContext, useContext, useState} from 'react';
+import type {PostMeta} from '@/types/post';
 import MobileDrawer from './MobileDrawer';
 
 interface DrawerContextValue {

@@ -20,13 +20,12 @@ export default async function TagPage({params}: Props) {
   return (
     <div className="max-w-290 mx-auto flex min-h-[calc(100vh-96px)] px-6">
       <Sidebar categories={categories} recentPosts={recentPosts}/>
-      <main className="flex-1 min-w-0 bg-[#fff8f9] dark:bg-[#1a0f14] px-10 py-10 max-[1200px]:px-3">
-        <div className="flex items-center gap-2 mb-7 text-[13px] text-[#9b7685] dark:text-[#c49ab0]">
-          <span className="font-bold text-[#3d2b35] dark:text-[#f5e0ea]">#{decodedTag}</span>
+      <main className="flex-1 min-w-0 bg-[var(--c-bg)] px-10 py-10 max-[1200px]:px-3">
+        <div className="flex items-center gap-2 mb-7 text-[13px] text-[var(--c-muted)]">
+          <span className="font-bold text-[var(--c-text)]">#{decodedTag}</span>
           <span>태그</span>
           <a href="/tags"
-             className="text-[12px] border border-[#f0d4de] dark:border-[#3d2030] px-2 py-0.5 rounded-full hover:bg-[#fff0f3] dark:hover:bg-[#3d2030] transition-colors">전체
-            태그</a>
+             className="text-[12px] border border-[var(--c-border)] px-2 py-0.5 rounded-full hover:bg-[var(--c-hover)] transition-colors">전체 태그</a>
         </div>
         {posts.map((post) => (
           <PostCard key={post.slug} post={post}/>

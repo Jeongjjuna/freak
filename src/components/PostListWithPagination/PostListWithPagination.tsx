@@ -1,7 +1,7 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import type { PostMeta } from '@/types/post';
+import {useSearchParams} from 'next/navigation';
+import type {PostMeta} from '@/types/post';
 import PostCard from '@/components/PostCard/PostCard';
 import Pagination from '@/components/Pagination/Pagination';
 

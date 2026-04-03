@@ -1,9 +1,9 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import {useSearchParams} from 'next/navigation';
 import PostCard from '@/components/PostCard/PostCard';
 import Pagination from '@/components/Pagination/Pagination';
-import type { PostMeta } from '@/types/post';
+import type {PostMeta} from '@/types/post';
 
 const PAGE_SIZE = 6;
 
@@ -28,16 +28,16 @@ export default function SearchResults({ allPosts }: Props) {
 
   return (
     <>
-      <div className="flex items-center gap-2 mb-7 text-[13px] text-[#9b7685] dark:text-[#c49ab0]">
+      <div className="flex items-center gap-2 mb-7 text-[13px] text-[var(--c-muted)]">
         {trimmed ? (
           <>
-            <span className="font-bold text-[#3d2b35] dark:text-[#f5e0ea]">&ldquo;{trimmed}&rdquo;</span>
+            <span className="font-bold text-[var(--c-text)]">&ldquo;{trimmed}&rdquo;</span>
             <span>검색 결과</span>
           </>
         ) : (
-          <span className="font-bold text-[#3d2b35] dark:text-[#f5e0ea]">전체 게시글</span>
+          <span className="font-bold text-[var(--c-text)]">전체 게시글</span>
         )}
-        <span className="text-[12px] border border-[#f0d4de] dark:border-[#3d2030] px-2 py-0.5 rounded-full bg-[#fff0f3] dark:bg-[#25101a]">
+        <span className="text-[12px] border border-[var(--c-border)] px-2 py-0.5 rounded-full bg-[var(--c-surface)]">
           {filtered.length}개의 결과
         </span>
       </div>
@@ -48,7 +48,7 @@ export default function SearchResults({ allPosts }: Props) {
           ))}
         </div>
       ) : (
-        <p className="text-[15px] text-[#9b7685] dark:text-[#c49ab0] py-10 text-center">
+        <p className="text-[15px] text-[var(--c-muted)] py-10 text-center">
           검색 결과가 없습니다.
         </p>
       )}

@@ -1,7 +1,6 @@
 'use client';
 
 import type {TocItem} from '@/types/post';
-import {getCategoryEmoji} from "@/lib/categoryEmoji";
 
 interface Props {
   items: TocItem[];
@@ -16,8 +15,11 @@ export default function TOC({items}: Props) {
   };
 
   return (
-    <div className="border border-[#f0d4de] dark:border-[#3d2030] rounded-md px-6 py-5 mb-10 bg-[#fff0f3] dark:bg-[#25101a]">
-      <span className="flex items-center gap-1">
+    <div
+      className="rounded-md px-6 py-5 mb-10 border"
+      style={{ borderColor: 'var(--c-border)', backgroundColor: 'var(--c-surface)' }}
+    >
+      <span className="flex items-center gap-1 text-[var(--c-text)]">
         <svg
           width="13"
           height="13"
@@ -33,18 +35,19 @@ export default function TOC({items}: Props) {
         </svg>
         목차
       </span>
-      <ul className="flex flex-col gap-1.5 border-t border-[#f0d4de] dark:border-[#3d2030] mt-3 pt-3">
+      <ul className="flex flex-col gap-1.5 border-t mt-3 pt-3" style={{ borderColor: 'var(--c-border)' }}>
         {items.map((item) => (
           <li
             key={item.id}
             onClick={() => handleClick(item.id)}
             className={[
-              'flex items-center gap-1.5 text-[13px] text-[#3d2b35] dark:text-[#f5e0ea] cursor-pointer hover:opacity-60 transition-opacity',
+              'flex items-center gap-1.5 text-[13px] cursor-pointer hover:opacity-60 transition-opacity',
               item.level === 2 ? 'pl-4' : '',
-              item.level === 3 ? 'pl-8 text-[12px] text-[#9b7685] dark:text-[#c49ab0]' : '',
+              item.level === 3 ? 'pl-8 text-[12px]' : '',
             ].join(' ')}
+            style={{ color: item.level === 3 ? 'var(--c-muted)' : 'var(--c-text)' }}
           >
-            <span className="text-[10px] text-[#9b7685] dark:text-[#c49ab0]">›</span>
+            <span className="text-[10px]" style={{ color: 'var(--c-muted)' }}>›</span>
             {item.text}
           </li>
         ))}

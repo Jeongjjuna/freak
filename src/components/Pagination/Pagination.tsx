@@ -29,18 +29,18 @@ export default function Pagination({ currentPage, totalPages, basePath }: Props)
   const pageUrl = (p: number) => p === 1 ? basePath : `${basePath}?page=${p}`;
 
   return (
-    <div className="flex items-center justify-center gap-2 mt-10 text-[15px] text-[#3d2b35] dark:text-[#f5e0ea]">
+    <div className="flex items-center justify-center gap-2 mt-10 text-[15px] text-[var(--c-text)]">
       {currentPage > 1 ? (
         <Link href={pageUrl(currentPage - 1)} className="px-1 hover:opacity-60 transition-opacity">
           &lt;
         </Link>
       ) : (
-        <span className="px-1 text-[#f0d4de] dark:text-[#3d2030]">&lt;</span>
+        <span className="px-1 text-[var(--c-border)]">&lt;</span>
       )}
 
       {pages.map((page, i) =>
         page === '...' ? (
-          <span key={`ellipsis-${i}`} className="px-1 text-[#c4a0b0]">···</span>
+          <span key={`ellipsis-${i}`} className="px-1 text-[var(--c-dot)]">···</span>
         ) : (
           <Link
             key={page}
@@ -59,7 +59,7 @@ export default function Pagination({ currentPage, totalPages, basePath }: Props)
           &gt;
         </Link>
       ) : (
-        <span className="px-1 text-[#f0d4de] dark:text-[#3d2030]">&gt;</span>
+        <span className="px-1 text-[var(--c-border)]">&gt;</span>
       )}
     </div>
   );

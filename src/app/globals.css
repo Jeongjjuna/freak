@@ -13,17 +13,97 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── 색상 테마 변수 ── */
+:root {
+    --c-bg:          #ffffff;
+    --c-surface:     #f8f8f8;
+    --c-text:        #3a4954;
+    --c-muted:       #737373;
+    --c-border:      #e5e5e5;
+    --c-hover:       #f8f8f8;
+    --c-link:        #477fd6;
+    --c-accent:      #3a4954;
+    --c-search-bg:   #f5f7f7;
+    --c-placeholder: #8b8b8b;
+    --c-icon:        #5c5c5c;
+    --c-icon-accent: #3182f6;
+    --c-progress:    #2496ED;
+    --c-code-bg:     #f0f0f0;
+    --c-empty:       #e5e5e5;
+    --c-dot:         #909090;
+    --c-tag-link:    #023e8a;
+    --c-toggle:      #666666;
+}
+
+.dark {
+    --c-bg:          #111827;
+    --c-surface:     #1f2937;
+    --c-text:        #e2e8f0;
+    --c-muted:       #94a3b8;
+    --c-border:      #374151;
+    --c-hover:       #374151;
+    --c-link:        #7eb3f8;
+    --c-accent:      #94a3b8;
+    --c-search-bg:   #1e293b;
+    --c-placeholder: #6b7280;
+    --c-icon:        #94a3b8;
+    --c-icon-accent: #7eb3f8;
+    --c-progress:    #2496ED;
+    --c-code-bg:     #1e293b;
+    --c-empty:       #374151;
+    --c-dot:         #6b7280;
+    --c-tag-link:    #7eb3f8;
+    --c-toggle:      #94a3b8;
+}
+
+.sakura {
+    --c-bg:          #fff8f9;
+    --c-surface:     #fff0f3;
+    --c-text:        #3d2b35;
+    --c-muted:       #9b7685;
+    --c-border:      #f0d4de;
+    --c-hover:       #fff0f3;
+    --c-link:        #c45c7a;
+    --c-accent:      #e8a0b8;
+    --c-search-bg:   #fff0f3;
+    --c-placeholder: #c4a0b0;
+    --c-icon:        #b090a0;
+    --c-icon-accent: #e07098;
+    --c-progress:    #e8739a;
+    --c-code-bg:     #fae8ed;
+    --c-empty:       #f0d4de;
+    --c-dot:         #c4a0b0;
+    --c-tag-link:    #c45c7a;
+    --c-toggle:      #b090a0;
+}
+
+.sakura.dark {
+    --c-bg:          #1a0f14;
+    --c-surface:     #25101a;
+    --c-text:        #f5e0ea;
+    --c-muted:       #c49ab0;
+    --c-border:      #3d2030;
+    --c-hover:       #3d2030;
+    --c-link:        #f0a0c0;
+    --c-accent:      #c49ab0;
+    --c-search-bg:   #2d1820;
+    --c-placeholder: #a07890;
+    --c-icon:        #c49ab0;
+    --c-icon-accent: #f0a0c0;
+    --c-progress:    #e8739a;
+    --c-code-bg:     #2d1820;
+    --c-empty:       #3d2030;
+    --c-dot:         #a07890;
+    --c-tag-link:    #f0a0c0;
+    --c-toggle:      #c49ab0;
+}
+
 @layer base {
     body {
         font-family: 'Hahmlet', system-ui, -apple-system, BlinkMacSystemFont;
-        color: #3d2b35;
-        background-color: #fff8f9;
+        color: var(--c-text);
+        background-color: var(--c-bg);
         word-break: keep-all;
-    }
-
-    .dark body {
-        color: #f5e0ea;
-        background-color: #1a0f14;
     }
 }
 
@@ -31,7 +111,7 @@
 .prose {
     font-size: 16px;
     line-height: 2;
-    color: #3d2b35;
+    color: var(--c-text);
     word-break: keep-all;
 }
 
@@ -43,18 +123,18 @@
     margin-bottom: 16px;
     font-weight: 700;
     line-height: 1.4;
-    color: #3d2b35;
+    color: var(--c-text);
 }
 
 .prose h1 {
     font-size: 24px;
-    border-left: 4px solid #e8a0b8;
+    border-left: 4px solid var(--c-accent);
     padding-left: 12px;
 }
 
 .prose h2 {
     font-size: 20px;
-    border-left: 4px solid #e8a0b8;
+    border-left: 4px solid var(--c-accent);
     padding-left: 12px;
 }
 
@@ -67,7 +147,7 @@
 }
 
 .prose a {
-    color: #c45c7a;
+    color: var(--c-link);
     text-decoration: underline;
 }
 
@@ -90,17 +170,17 @@
 }
 
 .prose blockquote {
-    border-left: 4px solid #f0d4de;
+    border-left: 4px solid var(--c-border);
     padding: 8px 16px;
-    color: #9b7685;
+    color: var(--c-muted);
     margin: 20px 0;
-    background: #fff0f3;
+    background: var(--c-surface);
 }
 
 .prose code {
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     font-size: 13.5px;
-    background: #fae8ed;
+    background: var(--c-code-bg);
     padding: 2px 6px;
     border-radius: 4px;
 }
@@ -187,7 +267,7 @@
 
 .prose hr {
     border: none;
-    border-top: 1px solid #f0d4de;
+    border-top: 1px solid var(--c-border);
     margin: 32px 0;
 }
 
@@ -200,59 +280,17 @@
 
 .prose th,
 .prose td {
-    border: 1px solid #f0d4de;
+    border: 1px solid var(--c-border);
     padding: 8px 12px;
     text-align: left;
 }
 
 .prose th {
-    background: #fff0f3;
+    background: var(--c-surface);
     font-weight: 600;
 }
 
-/* 다크모드 prose 스타일 */
-.dark .prose {
-    color: #f5e0ea;
-}
-
-.dark .prose h1,
-.dark .prose h2,
-.dark .prose h3,
-.dark .prose h4 {
-    color: #f5e0ea;
-    border-left-color: #c49ab0;
-}
-
-.dark .prose a {
-    color: #f0a0c0;
-}
-
-.dark .prose blockquote {
-    border-left-color: #3d2030;
-    color: #c49ab0;
-    background: #25101a;
-}
-
-.dark .prose code {
-    background: #2d1820;
-    color: #f5e0ea;
-}
-
-.dark .prose hr {
-    border-top-color: #3d2030;
-}
-
-.dark .prose th,
-.dark .prose td {
-    border-color: #3d2030;
-}
-
-.dark .prose th {
-    background: #25101a;
-}
-
-.dark .copy-btn {
-    background: rgba(255, 255, 255, 0.06);
-    color: #6b7a9e;
-    border-color: rgba(255, 255, 255, 0.1);
+/* 검색 입력창 placeholder */
+input::placeholder {
+    color: var(--c-placeholder);
 }

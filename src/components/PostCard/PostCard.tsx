@@ -10,20 +10,20 @@ interface Props {
 
 export default function PostCard({post}: Props) {
   return (
-    <article className="flex justify-between items-start gap-5 py-7 border-b border-[#f0d4de] dark:border-[#3d2030] first:pt-0">
+    <article className="flex justify-between items-start gap-5 py-7 border-b border-[var(--c-border)] first:pt-0">
       <div className="flex-1 min-w-0">
         <Link
           href={`/posts/${post.slug}`}
-          className="block text-[17px] font-normal text-[#3d2b35] dark:text-[#f5e0ea] leading-[1.4] mb-2.5 line-clamp-2 hover:opacity-60 transition-opacity"
+          className="block text-[17px] font-normal text-[var(--c-text)] leading-[1.4] mb-2.5 line-clamp-2 hover:opacity-60 transition-opacity"
         >
           {post.title}
         </Link>
         {post.excerpt && (
-          <p className="text-[15px] text-[#9b7685] dark:text-[#c49ab0] leading-[1.7] line-clamp-2 mb-3">
+          <p className="text-[15px] text-[var(--c-muted)] leading-[1.7] line-clamp-2 mb-3">
             {post.excerpt}
           </p>
         )}
-        <div className="flex items-center gap-1.5 text-[12px] text-[#9b7685] dark:text-[#c49ab0]">
+        <div className="flex items-center gap-1.5 text-[12px] text-[var(--c-muted)]">
           <span className="flex items-center gap-1">
             <svg
               width="13"
@@ -40,7 +40,7 @@ export default function PostCard({post}: Props) {
             </svg>
             {post.category} {getCategoryEmoji(post.category)}
           </span>
-          <span className="text-[#c4a0b0]">·</span>
+          <span className="text-[var(--c-dot)]">·</span>
           <span>{post.date}</span>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function PostCard({post}: Props) {
           className="w-[120px] h-[88px] object-cover rounded shrink-0"
         />
       ) : (
-        <div className="w-[120px] h-[88px] rounded shrink-0 bg-[#f0d4de] dark:bg-[#3d2030]"/>
+        <div className="w-[120px] h-[88px] rounded shrink-0 bg-[var(--c-empty)]"/>
       )}
     </article>
   );

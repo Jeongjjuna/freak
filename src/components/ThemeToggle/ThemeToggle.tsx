@@ -25,7 +25,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="다크모드 전환"
-      className="flex items-center justify-center w-8 h-8 rounded-full text-[#666666] dark:text-[#94a3b8] hover:opacity-60 transition-opacity cursor-pointer"
+      className="flex items-center justify-center w-8 h-8 rounded-full text-[#b090a0] dark:text-[#c49ab0] hover:opacity-60 transition-opacity cursor-pointer"
     >
       {dark ? (
         /* 해 아이콘 */

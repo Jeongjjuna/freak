@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 
 const COLS = 32;
 const ROWS = 32;
-const COLORS_LIGHT = ['#f0f0f0', '#c0c0c0', '#888888', '#444444', '#1a1a1a'];
-const COLORS_DARK  = ['#1f2937', '#374151', '#6b7280', '#94a3b8', '#e2e8f0'];
+const COLORS_LIGHT = ['#f8e0e8', '#f0b0c8', '#e07098', '#c84070', '#8f1a40'];
+const COLORS_DARK  = ['#2d1820', '#5a2840', '#9b4868', '#c87090', '#f0a0c0'];
 
-const generateRandomGrid = () => 
-  Array(ROWS).fill(0).map(() => 
+const generateRandomGrid = () =>
+  Array(ROWS).fill(0).map(() =>
     Array(COLS).fill(0).map(() => {
       // Create a more realistic contribution distribution
       const rand = Math.random();

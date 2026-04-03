@@ -20,7 +20,7 @@ export default function ReadingProgress() {
     <div className="fixed top-0 left-0 w-full z-[70]" style={{ height: '3px' }}>
       {/* 진행 바 */}
       <div
-        className="h-full bg-[#2496ED]"
+        className="h-full bg-[#e8739a]"
         style={{ width: `${progress}%`, transition: 'width 0.1s linear' }}
       />
       {/* Docker 고래 아이콘 */}

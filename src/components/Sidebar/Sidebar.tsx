@@ -14,23 +14,23 @@ export default function Sidebar({categories, recentPosts}: Props) {
   return (
     <aside className="w-70 shrink-0 py-8 min-h-[calc(100vh-96px)] max-[1200px]:hidden">
       {/* 공지사항 */}
-      <div className="px-5 pb-2 mb-6 border-b border-[#e5e5e5] dark:border-[#374151]">
-        <p className="text-[16px] font-medium text-[#3a4954] dark:text-[#e2e8f0]">공지사항</p>
+      <div className="px-5 pb-2 mb-6 border-b border-[#f0d4de] dark:border-[#3d2030]">
+        <p className="text-[16px] font-medium text-[#3d2b35] dark:text-[#f5e0ea]">공지사항</p>
       </div>
 
       {/* 전체 카테고리 */}
-      <div className="px-5 pb-6 mb-6 border-b border-[#e5e5e5] dark:border-[#374151]">
-        <p className="text-[16px] font-medium text-[#3a4954] dark:text-[#e2e8f0] mb-2">전체 카테고리</p>
-        <div className="border-b border-[#e5e5e5] dark:border-[#374151] -mx-5 mb-6"/>
+      <div className="px-5 pb-6 mb-6 border-b border-[#f0d4de] dark:border-[#3d2030]">
+        <p className="text-[16px] font-medium text-[#3d2b35] dark:text-[#f5e0ea] mb-2">전체 카테고리</p>
+        <div className="border-b border-[#f0d4de] dark:border-[#3d2030] -mx-5 mb-6"/>
         <ul className="flex flex-col gap-1.5">
           {categories.map((cat) => (
             <li key={cat.name}>
               <Link
                 href={`/categories/${encodeURIComponent(cat.name)}`}
-                className="flex justify-between items-center text-[13px] text-[#3a4954] dark:text-[#e2e8f0] hover:opacity-60 transition-opacity py-0.5"
+                className="flex justify-between items-center text-[13px] text-[#3d2b35] dark:text-[#f5e0ea] hover:opacity-60 transition-opacity py-0.5"
               >
                 <span>{cat.name} {getCategoryEmoji(cat.name)}</span>
-                <span className="text-[12px] text-[#737373] dark:text-[#94a3b8]">({cat.count})</span>
+                <span className="text-[12px] text-[#9b7685] dark:text-[#c49ab0]">({cat.count})</span>
               </Link>
             </li>
           ))}
@@ -38,8 +38,8 @@ export default function Sidebar({categories, recentPosts}: Props) {
       </div>
 
       {/* 최근 글 */}
-      <div className="px-5 pb-6 mb-6 border-b border-[#e5e5e5] dark:border-[#374151]">
-        <p className="text-[16px] font-medium text-[#3a4954] dark:text-[#e2e8f0] mb-3">최근 글</p>
+      <div className="px-5 pb-6 mb-6 border-b border-[#f0d4de] dark:border-[#3d2030]">
+        <p className="text-[16px] font-medium text-[#3d2b35] dark:text-[#f5e0ea] mb-3">최근 글</p>
         <ul className="flex flex-col gap-3">
           {recentPosts.map((post) => (
             <li key={post.slug}>
@@ -53,10 +53,10 @@ export default function Sidebar({categories, recentPosts}: Props) {
                     className="w-14 h-11 object-cover rounded shrink-0"
                   />
                 ) : (
-                  <div className="w-14 h-11 rounded shrink-0 bg-[#e5e5e5] dark:bg-[#374151]"/>
+                  <div className="w-14 h-11 rounded shrink-0 bg-[#f0d4de] dark:bg-[#3d2030]"/>
                 )}
                 <span
-                  className="text-[12px] text-[#3a4954] dark:text-[#e2e8f0] leading-normal line-clamp-2 group-hover:opacity-60 transition-opacity">
+                  className="text-[12px] text-[#3d2b35] dark:text-[#f5e0ea] leading-normal line-clamp-2 group-hover:opacity-60 transition-opacity">
                   {post.title}
                 </span>
               </Link>

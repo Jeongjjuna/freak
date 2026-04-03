@@ -28,16 +28,16 @@ export default function SearchResults({ allPosts }: Props) {
 
   return (
     <>
-      <div className="flex items-center gap-2 mb-7 text-[13px] text-[#737373] dark:text-[#94a3b8]">
+      <div className="flex items-center gap-2 mb-7 text-[13px] text-[#9b7685] dark:text-[#c49ab0]">
         {trimmed ? (
           <>
-            <span className="font-bold text-[#3a4954] dark:text-[#e2e8f0]">&ldquo;{trimmed}&rdquo;</span>
+            <span className="font-bold text-[#3d2b35] dark:text-[#f5e0ea]">&ldquo;{trimmed}&rdquo;</span>
             <span>검색 결과</span>
           </>
         ) : (
-          <span className="font-bold text-[#3a4954] dark:text-[#e2e8f0]">전체 게시글</span>
+          <span className="font-bold text-[#3d2b35] dark:text-[#f5e0ea]">전체 게시글</span>
         )}
-        <span className="text-[12px] border border-[#e5e5e5] dark:border-[#374151] px-2 py-0.5 rounded-full bg-[#f8f8f8] dark:bg-[#1f2937]">
+        <span className="text-[12px] border border-[#f0d4de] dark:border-[#3d2030] px-2 py-0.5 rounded-full bg-[#fff0f3] dark:bg-[#25101a]">
           {filtered.length}개의 결과
         </span>
       </div>
@@ -48,7 +48,7 @@ export default function SearchResults({ allPosts }: Props) {
           ))}
         </div>
       ) : (
-        <p className="text-[15px] text-[#737373] dark:text-[#94a3b8] py-10 text-center">
+        <p className="text-[15px] text-[#9b7685] dark:text-[#c49ab0] py-10 text-center">
           검색 결과가 없습니다.
         </p>
       )}

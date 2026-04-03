@@ -9,17 +9,17 @@ export default function TagsPage() {
   return (
     <div className="max-w-290 mx-auto flex min-h-[calc(100vh-96px)] px-6">
       <Sidebar categories={categories} recentPosts={recentPosts}/>
-      <main className="flex-1 min-w-0 bg-white dark:bg-[#111827] px-10 py-10 max-[1200px]:px-3">
-        <h1 className="text-[20px] font-medium text-[#3a4954] dark:text-[#e2e8f0] mb-7 border-[#e5e5e5]">태그</h1>
+      <main className="flex-1 min-w-0 bg-[#fff8f9] dark:bg-[#1a0f14] px-10 py-10 max-[1200px]:px-3">
+        <h1 className="text-[20px] font-medium text-[#3d2b35] dark:text-[#f5e0ea] mb-7 border-[#f0d4de]">태그</h1>
         <div className="flex flex-wrap gap-2.5">
           {tags.map((tag) => (
             <a
               key={tag.name}
               href={`/tags/${encodeURIComponent(tag.name)}`}
-              className="flex items-center text-[13px] text-[#737373] dark:text-[#94a3b8] border border-[#e5e5e5] dark:border-[#374151] rounded-full px-3.5 py-1 hover:bg-[#f8f8f8] dark:hover:bg-[#1f2937] hover:text-[#3a4954] dark:hover:text-[#e2e8f0] transition-colors"
+              className="flex items-center text-[13px] text-[#9b7685] dark:text-[#c49ab0] border border-[#f0d4de] dark:border-[#3d2030] rounded-full px-3.5 py-1 hover:bg-[#fff0f3] dark:hover:bg-[#3d2030] hover:text-[#3d2b35] dark:hover:text-[#f5e0ea] transition-colors"
             >
               #{tag.name}
-              <span className="text-[11px] text-[#909090] ml-1">({tag.count})</span>
+              <span className="text-[11px] text-[#c4a0b0] ml-1">({tag.count})</span>
             </a>
           ))}
         </div>

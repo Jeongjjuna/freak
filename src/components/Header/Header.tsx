@@ -38,12 +38,12 @@ export default function Header() {
     >
       {/* 상단 로고 + 검색 */}
       <div className="max-w-290 mx-auto px-6">
-        <div className="flex items-center justify-between h-14 mt-4 mb-4 pl-5 pr-10 max-[1200px]:pr-3">
+        <div className="flex items-center justify-between h-14 mt-4 mb-4 pl-5 pr-10 max-[1200px]:pr-3 max-[640px]:pl-0">
           <Link href="/" className="text-[20px] font-light text-[var(--c-text)] tracking-tight">
             Freak Blog
           </Link>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl w-60" style={{ backgroundColor: 'var(--c-search-bg)' }}>
+          <div className="flex items-center gap-4 max-[640px]:gap-2">
+            <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl w-60 max-[640px]:hidden" style={{ backgroundColor: 'var(--c-search-bg)' }}>
               <svg
                 width="18"
                 height="18"

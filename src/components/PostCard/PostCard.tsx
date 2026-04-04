@@ -50,10 +50,10 @@ export default function PostCard({post}: Props) {
           alt={post.title}
           width={120}
           height={88}
-          className="w-[120px] h-[88px] object-cover rounded shrink-0"
+          className="w-[120px] h-[88px] object-cover rounded shrink-0 max-[640px]:hidden"
         />
       ) : (
-        <div className="w-[120px] h-[88px] rounded shrink-0 bg-[var(--c-empty)]"/>
+        <div className="w-[120px] h-[88px] rounded shrink-0 bg-[var(--c-empty)] max-[640px]:hidden"/>
       )}
     </article>
   );

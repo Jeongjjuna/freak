@@ -41,7 +41,7 @@ export default function MobileDrawer() {
 
       {/* 드로어 패널 */}
       <div
-        className={`fixed top-0 right-0 z-[60] h-full w-72 shadow-xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 right-0 z-[60] h-full w-[min(288px,85vw)] shadow-xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
         style={{ backgroundColor: 'var(--c-bg)' }}
         role="dialog"
         aria-modal="true"

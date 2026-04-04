@@ -351,3 +351,15 @@
 input::placeholder {
     color: var(--c-placeholder);
 }
+
+@media (max-width: 640px) {
+    .prose h1 { font-size: 20px; }
+    .prose h2 { font-size: 17px; }
+    .prose h3 { font-size: 15px; }
+    .prose pre [data-line] { padding: 0 12px 0 8px; }
+    .prose pre [data-line]::before {
+        width: 1.2rem;
+        margin-right: 0.8rem;
+        padding-right: 0.5rem;
+    }
+}

@@ -56,6 +56,7 @@ export default function RainDrops() {
             animationDelay: `${d.delay}s`,
             animationTimingFunction: 'linear',
             animationIterationCount: 'infinite',
+            animationFillMode: 'both',
             '--wind': `${d.wind}px`,
           } as React.CSSProperties}
         >

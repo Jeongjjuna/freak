@@ -13,6 +13,14 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes sakura-fall {
+    0%   { transform: translateY(-30px)  translateX(0)                        rotate(0deg);   opacity: 0.9; }
+    25%  { transform: translateY(25vh)   translateX(var(--sway, 40px))        rotate(90deg);               }
+    50%  { transform: translateY(50vh)   translateX(0)                        rotate(180deg);              }
+    75%  { transform: translateY(75vh)   translateX(calc(var(--sway, 40px) * -0.6)) rotate(270deg);        }
+    100% { transform: translateY(110vh)  translateX(0)                        rotate(360deg); opacity: 0.1; }
+}
+
 /* ── 색상 테마 변수 ── */
 :root {
     --c-bg:          #ffffff;

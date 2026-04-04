@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header/Header';
 import {DrawerProvider} from '@/components/Drawer/DrawerProvider';
 import {getAllCategories, getRecentPosts} from '@/lib/posts';
+import SakuraPetals from '@/components/SakuraPetals/SakuraPetals';
 
 export const metadata: Metadata = {
   title: 'Freak Blog',
@@ -21,6 +22,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     </head>
     <body>
     <DrawerProvider categories={categories} recentPosts={recentPosts}>
+      <SakuraPetals />
       <Header/>
       <nav className="max-w-290 mx-auto px-6">
         <div className="py-3 flex items-center gap-10 pl-11 max-[1200px]:pl-0 max-[1200px]:mx-3 border-t border-b border-[var(--c-border)]">

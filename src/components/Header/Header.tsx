@@ -6,6 +6,7 @@ import {useEffect, useState} from 'react';
 import {useDrawer} from '@/components/Drawer/DrawerProvider';
 import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
 import SakuraToggle from '@/components/SakuraToggle/SakuraToggle';
+import RainToggle from '@/components/RainToggle/RainToggle';
 
 export default function Header() {
   const router = useRouter();
@@ -67,6 +68,7 @@ export default function Header() {
               />
             </div>
             <SakuraToggle />
+            <RainToggle />
             <ThemeToggle />
             <button onClick={open} className="min-[1200px]:hidden flex flex-col gap-1.25 w-6 px-0.5 group cursor-pointer" aria-label="메뉴">
               <span className="w-full h-0.75 rounded-full" style={{ backgroundColor: 'var(--c-icon)' }}></span>

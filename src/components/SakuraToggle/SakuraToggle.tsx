@@ -6,7 +6,11 @@ export default function SakuraToggle() {
   const [sakura, setSakura] = useState(false);
 
   useEffect(() => {
-    setSakura(document.documentElement.classList.contains('sakura'));
+    const update = () => setSakura(document.documentElement.classList.contains('sakura'));
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(document.documentElement, {attributeFilter: ['class']});
+    return () => observer.disconnect();
   }, []);
 
   const toggle = () => {
@@ -14,7 +18,9 @@ export default function SakuraToggle() {
     setSakura(next);
     if (next) {
       document.documentElement.classList.add('sakura');
+      document.documentElement.classList.remove('rain');
       localStorage.setItem('color-theme', 'sakura');
+      localStorage.setItem('weather-theme', 'none');
     } else {
       document.documentElement.classList.remove('sakura');
       localStorage.setItem('color-theme', 'original');

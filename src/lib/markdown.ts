@@ -34,8 +34,11 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     .use(rehypeSlug)
     .use(rehypeBasePath)
     .use(rehypePrettyCode, {
-      theme: 'dracula',
-      keepBackground: true,
+      theme: {
+        light: 'github-light',
+        dark: 'dracula',
+      },
+      keepBackground: false,
     })
     .use(rehypeStringify)
     .process(markdown);

@@ -43,7 +43,8 @@
     --c-icon:        #5c5c5c;
     --c-icon-accent: #3182f6;
     --c-progress:    #2496ED;
-    --c-code-bg:     #f0f0f0;
+    --c-code-bg:     #eef0f3;
+    --c-pre-bg:      #1e2433;
     --c-empty:       #e5e5e5;
     --c-dot:         #909090;
     --c-tag-link:    #023e8a;
@@ -65,6 +66,7 @@
     --c-icon-accent: #7eb3f8;
     --c-progress:    #2496ED;
     --c-code-bg:     #1e293b;
+    --c-pre-bg:      #141c2e;
     --c-empty:       #374151;
     --c-dot:         #6b7280;
     --c-tag-link:    #7eb3f8;
@@ -253,12 +255,48 @@
 
 .prose pre {
     position: relative;
-    background: #282a36 !important;
+    background-color: #f3f4f6 !important;
+    border: 1px solid #e1e4e8;
     padding: 44px 0 24px;
     border-radius: 12px;
     overflow-x: auto;
     margin-bottom: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .prose pre {
+    background-color: #1e2433 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 벚꽃 테마 */
+.sakura .prose pre {
+    background-color: #f9e8ef !important;
+    border: 1px solid #f0c8d8;
+}
+
+.sakura.dark .prose pre {
+    background-color: #2a1020 !important;
+    border: 1px solid rgba(240, 160, 192, 0.15);
+}
+
+/* 비 테마 */
+.rain .prose pre {
+    background-color: #dde4ed !important;
+    border: 1px solid #b8c8dc;
+}
+
+.rain.dark .prose pre {
+    background-color: #0d1520 !important;
+    border: 1px solid rgba(88, 166, 255, 0.12);
+}
+
+/* dual-theme syntax 색상 활성화 */
+.prose pre code span {
+    color: var(--shiki-light, #24292e);
+}
+
+.dark .prose pre code span {
+    color: var(--shiki-dark, #f8f8f2);
 }
 
 .lang-label {
@@ -267,11 +305,15 @@
     left: 16px;
     font-size: 11px;
     font-family: 'SFMono-Regular', Consolas, monospace;
-    color: #8b9dc3;
+    color: #6b7280;
     text-transform: lowercase;
     letter-spacing: 0.04em;
     pointer-events: none;
     user-select: none;
+}
+
+.dark .lang-label {
+    color: #8b9dc3;
 }
 
 .copy-btn {
@@ -281,13 +323,19 @@
     padding: 3px 10px;
     font-size: 12px;
     font-family: 'Hahmlet', system-ui, sans-serif;
-    background: rgba(255, 255, 255, 0.08);
-    color: #8b9dc3;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.05);
+    color: #6b7280;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.dark .copy-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #8b9dc3;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .prose pre:hover .copy-btn {

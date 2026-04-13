@@ -226,6 +226,15 @@
     margin-bottom: 6px;
 }
 
+.prose strong {
+    background-color: #fff9be;
+    padding: 1px 3px 3px;
+    border-radius: 6px;
+    color: #1a1a1a;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
 .prose blockquote {
     border-left: 4px solid var(--c-border);
     padding: 8px 16px;

@@ -1,7 +1,6 @@
 'use client';
 
 import {useEffect, useState} from 'react';
-import Image from 'next/image';
 
 export default function ReadingProgress() {
   const [progress, setProgress] = useState(0);
@@ -26,24 +25,6 @@ export default function ReadingProgress() {
           transition: 'width 0.1s linear',
         }}
       />
-      {progress > 0 && (
-        <div
-          className="absolute top-0"
-          style={{
-            left: `${progress}%`,
-            transform: 'translateX(-50%) translateY(-1%)',
-            transition: 'left 0.1s linear',
-          }}
-        >
-          <Image
-            src="/freak/images/docker-whale.png"
-            alt="docker whale"
-            width={18}
-            height={14}
-            style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.2))' }}
-          />
-        </div>
-      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 ---
-title: "Spring AOP를 private 메서드에 적용할 수 없는 이유 (feat. @Transactional)"
+title: "[Example] Spring AOP를 private 메서드에 적용할 수 없는 이유 (feat. @Transactional)"
 date: "2026-02-07"
 category: "Spring Boot, JAVA"
 tags: ["Spring", "AOP", "Java", "Transactional"]

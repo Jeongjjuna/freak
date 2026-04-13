@@ -1,5 +1,5 @@
 ---
-title: "Redis 캐시 전략 - Cache Aside부터 Write Through까지"
+title: "[Example] Redis 캐시 전략 - Cache Aside부터 Write Through까지"
 date: "2025-11-20"
 category: "Redis"
 tags: ["Redis", "Cache", "Backend", "성능최적화"]

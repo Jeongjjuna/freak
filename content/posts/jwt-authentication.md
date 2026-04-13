@@ -1,5 +1,5 @@
 ---
-title: "JWT 인증 구현과 refresh token 전략"
+title: "[Example] JWT 인증 구현과 refresh token 전략"
 date: "2025-07-28"
 category: "Security"
 tags: ["JWT", "Security", "Spring", "인증"]

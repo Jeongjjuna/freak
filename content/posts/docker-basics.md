@@ -1,5 +1,5 @@
 ---
-title: "Docker 기초부터 실전까지 - 컨테이너 이해하기"
+title: "[Example] Docker 기초부터 실전까지 - 컨테이너 이해하기"
 date: "2025-12-15"
 category: "Docker"
 tags: ["Docker", "Container", "DevOps", "인프라"]

@@ -1,5 +1,5 @@
 ---
-title: "JPA N+1 문제, 제대로 이해하고 해결하기"
+title: "[Example] JPA N+1 문제, 제대로 이해하고 해결하기"
 date: "2025-11-05"
 category: "JPA"
 tags: ["JPA", "Spring", "Hibernate", "성능최적화"]

@@ -1,5 +1,5 @@
 ---
-title: "Git 브랜치 전략 - Git Flow vs Trunk Based"
+title: "[Example] Git 브랜치 전략 - Git Flow vs Trunk Based"
 date: "2025-08-15"
 category: "Git"
 tags: ["Git", "Git Flow", "Trunk Based", "협업"]

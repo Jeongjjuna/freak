@@ -1,5 +1,5 @@
 ---
-title: "REST API 설계 원칙과 실전 가이드"
+title: "[Example] REST API 설계 원칙과 실전 가이드"
 date: "2025-08-30"
 category: "Backend"
 tags: ["REST", "API", "Backend", "설계"]

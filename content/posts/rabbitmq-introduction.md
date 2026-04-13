@@ -1,5 +1,5 @@
 ---
-title: "메시지 브로커가 뭔데, RabbitMQ 이해하기"
+title: "[Example] 메시지 브로커가 뭔데, RabbitMQ 이해하기"
 date: "2026-01-08"
 category: "devOps"
 tags: ["RabbitMQ", "메시지큐", "MSA", "DevOps"]

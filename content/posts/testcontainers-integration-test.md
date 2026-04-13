@@ -1,5 +1,5 @@
 ---
-title: "Testcontainers로 실제 DB 쓰는 통합 테스트 작성하기"
+title: "[Example] Testcontainers로 실제 DB 쓰는 통합 테스트 작성하기"
 date: "2025-07-10"
 category: "Testing"
 tags: ["Testcontainers", "Testing", "Spring", "JPA"]

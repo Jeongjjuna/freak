@@ -1,5 +1,5 @@
 ---
-title: "MySQL 인덱스 제대로 이해하기 - 왜 느린지 EXPLAIN으로 파악하기"
+title: "[Example] MySQL 인덱스 제대로 이해하기 - 왜 느린지 EXPLAIN으로 파악하기"
 date: "2025-09-22"
 category: "Database"
 tags: ["MySQL", "Index", "Database", "성능최적화"]

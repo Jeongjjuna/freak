@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes 핵심 개념 정리 - Pod부터 Ingress까지"
+title: "[Example] Kubernetes 핵심 개념 정리 - Pod부터 Ingress까지"
 date: "2025-10-28"
 category: "Kubernetes"
 tags: ["Kubernetes", "K8s", "DevOps", "Container"]

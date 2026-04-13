@@ -1,5 +1,5 @@
 ---
-title: "Spring @Transactional 동작 원리와 흔한 실수들"
+title: "[Example] Spring @Transactional 동작 원리와 흔한 실수들"
 date: "2025-10-10"
 category: "Spring"
 tags: ["Spring", "Transaction", "JPA", "Backend"]

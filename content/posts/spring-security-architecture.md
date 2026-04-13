@@ -1,5 +1,5 @@
 ---
-title: "Spring Security 동작 원리, 프로세스 이해하기"
+title: "[Example] Spring Security 동작 원리, 프로세스 이해하기"
 date: "2026-03-15"
 category: "Spring Boot, JAVA"
 tags: ["Spring Security", "Authentication", "Filter", "Java"]

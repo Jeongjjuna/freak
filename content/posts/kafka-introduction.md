@@ -1,5 +1,5 @@
 ---
-title: "Kafka 입문 - 왜 쓰고, 어떻게 동작하나"
+title: "[Example] Kafka 입문 - 왜 쓰고, 어떻게 동작하나"
 date: "2025-09-08"
 category: "Kafka"
 tags: ["Kafka", "MessageQueue", "Backend", "분산시스템"]

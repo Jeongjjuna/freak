@@ -665,9 +665,8 @@ class ArticleUseCaseTest {
 
 이를 Git hook과 연동하면, UseCase가 변경될 때마다 SKILL 파일이 자동으로 업데이트됩니다.
 
+Git hook 연동 스크립트 예시
 ```bash
-// 🚧 코드 공간 — Git hook 연동 스크립트 예시
-
 #!/bin/sh
 # .git/hooks/pre-commit
 

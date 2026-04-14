@@ -13,6 +13,11 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes cd-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
 @keyframes rain-fall {
     0%   { transform: translateY(-20px) translateX(0);                  opacity: 0;    }
     5%   { opacity: 0.65; }

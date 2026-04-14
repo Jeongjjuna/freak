@@ -20,10 +20,24 @@ export default function MusicPlayer() {
     <div className="px-5 pb-5 mb-6 border-b border-[var(--c-border)]">
       <div className="flex items-center gap-3">
         <div
-          className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center text-lg"
-          style={{ background: 'var(--c-surface)', border: '1px solid var(--c-border)' }}
+          className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center"
+          style={{
+            background: 'var(--c-surface)',
+            border: '1px solid var(--c-border)',
+            animation: isPlaying ? 'cd-spin 3s linear infinite' : 'none',
+          }}
         >
-          {isPlaying ? '🎵' : '🎶'}
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            {/* 외부 CD 원 */}
+            <circle cx="18" cy="18" r="17" fill="var(--c-border)" stroke="var(--c-muted)" strokeWidth="0.5"/>
+            {/* 무지개빛 링 영역 */}
+            <circle cx="18" cy="18" r="14" fill="var(--c-accent)" opacity="0.15"/>
+            <circle cx="18" cy="18" r="10" fill="var(--c-surface)"/>
+            {/* 내부 홀 */}
+            <circle cx="18" cy="18" r="3" fill="var(--c-bg)" stroke="var(--c-border)" strokeWidth="1"/>
+            {/* 반짝임 하이라이트 */}
+            <path d="M10 10 Q14 7 20 9" stroke="var(--c-muted)" strokeWidth="1" strokeLinecap="round" opacity="0.5"/>
+          </svg>
         </div>
 
         <div className="flex-1 min-w-0">

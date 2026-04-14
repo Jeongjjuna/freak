@@ -7,6 +7,7 @@ import Image from 'next/image';
 import {useDrawer} from './DrawerProvider';
 import {getCategoryEmoji} from '@/lib/categoryEmoji';
 import {resolveImageSrc} from '@/lib/image';
+import MusicPlayer from '@/components/MusicPlayer/MusicPlayer';
 
 export default function MobileDrawer() {
   const { isOpen, close, categories, recentPosts } = useDrawer();
@@ -65,6 +66,11 @@ export default function MobileDrawer() {
 
         {/* 스크롤 가능한 본문 */}
         <div className="overflow-y-auto h-[calc(100%-57px)]">
+          {/* 뮤직 플레이어 */}
+          <div className="pt-5">
+            <MusicPlayer />
+          </div>
+
           {/* 전체 카테고리 */}
           <div className="px-5 py-6 border-b" style={{ borderColor: 'var(--c-border)' }}>
             <p className="text-[16px] font-medium text-[var(--c-text)] mb-2">전체 카테고리</p>

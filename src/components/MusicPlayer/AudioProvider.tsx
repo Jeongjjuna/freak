@@ -57,6 +57,11 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
     audio.addEventListener('timeupdate', onTimeUpdate);
     audio.addEventListener('loadedmetadata', onLoadedMetadata);
     audio.addEventListener('ended', onEnded);
+
+    // 이미 메타데이터가 로드된 경우 즉시 duration 세팅
+    if (audio.readyState >= 1 && audio.duration) {
+      setDuration(audio.duration);
+    }
     return () => {
       audio.removeEventListener('timeupdate', onTimeUpdate);
       audio.removeEventListener('loadedmetadata', onLoadedMetadata);
@@ -79,10 +84,14 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
 
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
     const audio = audioRef.current;
-    if (!audio || !duration) return;
+    if (!audio) return;
+    const audioDuration = audio.duration;
+    if (!audioDuration || !isFinite(audioDuration)) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    const ratio = (e.clientX - rect.left) / rect.width;
-    audio.currentTime = ratio * duration;
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    audio.currentTime = ratio * audioDuration;
+    setCurrentTime(ratio * audioDuration);
+    setProgress(ratio * 100);
   };
 
   return (

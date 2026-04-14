@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type {PostMeta} from '@/types/post';
 import {getCategoryEmoji} from '@/lib/categoryEmoji';
 import ContributionGrass from '@/components/ContributionGrass/ContributionGrass';
+import MusicPlayer from '@/components/MusicPlayer/MusicPlayer';
 import {resolveImageSrc} from '@/lib/image';
 
 interface Props {
@@ -13,6 +14,9 @@ interface Props {
 export default function Sidebar({categories, recentPosts}: Props) {
   return (
     <aside className="w-70 shrink-0 py-8 min-h-[calc(100vh-96px)] max-[1200px]:hidden">
+      {/* 뮤직 플레이어 */}
+      <MusicPlayer />
+
       {/* 공지사항 */}
       <div className="px-5 pb-2 mb-6 border-b border-[var(--c-border)]">
         <p className="text-[16px] font-medium text-[var(--c-text)]">공지사항</p>

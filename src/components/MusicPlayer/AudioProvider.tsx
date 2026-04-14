@@ -11,6 +11,8 @@ interface AudioContextValue {
   duration: number;
   togglePlay: () => void;
   handleSeek: (e: React.MouseEvent<HTMLDivElement>) => void;
+  isLooping: boolean;
+  toggleLoop: () => void;
 }
 
 const AudioContext = createContext<AudioContextValue | null>(null);
@@ -23,10 +25,14 @@ export function useAudio() {
 
 export default function AudioProvider({ children }: { children: React.ReactNode }) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const isLoopingRef = useRef(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLooping, setIsLooping] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+
+  useEffect(() => { isLoopingRef.current = isLooping; }, [isLooping]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -37,7 +43,16 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
       if (audio.duration) setProgress((audio.currentTime / audio.duration) * 100);
     };
     const onLoadedMetadata = () => setDuration(audio.duration);
-    const onEnded = () => setIsPlaying(false);
+    const onEnded = () => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      if (isLoopingRef.current) {
+        audio.currentTime = 0;
+        audio.play();
+      } else {
+        setIsPlaying(false);
+      }
+    };
 
     audio.addEventListener('timeupdate', onTimeUpdate);
     audio.addEventListener('loadedmetadata', onLoadedMetadata);
@@ -48,6 +63,8 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
       audio.removeEventListener('ended', onEnded);
     };
   }, []);
+
+  const toggleLoop = () => setIsLooping(prev => !prev);
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -69,7 +86,7 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
   };
 
   return (
-    <AudioContext.Provider value={{ isPlaying, progress, currentTime, duration, togglePlay, handleSeek }}>
+    <AudioContext.Provider value={{ isPlaying, progress, currentTime, duration, togglePlay, handleSeek, isLooping, toggleLoop }}>
       <audio ref={audioRef} src={SONG_SRC} preload="metadata" />
       {children}
     </AudioContext.Provider>

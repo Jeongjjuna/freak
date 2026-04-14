@@ -8,7 +8,7 @@ const SONG = {
 };
 
 export default function MusicPlayer() {
-  const { isPlaying, progress, currentTime, duration, togglePlay, handleSeek } = useAudio();
+  const { isPlaying, progress, currentTime, duration, togglePlay, handleSeek, isLooping, toggleLoop } = useAudio();
 
   const formatTime = (sec: number) => {
     const m = Math.floor(sec / 60);
@@ -61,6 +61,24 @@ export default function MusicPlayer() {
               <path d="M3 1.5l7 4.5-7 4.5V1.5z"/>
             </svg>
           )}
+        </button>
+
+        <button
+          onClick={toggleLoop}
+          className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-opacity hover:opacity-70"
+          style={{
+            background: isLooping ? 'var(--c-progress)' : 'transparent',
+            color: isLooping ? '#fff' : 'var(--c-muted)',
+            border: isLooping ? 'none' : '1px solid var(--c-border)',
+          }}
+          aria-label={isLooping ? '반복 해제' : '반복 재생'}
+        >
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="8.5 0.5 10.5 2.5 8.5 4.5"/>
+            <path d="M1.5 5.5V4.5a2 2 0 0 1 2-2h7"/>
+            <polyline points="3.5 11.5 1.5 9.5 3.5 7.5"/>
+            <path d="M10.5 6.5v1a2 2 0 0 1-2 2h-7"/>
+          </svg>
         </button>
       </div>
 

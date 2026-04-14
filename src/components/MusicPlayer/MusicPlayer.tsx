@@ -1,60 +1,14 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useAudio } from './AudioProvider';
 
-// public/music/song.mp3 파일을 넣어주세요.
 const SONG = {
-  title: '꿈을 꿨어요',
+  title: '꿈을꿨어요',
   artist: '카더가든',
-  src: '/freak/music/song_01.mp3',
 };
 
 export default function MusicPlayer() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const onTimeUpdate = () => {
-      setCurrentTime(audio.currentTime);
-      if (audio.duration) setProgress((audio.currentTime / audio.duration) * 100);
-    };
-    const onLoadedMetadata = () => setDuration(audio.duration);
-    const onEnded = () => setIsPlaying(false);
-
-    audio.addEventListener('timeupdate', onTimeUpdate);
-    audio.addEventListener('loadedmetadata', onLoadedMetadata);
-    audio.addEventListener('ended', onEnded);
-    return () => {
-      audio.removeEventListener('timeupdate', onTimeUpdate);
-      audio.removeEventListener('loadedmetadata', onLoadedMetadata);
-      audio.removeEventListener('ended', onEnded);
-    };
-  }, []);
-
-  const togglePlay = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
-    const audio = audioRef.current;
-    if (!audio || !duration) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const ratio = (e.clientX - rect.left) / rect.width;
-    audio.currentTime = ratio * duration;
-  };
+  const { isPlaying, progress, currentTime, duration, togglePlay, handleSeek } = useAudio();
 
   const formatTime = (sec: number) => {
     const m = Math.floor(sec / 60);
@@ -64,8 +18,6 @@ export default function MusicPlayer() {
 
   return (
     <div className="px-5 pb-5 mb-6 border-b border-[var(--c-border)]">
-      <audio ref={audioRef} src={SONG.src} preload="metadata" />
-
       <div className="flex items-center gap-3">
         <div
           className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center text-lg"

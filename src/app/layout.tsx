@@ -6,6 +6,7 @@ import {DrawerProvider} from '@/components/Drawer/DrawerProvider';
 import {getAllCategories, getRecentPosts} from '@/lib/posts';
 import SakuraPetals from '@/components/SakuraPetals/SakuraPetals';
 import RainDrops from '@/components/RainDrops/RainDrops';
+import AudioProvider from '@/components/MusicPlayer/AudioProvider';
 
 export const metadata: Metadata = {
   title: 'Freak Blog',
@@ -22,6 +23,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
       <script dangerouslySetInnerHTML={{ __html: `(function(){if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}if(localStorage.getItem('color-theme')==='sakura'){document.documentElement.classList.add('sakura')}if(localStorage.getItem('weather-theme')==='rain'){document.documentElement.classList.add('rain')}})()` }} />
     </head>
     <body>
+    <AudioProvider>
     <DrawerProvider categories={categories} recentPosts={recentPosts}>
       <SakuraPetals />
       <RainDrops />
@@ -34,6 +36,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
       </nav>
       {children}
     </DrawerProvider>
+    </AudioProvider>
     </body>
     </html>
   );

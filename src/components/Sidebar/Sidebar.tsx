@@ -17,9 +17,9 @@ export default function Sidebar({categories, recentPosts}: Props) {
       {/* 뮤직 플레이어 */}
       <MusicPlayer />
 
-      {/* 공지사항 */}
+      {/* 이것저것 */}
       <div className="px-5 pb-2 mb-6 border-b border-[var(--c-border)]">
-        <p className="text-[16px] font-medium text-[var(--c-text)]">공지사항</p>
+        <p className="text-[16px] font-medium text-[var(--c-text)]">이것저것</p>
       </div>
 
       {/* 전체 카테고리 */}

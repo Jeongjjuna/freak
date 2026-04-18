@@ -22,6 +22,8 @@ export const CATEGORY_GROUPS = {
     // - 병목 분석 및 제거
     // - latency / throughput / TPS 개선
     // 예) Redis 캐싱 도입으로 DB 부하 감소, Query 튜닝 사례
+
+    'Algorithm'
   ],
 
   Learning: [
@@ -34,6 +36,7 @@ export const CATEGORY_GROUPS = {
     'RabbitMQ',
     'Kafka',
     'Redis',
+    'Linux',
     'Docker',
     'Git',
     'Kubernetes',

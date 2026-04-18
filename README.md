@@ -36,8 +36,9 @@ thumbnail: "/images/thumbnails/custom.png"  # 선택사항
 
 | 그룹 | 카테고리 (Frontmatter `category` 필드값) |
 |------|-----------------------------------------|
-| **Engineering** | `Backend`, `Database`, `JPA`, `Kafka`, `Redis`, `Security`, `Spring Boot, JAVA`, `Spring` |
-| **Learning** | `devOps`, `Docker`, `Git`, `Kubernetes`, `Testing` |
+| **Engineering** | `Architecture`, `Troubleshooting`, `Performance`, `Algorithm` |
+| **Learning** | `API`, `SpringBoot`, `SpringBatch`, `SpringSecurity`, `JPA`, `MySQL`, `RabbitMQ`, `Kafka`, `Redis`, `Linux`, `Docker`, `Git`, `Kubernetes`, `Security`, `Testing` |
+| **Reading** | `Books`, `Essay`, `Thoughts` |
 
 **카테고리별 썸네일 자동 적용:**
 

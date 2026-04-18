@@ -26,7 +26,8 @@ export function getThumbnailSrc(thumbnailField: string | undefined, category: st
     'springsecurity': 'security',
     'mysql': 'database',
     'api': 'backend',
-    'rabbitmq': 'devops'
+    'rabbitmq': 'devops',
+    'books': 'books'
   };
 
   const filename = mapping[c] || category

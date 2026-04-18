@@ -42,6 +42,12 @@ export const CATEGORY_GROUPS = {
     'Kubernetes',
     'Security',
     'Testing'
+  ],
+
+  Archive: [
+    'Books', // 독서
+    'Activities', // 대외활동, 컨퍼런스, 세미나
+    'Thoughts' // 일상, 생각
   ]
 } as const;
 

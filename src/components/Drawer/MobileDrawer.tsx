@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {usePathname} from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,8 +10,16 @@ import {resolveImageSrc} from '@/lib/image';
 import MusicPlayer from '@/components/MusicPlayer/MusicPlayer';
 
 export default function MobileDrawer() {
-  const { isOpen, close, categories, recentPosts } = useDrawer();
+  const { isOpen, close, groups, recentPosts } = useDrawer();
   const pathname = usePathname();
+
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
+    return groups.reduce((acc, group) => ({...acc, [group.name]: true}), {});
+  });
+
+  const toggleGroup = (name: string) => {
+    setOpenGroups(prev => ({...prev, [name]: !prev[name]}));
+  };
 
   useEffect(() => {
     close();
@@ -75,19 +83,49 @@ export default function MobileDrawer() {
           <div className="px-5 py-6 border-b" style={{ borderColor: 'var(--c-border)' }}>
             <p className="text-[16px] font-medium text-[var(--c-text)] mb-2">전체 카테고리</p>
             <div className="border-b -mx-5 mb-4" style={{ borderColor: 'var(--c-border)' }}/>
-            <ul className="flex flex-col gap-1.5">
-              {categories.map((cat) => (
-                <li key={cat.name}>
-                  <Link
-                    href={`/categories/${encodeURIComponent(cat.name)}`}
-                    className="flex justify-between items-center text-[13px] text-[var(--c-text)] hover:opacity-60 transition-opacity py-0.5"
-                  >
-                    <span>{cat.name} {getCategoryEmoji(cat.name)}</span>
-                    <span className="text-[12px] text-[var(--c-muted)]">({cat.count})</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-col gap-5">
+              {groups.map((group) => {
+                const isGroupOpen = openGroups[group.name];
+                return (
+                  <div key={group.name} className="flex flex-col">
+                    <button
+                      onClick={() => toggleGroup(group.name)}
+                      className="flex items-center justify-between w-full text-[14px] font-bold text-[var(--c-text)] mb-2 group/btn cursor-pointer"
+                    >
+                      <span className="opacity-80 group-hover/btn:opacity-100 transition-opacity">{group.name}</span>
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className={`transition-transform duration-200 ${isGroupOpen ? 'rotate-180' : ''}`}
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isGroupOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <ul className="flex flex-col gap-1.5 pl-1 border-l-2 border-[var(--c-border)] ml-1 mb-2">
+                        {group.categories.map((cat) => (
+                          <li key={cat.name}>
+                            <Link
+                              href={`/categories/${encodeURIComponent(cat.name)}`}
+                              className="flex justify-between items-center text-[13px] text-[var(--c-text)] hover:opacity-60 transition-opacity py-0.5"
+                            >
+                              <span>{cat.name} {getCategoryEmoji(cat.name)}</span>
+                              <span className="text-[12px] text-[var(--c-muted)]">({cat.count})</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* 최근 글 */}

@@ -2,18 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import type {Post, PostMeta} from '@/types/post';
+import { CATEGORY_GROUPS } from './categories';
+import { getThumbnailSrc } from './image';
 
 const POSTS_DIR = path.join(process.cwd(), 'content/posts');
 
 function slugify(filename: string): string {
   return filename.replace(/\.md$/, '');
-}
-
-function categoryToFilename(category: string): string {
-  return category
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -34,7 +29,7 @@ export function getAllPosts(): PostMeta[] {
         category: data.category ?? '',
         tags: data.tags ?? [],
         excerpt: data.excerpt ?? '',
-        thumbnail: data.thumbnail ?? `/images/thumbnails/${categoryToFilename(data.category ?? '')}.png`,
+        thumbnail: getThumbnailSrc(data.thumbnail, data.category ?? ''),
       } satisfies PostMeta;
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -54,7 +49,7 @@ export function getPostBySlug(slug: string): Post | null {
     category: data.category ?? '',
     tags: data.tags ?? [],
     excerpt: data.excerpt ?? '',
-    thumbnail: data.thumbnail ?? `/images/thumbnails/${categoryToFilename(data.category ?? '')}.png`,
+    thumbnail: getThumbnailSrc(data.thumbnail, data.category ?? ''),
     content,
   };
 }
@@ -66,6 +61,39 @@ export function getAllCategories(): { name: string; count: number }[] {
   return Array.from(map.entries())
     .map(([name, count]) => ({name, count}))
     .sort((a, b) => b.count - a.count);
+}
+
+export interface CategoryGroup {
+  name: string;
+  categories: { name: string; count: number }[];
+}
+
+export function getGroupedCategories(): CategoryGroup[] {
+  const categories = getAllCategories();
+  const groups: CategoryGroup[] = [];
+
+  // 각 그룹 정의에 따라 분류
+  Object.entries(CATEGORY_GROUPS).forEach(([groupName, categoryNames]) => {
+    const matched = categories
+      .filter((c) => (categoryNames as readonly string[]).includes(c.name))
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    if (matched.length > 0) {
+      groups.push({ name: groupName, categories: matched });
+    }
+  });
+
+  // 정의되지 않은 카테고리는 Etc 그룹으로 분류
+  const allDefinedNames = Object.values(CATEGORY_GROUPS).flat() as readonly string[];
+  const etc = categories
+    .filter((c) => !allDefinedNames.includes(c.name))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  if (etc.length > 0) {
+    groups.push({ name: 'Etc', categories: etc });
+  }
+
+  return groups;
 }
 
 export function getAllTags(): { name: string; count: number }[] {

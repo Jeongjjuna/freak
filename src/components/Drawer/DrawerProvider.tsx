@@ -2,13 +2,14 @@
 
 import {createContext, useContext, useState} from 'react';
 import type {PostMeta} from '@/types/post';
+import {CategoryGroup} from '@/lib/posts';
 import MobileDrawer from './MobileDrawer';
 
 interface DrawerContextValue {
   isOpen: boolean;
   open: () => void;
   close: () => void;
-  categories: { name: string; count: number }[];
+  groups: CategoryGroup[];
   recentPosts: PostMeta[];
 }
 
@@ -21,18 +22,18 @@ export function useDrawer() {
 }
 
 interface Props {
-  categories: { name: string; count: number }[];
+  groups: CategoryGroup[];
   recentPosts: PostMeta[];
   children: React.ReactNode;
 }
 
-export function DrawerProvider({ categories, recentPosts, children }: Props) {
+export function DrawerProvider({ groups, recentPosts, children }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
 
   return (
-    <DrawerContext.Provider value={{ isOpen, open, close, categories, recentPosts }}>
+    <DrawerContext.Provider value={{ isOpen, open, close, groups, recentPosts }}>
       {children}
       <MobileDrawer />
     </DrawerContext.Provider>

@@ -1,7 +1,7 @@
 ---
 title: "[Example] Spring AOP를 private 메서드에 적용할 수 없는 이유 (feat. @Transactional)"
 date: "2026-02-07"
-category: "Spring Boot, JAVA"
+category: "SpringBoot"
 tags: ["Spring", "AOP", "Java", "Transactional"]
 excerpt: "사내에서 Spring AOP를 활용한 FeatureFlag 도입을 맡게 되었다. 커스텀 어노테이션과 Spring AOP를 조합해 메서드 단위로 기능을 ON/OFF하거나 분기 처리할 수 있는 구조를 설계했다."
 ---

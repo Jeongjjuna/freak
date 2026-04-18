@@ -32,28 +32,35 @@ thumbnail: "/images/thumbnails/custom.png"  # 선택사항
 
 ### 카테고리 설정
 
-단일 문자열로 지정합니다. 카테고리는 별도 설정 파일 없이 frontmatter에서 자동으로 수집됩니다.
+카테고리는 **Engineering**과 **Learning** 두 개의 대그룹으로 나뉘어 관리됩니다. 사이드바에서는 이 그룹별로 카테고리가 묶여서 표시됩니다.
 
-**현재 사용 중인 카테고리:**
+| 그룹 | 카테고리 (Frontmatter `category` 필드값) |
+|------|-----------------------------------------|
+| **Engineering** | `Backend`, `Database`, `JPA`, `Kafka`, `Redis`, `Security`, `Spring Boot, JAVA`, `Spring` |
+| **Learning** | `devOps`, `Docker`, `Git`, `Kubernetes`, `Testing` |
 
-| 카테고리 | 썸네일 자동 적용 |
+**카테고리별 썸네일 자동 적용:**
+
+| 카테고리 | 썸네일 파일명 (`public/images/thumbnails/`) |
 |----------|-----------------|
-| `Spring` | spring.png |
-| `JPA` | jpa.png |
-| `Docker` | docker.png |
-| `Kubernetes` | kubernetes.png |
-| `Kafka` | kafka.png |
-| `Redis` | redis.png |
-| `Git` | git.png |
-| `Security` | security.png |
-| `DevOps` | devops.png |
-| `Backend` | backend.png |
-| `Database` | database.png |
-| `Testing` | testing.png |
+| `Spring` | `spring.png` |
+| `JPA` | `jpa.png` |
+| `Docker` | `docker.png` |
+| `Kubernetes` | `kubernetes.png` |
+| `Kafka` | `kafka.png` |
+| `Redis` | `redis.png` |
+| `Git` | `git.png` |
+| `Security` | `security.png` |
+| `devOps` | `devops.png` |
+| `Backend` | `backend.png` |
+| `Database` | `database.png` |
+| `Testing` | `testing.png` |
+| `Spring Boot, JAVA` | `spring-boot-java.png` |
 
-> **새 카테고리 추가 시:** `public/images/thumbnails/{카테고리_소문자}.png` 파일도 함께 추가하면 썸네일이 자동 적용됩니다.
-
-> **카테고리 이모지**는 `src/lib/categoryEmoji.ts`에서 관리합니다.
+> **새 카테고리 추가 시:**
+> 1. `src/lib/categories.ts` 파일의 `CATEGORY_GROUPS` 객체에 카테고리 이름을 추가하세요. (새로운 그룹을 키로 추가할 수도 있습니다.)
+> 2. `public/images/thumbnails/{카테고리_소문자}.png` 파일을 추가하면 썸네일이 자동 적용됩니다.
+> 3. `src/lib/categoryEmoji.ts`에서 카테고리에 맞는 이모지를 설정할 수 있습니다.
 
 ---
 
@@ -69,20 +76,32 @@ tags: ["Spring Boot", "JPA", "Hibernate", "성능최적화"]
 
 ### 썸네일 설정
 
-**자동 적용 (권장):** `thumbnail` 필드를 생략하면 카테고리 이름을 소문자로 변환하여 자동 적용됩니다.
+썸네일은 다음 우선순위에 따라 결정됩니다.
 
-```
-category: "Docker"  →  /images/thumbnails/docker.png
-category: "Spring"  →  /images/thumbnails/spring.png
-```
+1.  **전체 경로 직접 지정 (최우선)**
+    `thumbnail` 필드에 `/`로 시작하는 경로를 입력하면 해당 이미지를 그대로 사용합니다.
+    ```yaml
+    thumbnail: "/images/posts/my-post/cover.png"
+    ```
 
-**직접 지정:** 특정 이미지를 사용하려면 `thumbnail` 필드에 경로를 명시합니다.
+2.  **파일명만 지정**
+    파일명(확장자 포함)만 입력하면 `public/images/thumbnails/` 디렉토리에서 해당 파일을 찾습니다.
+    ```yaml
+    thumbnail: "custom-thumb.png"  # → /images/thumbnails/custom-thumb.png
+    ```
 
-```yaml
-thumbnail: "/images/thumbnails/spring-boot-java.png"
-```
+3.  **자동 지정 (필드 생략 시)**
+    `thumbnail` 필드를 생략하거나 비워두면 **카테고리**에 맞춰 아래와 같이 이미지가 자동 선택됩니다.
 
-썸네일 이미지는 `public/images/thumbnails/` 디렉토리에 저장합니다.
+    | 카테고리 (Frontmatter) | 적용 이미지 (`/images/thumbnails/`) |
+    | :--- | :--- |
+    | `Architecture` | `spring.png` |
+    | `SpringBoot` | `spring-boot-java.png` |
+    | `SpringSecurity` | `security.png` |
+    | `MySQL` | `database.png` |
+    | `API` | `backend.png` |
+    | `RabbitMQ` | `devops.png` |
+    | **그 외 카테고리** | `{카테고리명_소문자}.png` |
 
 ---
 

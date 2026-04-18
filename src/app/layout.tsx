@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './globals.css';
 import Header from '@/components/Header/Header';
 import {DrawerProvider} from '@/components/Drawer/DrawerProvider';
-import {getAllCategories, getRecentPosts} from '@/lib/posts';
+import {getGroupedCategories, getRecentPosts} from '@/lib/posts';
 import SakuraPetals from '@/components/SakuraPetals/SakuraPetals';
 import RainDrops from '@/components/RainDrops/RainDrops';
 import AudioProvider from '@/components/MusicPlayer/AudioProvider';
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
-  const categories = getAllCategories();
+  const groups = getGroupedCategories();
   const recentPosts = getRecentPosts(5);
 
   return (
@@ -24,7 +24,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     </head>
     <body>
     <AudioProvider>
-    <DrawerProvider categories={categories} recentPosts={recentPosts}>
+    <DrawerProvider groups={groups} recentPosts={recentPosts}>
       <SakuraPetals />
       <RainDrops />
       <Header/>

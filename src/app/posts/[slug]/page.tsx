@@ -1,7 +1,7 @@
 import {notFound} from 'next/navigation';
 import Link from 'next/link';
 import {
-  getAllCategories,
+  getGroupedCategories,
   getAllSlugs,
   getCategoryEmoji,
   getPostBySlug,
@@ -32,7 +32,7 @@ export default async function PostPage({params}: Props) {
 
   const html = await markdownToHtml(post.content);
   const toc = extractToc(html);
-  const categories = getAllCategories();
+  const groups = getGroupedCategories();
   const recentPosts = getRecentPosts(5);
 
   const relatedPosts = getPostsByCategory(post.category)
@@ -43,7 +43,7 @@ export default async function PostPage({params}: Props) {
   const readingTime = calcReadingTime(post.content);
 
   return (
-    <PostLayout sidebar={<Sidebar categories={categories} recentPosts={recentPosts}/>}>
+    <PostLayout sidebar={<Sidebar groups={groups} recentPosts={recentPosts}/>}>
       <p className="text-[14px] text-[var(--c-muted)] mb-3">{post.category} · {post.date} · {readingTime}분 읽기</p>
       <h1 className="text-[28px] font-medium leading-[1.4] text-[var(--c-text)] mb-8 pb-6 border-b border-[var(--c-border)]">
         {post.title}

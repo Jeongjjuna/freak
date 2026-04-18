@@ -1,7 +1,7 @@
 ---
 title: "[Example] MySQL 인덱스 제대로 이해하기 - 왜 느린지 EXPLAIN으로 파악하기"
 date: "2025-09-22"
-category: "Database"
+category: "MySQL"
 tags: ["MySQL", "Index", "Database", "성능최적화"]
 excerpt: "쿼리가 느리다고 인덱스를 무작정 추가하면 오히려 역효과가 난다. 인덱스 구조와 EXPLAIN 읽는 법을 정리했다."
 ---

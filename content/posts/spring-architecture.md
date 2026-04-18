@@ -1,7 +1,7 @@
 ---
 title: "아키텍처 규칙 강제하기(feat MultiModule, ArchUnit, AI Agent)"
 date: "2026-04-08"
-category: "Spring"
+category: "Architecture"
 tags: ["Kotlin", "SpringBoot", "아키텍처", "테스트", "AI Agent"]
 excerpt: "아키텍처 규칙은 문서로 공유한다고 지켜지지 않는다. 멀티모듈, ArchUnit, AI Agent SKILL을 활용해 규칙을 코드와 시스템 수준에서 강제하는 방법을 정리해본다."
 ---

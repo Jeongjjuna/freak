@@ -1,7 +1,7 @@
 ---
 title: "[Example] 메시지 브로커가 뭔데, RabbitMQ 이해하기"
 date: "2026-01-08"
-category: "devOps"
+category: "RabbitMQ"
 tags: ["RabbitMQ", "메시지큐", "MSA", "DevOps"]
 excerpt: "그간 RabbitMQ를 많이 사용해왔지만 어떻게 동작하는지 자세히 학습해본적이 없어 이번 기회에 정리해보려 한다. 요즘 시스템 아키텍처를 이야기하면 REST API, gRPC, Kafka, RabbitMQ 이런 단어를 쉽게 접한다."
 ---

@@ -1,7 +1,7 @@
 ---
 title: "[Example] REST API 설계 원칙과 실전 가이드"
 date: "2025-08-30"
-category: "Backend"
+category: "API"
 tags: ["REST", "API", "Backend", "설계"]
 excerpt: "REST API를 만들 때 URL을 어떻게 짜야 하는지, 상태 코드는 뭘 써야 하는지 매번 헷갈린다. 실전에서 바로 쓸 수 있는 기준을 정리했다."
 ---

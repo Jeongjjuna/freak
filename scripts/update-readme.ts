@@ -19,7 +19,18 @@ interface PostSummary {
 }
 
 function categoryToFilename(category: string): string {
-  return category
+  const c = category.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  
+  const mapping: Record<string, string> = {
+    'architecture': 'spring',
+    'springboot': 'spring-boot-java',
+    'springsecurity': 'security',
+    'mysql': 'database',
+    'api': 'backend',
+    'rabbitmq': 'devops'
+  };
+
+  return mapping[c] || category
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');

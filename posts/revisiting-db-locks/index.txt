@@ -1,0 +1,296 @@
+1:"$Sreact.fragment"
+2:I[8309,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","177","static/chunks/app/layout-e710709ed02ca9d4.js"],"default"]
+3:I[2937,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","177","static/chunks/app/layout-e710709ed02ca9d4.js"],"DrawerProvider"]
+4:I[7748,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","177","static/chunks/app/layout-e710709ed02ca9d4.js"],"default"]
+5:I[7898,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","177","static/chunks/app/layout-e710709ed02ca9d4.js"],"default"]
+6:I[1842,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","177","static/chunks/app/layout-e710709ed02ca9d4.js"],"default"]
+7:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","501","static/chunks/501-ddd2f7f77592f4dc.js","858","static/chunks/app/posts/%5Bslug%5D/page-20dea2cd6118e8ed.js"],""]
+8:I[9766,[],""]
+9:I[8924,[],""]
+10:I[7150,[],""]
+:HL["/freak/_next/static/css/6ef7157521a458b2.css","style"]
+0:{"P":null,"b":"fEhN92UdNFaBvVbSYdne-","p":"/freak","c":["","posts","revisiting-db-locks",""],"i":false,"f":[[["",{"children":["posts",{"children":[["slug","revisiting-db-locks","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/freak/_next/static/css/6ef7157521a458b2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}if(localStorage.getItem('color-theme')==='sakura'){document.documentElement.classList.add('sakura')}if(localStorage.getItem('weather-theme')==='rain'){document.documentElement.classList.add('rain')}})()"}}]}],["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"groups":[{"name":"Engineering","categories":[{"name":"Architecture","count":1}]},{"name":"Learning","categories":[{"name":"API","count":1},{"name":"Docker","count":1},{"name":"Git","count":1},{"name":"JPA","count":1},{"name":"Kafka","count":1},{"name":"Kubernetes","count":1},{"name":"MySQL","count":2},{"name":"RabbitMQ","count":1},{"name":"Redis","count":1},{"name":"Security","count":1},{"name":"SpringBoot","count":2},{"name":"SpringSecurity","count":1},{"name":"Testing","count":1}]},{"name":"Archive","categories":[{"name":"Books","count":1}]}],"recentPosts":[{"slug":"revisiting-db-locks","title":"초심 찾기! 동시성 처리를 위한 DB Lock 다시 한번 복습해보자","date":"2026-04-30","category":"MySQL","tags":["MySQL","동시성","JPA"],"excerpt":"DB 동시성 제어를 위한 Lock 메커니즘을 오랜만에 다시 복습하며 정리해본다.","thumbnail":"/images/thumbnails/database.png"},{"slug":"minimum-practical-knowledge-for-developers","title":"개발자를 위한 최소한의 실무 지식 독서 회고","date":"2026-04-18","category":"Books","tags":["독서","실무지식","성장","커리어"],"excerpt":"개발자로서 실무에서 꼭 알아야 할 기초 지식들을 정리한 책, '개발자를 위한 최소한의 실무 지식'을 읽고 느낀 점과 핵심 내용을 정리합니다.","thumbnail":"/images/thumbnails/books.png"},{"slug":"spring-architecture","title":"아키텍처 규칙 강제하기(feat MultiModule, ArchUnit, AI Agent)","date":"2026-04-08","category":"Architecture","tags":["Kotlin","SpringBoot","아키텍처","테스트","AI Agent"],"excerpt":"아키텍처 규칙은 문서로 공유한다고 지켜지지 않는다. 멀티모듈, ArchUnit, AI Agent SKILL을 활용해 규칙을 코드와 시스템 수준에서 강제하는 방법을 정리해본다.","thumbnail":"/images/thumbnails/spring.png"},{"slug":"spring-security-architecture","title":"[Example] Spring Security 동작 원리, 프로세스 이해하기","date":"2026-03-15","category":"SpringSecurity","tags":["Spring Security","Authentication","Filter","Java"],"excerpt":"Spring Security가 필터 기반으로 동작하는 이유와 주요 필터들의 역할을 파해쳐보자. 위임 필터와 필터 체인 대리자(FilterChainProxy)의 관계를 정리한다.","thumbnail":"/images/thumbnails/security.png"},{"slug":"spring-aop-private-method","title":"[Example] Spring AOP를 private 메서드에 적용할 수 없는 이유 (feat. @Transactional)","date":"2026-02-07","category":"SpringBoot","tags":["Spring","AOP","Java","Transactional"],"excerpt":"사내에서 Spring AOP를 활용한 FeatureFlag 도입을 맡게 되었다. 커스텀 어노테이션과 Spring AOP를 조합해 메서드 단위로 기능을 ON/OFF하거나 분기 처리할 수 있는 구조를 설계했다.","thumbnail":"/images/thumbnails/spring-boot-java.png"}],"children":[["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","nav",null,{"className":"max-w-290 mx-auto px-6","children":["$","div",null,{"className":"py-3 flex items-center gap-10 pl-11 max-[1200px]:pl-0 max-[1200px]:mx-3 border-t border-b border-[var(--c-border)]","children":[["$","$L7",null,{"href":"/","className":"text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity","children":"홈"}],["$","$L7",null,{"href":"/tags","className":"text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity","children":"태그"}]]}]}],["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"max-w-290 mx-auto px-6","children":["$","div",null,{"className":"flex flex-col items-center justify-center py-32 text-center","children":[["$","p",null,{"className":"text-[80px] font-bold text-[var(--c-border)] leading-none","children":"404"}],["$","p",null,{"className":"text-[18px] text-[var(--c-text)] mt-4 mb-2","children":"페이지를 찾을 수 없어요"}],"$La","$Lb"]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}]]}],{"children":["posts","$Lc",{"children":[["slug","revisiting-db-locks","d"],"$Ld",{"children":["__PAGE__","$Le",{},null,false]},null,false]},null,false]},null,false],"$Lf",false]],"m":"$undefined","G":["$10",[]],"s":false,"S":true}
+12:I[4431,[],"OutletBoundary"]
+14:I[5278,[],"AsyncMetadataOutlet"]
+16:I[4431,[],"ViewportBoundary"]
+18:I[4431,[],"MetadataBoundary"]
+19:"$Sreact.suspense"
+a:["$","p",null,{"className":"text-[14px] text-[var(--c-muted)] mb-8","children":"흠, 여기는 아무것도 없군요."}]
+b:["$","$L7",null,{"href":"/","className":"text-[14px] text-[var(--c-muted)] border border-[var(--c-border)] px-5 py-2 rounded hover:opacity-60 transition-opacity","children":"홈으로"}]
+c:["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+d:["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+e:["$","$1","c",{"children":["$L11",null,["$","$L12",null,{"children":["$L13",["$","$L14",null,{"promise":"$@15"}]]}]]}]
+f:["$","$1","h",{"children":[null,[["$","$L16",null,{"children":"$L17"}],null],["$","$L18",null,{"children":["$","div",null,{"hidden":true,"children":["$","$19",null,{"fallback":null,"children":"$L1a"}]}]}]]}]
+1b:I[8555,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","501","static/chunks/501-ddd2f7f77592f4dc.js","858","static/chunks/app/posts/%5Bslug%5D/page-20dea2cd6118e8ed.js"],"default"]
+1c:I[7501,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","501","static/chunks/501-ddd2f7f77592f4dc.js","858","static/chunks/app/posts/%5Bslug%5D/page-20dea2cd6118e8ed.js"],"default"]
+1d:I[9782,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","501","static/chunks/501-ddd2f7f77592f4dc.js","858","static/chunks/app/posts/%5Bslug%5D/page-20dea2cd6118e8ed.js"],"default"]
+1e:I[5470,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","501","static/chunks/501-ddd2f7f77592f4dc.js","858","static/chunks/app/posts/%5Bslug%5D/page-20dea2cd6118e8ed.js"],"default"]
+1f:T546d,<h2 id="들어가며">들어가며</h2>
+<p>프로젝트를 진행하다 보면 동시성 문제를 마주하게 됩니다.
+실제로 장애가 발생하지 않더라도, 기능을 구현하는 과정에서 정합성 문제가 발생할 가능성은 없는지 한 번쯤 점검하게 되는데요,</p>
+<p>저는 동시성 이슈를 검토할 때 보통 아래와 같은 단계적인 순서로 해결 방법을 고민합니다.</p>
+<ol>
+<li>동시성 자체를 줄이거나 제거하는 설계
+↓</li>
+<li>DB 제약 조건 활용 (Unique Key 등)
+↓</li>
+<li>DB Lock (비관적 락, 낙관적 락)
+↓</li>
+<li>비동기 순차 처리 (Queue 기반)
+↓</li>
+<li>분산 락 (Redis, Zookeeper 등)</li>
+</ol>
+<p>하지만 실무에서는 구현의 편의성이나 빠른 개발에 집중한 나머지, 충분한 고민 없이 비교적 적용하기 쉬운 'Lock'을 먼저 선택하는 경우를 종종 보게 됩니다.</p>
+<p>물론 Lock은 강력한 해결 수단이지만, 도입에 따른 데드락(Deadlock) 등 여러 장애 상황을 고려해야 하고,
+특히 Redis 같은 도구를 활용한 '분산 락'의 경우 Lock 해제 실패 대응이나 운영 및 구현 복잡도까지 함께 짊어져야 합니다.
+결국 시스템의 복잡도를 증가시키는 선택이 될 수 있죠.</p>
+<p>따라서 기술을 선택할 때는 "어떤 기술을 쓰느냐"보다 "왜 이 기술이어야만 하는가"에 대한 답을 내릴 수 있어야 합니다.
+그래서 저는 Lock이 필요 없는 설계가 가능한지 먼저 깊게 고민한 뒤, 아래의 기준들을 바탕으로 적절한 트레이드오프(Trade-off)를 고려해 구현 방향을 결정합니다.</p>
+<ul>
+<li>성능 및 비용</li>
+<li>비즈니스/서비스 정책</li>
+<li>구현 복잡도</li>
+<li>유지보수성과 협업 난이도</li>
+</ul>
+<p>사람마다 우선시하는 기준은 다르겠지만, 적적한 기준을 가지고 문제에 접근하는 것이 중요하다고 생각합니다.</p>
+<h2 id="ai-agent-시대-개발자에게-진짜-필요한-능력">AI Agent 시대, 개발자에게 진짜 필요한 능력</h2>
+<p>최근 AI Agent 기반의 개발 환경을 경험하면서, 앞서 언급한 기준과 판단력의 중요성을 더욱 크게 체감하고 있습니다.</p>
+<p>이전에는 코드를 직접 작성하는 구현 능력이 핵심이었다면, 지금은 AI에게 의도와 설계를 정확히 전달하고,
+생성된 결과물이 올바르게 동작하는지 빠르게 판단·검증하는 능력이 더 중요해지고 있습니다.</p>
+<p>AI는 순식간에 코드를 만들어 주지만, 그 코드가 올바른 동시성 모델을 따르고 있는지, 실제 운영 환경에서도 안전하게 동작할지는 결국 개발자의 책임입니다.
+많이 알고 있을수록 더 잘 검증할 수 있고, 개념에 대한 깊은 이해도가 곧 개발자의 판단력이 되는 시대가 온 것입니다.</p>
+<p>돌아보면 한 번 완벽히 이해했다고 생각했던 개념도 시간이 흐르거나 개발 환경이 바뀌면 다시 정리가 필요하곤 합니다.
+그래서 이번 글에서는 초심으로 돌아가, 동시성 해결의 핵심 축인 DB Lock의 동작 방식과 선택 기준을 다시 복습해보려 합니다.
+간단하게 실습을 해보고, 실제 상황에서 어떤 기준으로 기술을 선택해야 하는지 복습해보는 시간을 가지고자합니다.</p>
+<h2 id="동시성-문제">동시성 문제</h2>
+<p>대부분의 서비스는 평소엔 문제 없이 동작하지만,
+트래픽이 몰리는 순간 이런 문제가 드러납니다.</p>
+<ul>
+<li>Lost Update</li>
+<li>Race Condition</li>
+<li>데이터 불일치</li>
+</ul>
+<p>그래서 기능을 개발할 때는 항상
+"이 로직에서 동시성 문제가 발생할 수 있는가?"를 함께 고민하게 됩니다.</p>
+<p>예를 들어 다음과 같은 질문들을 스스로 던지게 됩니다.</p>
+<ul>
+<li>정합성이 반드시 보장되어야 하는가?</li>
+<li>동시 요청이 많이 발생할 가능성이 있는가?</li>
+<li>실제 트래픽이 집중되는 기능인가?</li>
+</ul>
+<p>실제로 동시성 이슈가 자주 발생하는 대표적인 요구사항은 다음과 같습니다.</p>
+<ul>
+<li>좋아요 증가</li>
+<li>주문 생성</li>
+<li>재고 감소</li>
+<li>포인트 증가/차감</li>
+</ul>
+<p>이러한 문제를 해결하기 위해 데이터베이스는 <strong>Lock 메커니즘</strong>을 제공합니다.</p>
+<h2 id="record-lock-row-lock">Record Lock (Row Lock)</h2>
+<p>Record Lock은 테이블 전체가 아니라 <strong>특정 행(Row)에 대해서만 락을 거는 방식</strong>입니다.</p>
+<p>InnoDB 스토리지 엔진에서는 <code>UPDATE</code>, <code>DELETE</code>와 같은 쓰기 작업이 수행되는 시점에
+해당 레코드에 대해 <strong>Exclusive Row Lock(X Lock)</strong> 을 획득합니다.</p>
+<p>즉, 하나의 트랜잭션이 특정 행을 수정하고 있는 동안에는
+다른 트랜잭션이 동일한 레코드를 동시에 수정하지 못하도록 막아줍니다.</p>
+<p>이를 통해 다음과 같은 문제를 방지할 수 있습니다.</p>
+<ul>
+<li>동일 레코드의 동시 수정 방지</li>
+<li>트랜잭션 간 충돌 제어</li>
+<li>데이터 무결성 보장</li>
+</ul>
+<p>일반적으로 우리가 기대하는 <strong>"행 단위 동시성 제어"</strong> 가 바로 Record Lock이라고 볼 수 있습니다.</p>
+<p>다만, 모든 스토리지 엔진이 Row Lock을 제공하는 것은 아니기 때문에
+실제 운영 환경에서는 사용 중인 스토리지 엔진(InnoDB 여부)을 반드시 확인해야 합니다.</p>
+<h3 id="락-상태-확인하기">락 상태 확인하기</h3>
+<p>실제로 Lock이 어떻게 동작하는지 직접 확인해보는 것이 가장 확실합니다.
+MySQL에서는 <code>performance_schema</code>를 통해 현재 걸린 Lock 상태를 조회할 수 있습니다.</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>select *</span></span>
+<span data-line=""><span>from performance_schema.data_locks;</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>START TRANSACTION;</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>UPDATE article</span></span>
+<span data-line=""><span>SET like_count = like_count + 1</span></span>
+<span data-line=""><span>WHERE id = 123;</span></span></code></pre></figure>
+<p>해당 시점에 InnoDB는 id = 123 레코드에 대해 Exclusive Row Lock(X Lock) 을 획득합니다.</p>
+<p>performance_schema 를 통해 조회해보면 아래와 같이 record lock 이 걸렸음을 확인할 수 있습니다.</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>+--------+-------------------------------------------+-----------------------+-----------+----------+---------------+-------------+----------------+-------------------+------------+-----------------------+-----------+---------------+-------------+-----------+</span></span>
+<span data-line=""><span>| ENGINE | ENGINE_LOCK_ID                            | ENGINE_TRANSACTION_ID | THREAD_ID | EVENT_ID | OBJECT_SCHEMA | OBJECT_NAME | PARTITION_NAME | SUBPARTITION_NAME | INDEX_NAME | OBJECT_INSTANCE_BEGIN | LOCK_TYPE | LOCK_MODE     | LOCK_STATUS | LOCK_DATA |</span></span>
+<span data-line=""><span>+--------+-------------------------------------------+-----------------------+-----------+----------+---------------+-------------+----------------+-------------------+------------+-----------------------+-----------+---------------+-------------+-----------+</span></span>
+<span data-line=""><span>| INNODB | 281473586793688:112:1068:281473500370112  |                  1844 |        46 |       68 | lock_test     | article     | NULL           | NULL              | NULL       |       281473500370112 | TABLE     | IX            | GRANTED     | NULL      |</span></span>
+<span data-line=""><span>| INNODB | 281473586793688:112:2:4:2:281473500367120 |                  1844 |        46 |       68 | lock_test     | article     | NULL           | NULL              | PRIMARY    |       281473500367120 | RECORD    | X,REC_NOT_GAP | GRANTED     | 1         |</span></span>
+<span data-line=""><span>+--------+-------------------------------------------+-----------------------+-----------+----------+---------------+-------------+----------------+-------------------+------------+-----------------------+-----------+---------------+-------------+-----------+</span></span></code></pre></figure>
+<p>그래서 또다른 커넥션에서 아래와 같이 같은 record 에 대해 update 를 시도합니다.</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>START TRANSACTION;</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>UPDATE article</span></span>
+<span data-line=""><span>SET like_count = like_count + 1</span></span>
+<span data-line=""><span>WHERE id = 123;</span></span></code></pre></figure>
+<p>이 쿼리는 즉시 실행되지 않고 대기 상태(waiting) 에 들어가게 됩니다.</p>
+<p>이미 트랜잭션 1이 동일 레코드를 점유하고 있기 때문입니다.</p>
+<p>트랜잭션 1이 종료되면서 해당 레코드에 걸린 Lock이 해제되고,
+대기 중이던 트랜잭션 2의 UPDATE가 그제서야 수행됩니다.</p>
+<p>이 과정을 통해 InnoDB의 Record Lock이
+동일 레코드에 대한 동시 수정 요청을 원자적으로 수행한다는 것을 알 수 있습니다.</p>
+<p>블로그에서 바로 쓰기 좋은 짧고 깔끔한 단일 콜아웃 버전으로 정리해줄게.</p>
+<h3 id="-참고">🍀 참고</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>UPDATE article SET like_count = like_count + 1 WHERE title = 'lock test article';</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>+--------+-------------------------------------------+-----------------------+-----------+----------+---------------+-------------+----------------+-------------------+------------+-----------------------+-----------+-----------+-------------+------------------------+</span></span>
+<span data-line=""><span>| ENGINE | ENGINE_LOCK_ID                            | ENGINE_TRANSACTION_ID | THREAD_ID | EVENT_ID | OBJECT_SCHEMA | OBJECT_NAME | PARTITION_NAME | SUBPARTITION_NAME | INDEX_NAME | OBJECT_INSTANCE_BEGIN | LOCK_TYPE | LOCK_MODE | LOCK_STATUS | LOCK_DATA              |</span></span>
+<span data-line=""><span>+--------+-------------------------------------------+-----------------------+-----------+----------+---------------+-------------+----------------+-------------------+------------+-----------------------+-----------+-----------+-------------+------------------------+</span></span>
+<span data-line=""><span>| INNODB | 281473586793688:114:1068:281473500370112  |                  1846 |        46 |       72 | lock_test     | article     | NULL           | NULL              | NULL       |       281473500370112 | TABLE     | IX        | GRANTED     | NULL                   |</span></span>
+<span data-line=""><span>| INNODB | 281473586793688:114:2:4:1:281473500367120 |                  1846 |        46 |       72 | lock_test     | article     | NULL           | NULL              | PRIMARY    |       281473500367120 | RECORD    | X         | GRANTED     | supremum pseudo-record |</span></span>
+<span data-line=""><span>| INNODB | 281473586793688:114:2:4:2:281473500367120 |                  1846 |        46 |       72 | lock_test     | article     | NULL           | NULL              | PRIMARY    |       281473500367120 | RECORD    | X         | GRANTED     | 1                      |</span></span>
+<span data-line=""><span>+--------+-------------------------------------------+-----------------------+-----------+----------+---------------+-------------+----------------+-------------------+------------+-----------------------+-----------+-----------+-------------+------------------------+</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-light dracula"><code data-language="text" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>UPDATE 시 InnoDB의 Lock 종류는 WHERE 조건에 따라 달라집니다.</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>PK / Unique 조건</span></span>
+<span data-line=""><span>→ Record Lock 적용 (단일 레코드만 잠금, 동시성 영향 최소)</span></span>
+<span data-line=""><span>Non-Unique 조건</span></span>
+<span data-line=""><span>→ Gap Lock 또는 Next-Key Lock 적용 가능</span></span>
+<span data-line=""><span>→ 조회된 레코드뿐 아니라 여러 레코드 행에 INSERT까지 차단될 수 있음</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>DB Lock 동작은 DB 벤더, 스토리지 엔진(InnoDB 등), 트랜잭션 격리 수준에 따라 달라지므로</span></span>
+<span data-line=""><span>동시성 처리가 중요한 경우 실제 Lock 동작을 확인하며 사용하는 것이 좋습니다.</span></span></code></pre></figure>
+<h2 id="락을-오래-점유하면-생기는-문제">락을 오래 점유하면 생기는 문제</h2>
+<p>다만 이러한 Lock 을 오래 점유하게 되면 시스템 전체 성능에 악영향을 줄 수 있음이 예상됩니다.</p>
+<ul>
+<li>
+<p><strong>트랜잭션 대기 증가</strong></p>
+<ul>
+<li>동일 레코드를 수정하려는 요청들이 대기 상태로 쌓인다.</li>
+<li>순간적인 트래픽 증가가 전체 요청 지연으로 이어질 수 있다.</li>
+</ul>
+</li>
+<li>
+<p><strong>DB 부하 증가</strong></p>
+<ul>
+<li>대기 중인 커넥션이 늘어나면서 커넥션 풀 고갈이나 CPU 사용량 증가가 발생할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p><strong>Deadlock 발생</strong></p>
+<ul>
+<li>여러 트랜잭션이 서로의 Lock 해제를 기다리며 교착 상태에 빠질 수 있다.</li>
+</ul>
+</li>
+<li>
+<p><strong>장애 상황 유발</strong></p>
+<ul>
+<li>Lock 대기가 길어지면 Timeout이 발생하고,
+결국 서비스 장애로 이어질 가능성도 존재한다.</li>
+</ul>
+</li>
+</ul>
+<p>개발자는 Lock 을 얼마나 짧은 시간동안 점유할 수 있는가에 고민을 해야합니다.</p>
+<h2 id="조회수-좋아요-기능-예시">조회수, 좋아요 기능 예시</h2>
+<p>게시글 서비스에서는 반정규화를 통해<br>
+게시글 Row에 조회수, 좋아요 수 같은 집계 데이터를 함께 저장하는 경우가 많습니다.</p>
+<p>문제는 쓰기 트래픽이 몰리는 순간 발생합니다.</p>
+<p>조회수 증가, 좋아요 증가, 게시글 수정은<br>
+기능적으로는 서로 독립적인 작업이지만<br>
+모두 동일한 게시글 Row를 UPDATE 하게 됩니다.</p>
+<p>특정 게시글에 좋아요나 조회 요청이 집중되면<br>
+집계성 업데이트가 Row Lock을 지속적으로 점유하게 되고,</p>
+<p>그 결과 게시글 수정과 같은 다른 작업까지<br>
+불필요하게 대기하는 상황이 발생할 수 있습니다.</p>
+<h2 id="데이터-구조-분리를-통한-lock-경합-완화">데이터 구조 분리를 통한 Lock 경합 완화</h2>
+<p>예를 들어 다음과 같이 데이터를 분리할 수 있습니다.</p>
+<p>article<br>
+article_like<br>
+article_like_count</p>
+<p>락 경합을 줄이기 위해<br>
+데이터 모델의 책임을 나누는 접근입니다.</p>
+<p>또한 조회수와 같은 집계 데이터는
+요청마다 즉시 UPDATE 하지 않고,
+캐시에 누적한 뒤 일정 주기로 반영하는 전략도 사용할 수 있습니다.</p>
+<p>이번 복습을 통해 다시 느낀 점은 다음과 같습니다.</p>
+<p>동시성 문제는 단순히 Lock 기술로 해결하는 문제가 아니라,<br>
+데이터 구조 설계 단계에서 이미 결정되는 경우가 많다는 점입니다.</p>
+<h2 id="비관적-락-pessimistic-lock">비관적 락 (Pessimistic Lock)</h2>
+<p>비관적 락은 <strong>충돌이 발생할 가능성이 높다고 가정</strong>하는 방식입니다.</p>
+<p>데이터 수정 전에 먼저 Lock을 획득하여<br>
+다른 트랜잭션의 접근을 차단합니다.</p>
+<p>InnoDB의 Record Lock 역시 비관적 락의 대표적인 예시입니다.</p>
+<h3 id="방법-1--update-한-번에-처리">방법 1 — UPDATE 한 번에 처리</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>UPDATE article</span></span>
+<span data-line=""><span>SET like_count = like_count + 1</span></span>
+<span data-line=""><span>WHERE id = 123;</span></span></code></pre></figure>
+<ul>
+<li>UPDATE 실행 시점에 Row Lock 획득</li>
+<li>Lock 점유 시간이 상대적으로 짧음</li>
+<li>불필요한 조회 과정 없음</li>
+</ul>
+<p>단순 증가/감소 연산에서는 가장 좋은 방식</p>
+<h3 id="방법-2--select-for-update">방법 2 — SELECT FOR UPDATE</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>SELECT *</span></span>
+<span data-line=""><span>FROM article</span></span>
+<span data-line=""><span>WHERE id = 123 FOR</span></span>
+<span data-line=""><span>UPDATE;</span></span></code></pre></figure>
+<p>이후 비즈니스 로직 수행 후 UPDATE를 실행합니다.</p>
+<ul>
+<li>조회 시점부터 Lock 획득</li>
+<li>조회 → 검증 → 수정 흐름 구현 가능</li>
+<li>JPA 같은 ORM 기술 사용 시 객체 중심으로 로직 작성이 용이</li>
+</ul>
+<p>단점</p>
+<ul>
+<li>Lock 점유 시간이 길어질 수 있음</li>
+<li>트랜잭션 설계에 더욱 주의 필요</li>
+</ul>
+<h2 id="낙관적-락-optimistic-lock">낙관적 락 (Optimistic Lock)</h2>
+<p>낙관적 락은 <strong>충돌이 거의 발생하지 않는다고 가정</strong>하는 방식입니다.</p>
+<p>데이터 조회 시 Lock을 획득하지 않고,<br>
+UPDATE 시점에 데이터 변경 여부를 검증하여 충돌을 감지합니다.</p>
+<h3 id="동작-방식">동작 방식</h3>
+<ul>
+<li>현재 version 조회</li>
+<li>UPDATE 시 version 조건 포함</li>
+<li>수정 성공 시 version 증가</li>
+</ul>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="mysql" data-theme="github-light dracula"><code data-language="mysql" data-theme="github-light dracula" style="display: grid;"><span data-line=""><span>UPDATE article</span></span>
+<span data-line=""><span>SET like_count = ?,</span></span>
+<span data-line=""><span>    version    = version + 1</span></span>
+<span data-line=""><span>WHERE id = 123</span></span>
+<span data-line=""><span>  AND version = 10;</span></span></code></pre></figure>
+<ul>
+<li>UPDATE 성공 → 충돌 없음</li>
+<li>UPDATE 실패 → 다른 트랜잭션이 먼저 수정</li>
+</ul>
+<p>충돌이 발생한 경우에는
+재시도(Retry) 전략을 함께 설계해야 합니다.</p>
+<p>특징</p>
+<ul>
+<li>DB Lock 대기 없음</li>
+<li>동시 처리 성능에 유리</li>
+<li>충돌 발생 시 애플리케이션 레벨에서 처리 필요
+적합한 상황</li>
+<li>충돌 빈도가 낮은 서비스</li>
+<li>읽기 비중이 높은 시스템</li>
+<li>Lock 대기를 최소화하고 싶은 경우</li>
+</ul>
+<h2 id="마무리">마무리</h2>
+<p>동시성 문제를 해결하기 위해 DB Lock을 고려할 때,<br>
+무조건 Lock부터 적용하기보다는 <strong>설계를 통해 문제 자체를 줄일 수 있는지</strong> 먼저 고민하는 것이 중요합니다.</p>
+<p>또한 충돌 발생 빈도가 낮거나 일부 실패를 허용할 수 있는 경우라면,<br>
+제약조건이나 원자적 연산을 활용해 <strong>가능한 한 Lock을 사용하지 않는 방향</strong>을 먼저 검토해보는게 좋은 방향이라는 생각이 듭니다.</p>
+<p>이번에 정리하며 스스로 정립한 사고 흐름은 다음과 같습니다.</p>
+<ul>
+<li>데이터 구조를 분리할 수 있는가?</li>
+<li>원자적 UPDATE로 해결 가능한가?</li>
+<li>Lock이 반드시 필요한 상황인가?</li>
+<li>비동기 처리로 문제 자체를 단순화할 수 있는가?<br>
+(단, 운영 비용과 서비스 정책에 대한 협의가 필요)</li>
+<li>복잡한 비즈니스 제어나 다중 인스턴스 환경이라면 분산 락을 고려할 수 있는가?</li>
+</ul>
+<p>오랜만에 초심으로 돌아가<br>
+DB Lock 개념을 다시 복습하고 정리해볼 수 있는 시간이었습니다.</p>
+<p>다음에는 <strong>분산 락과 비동기 처리 환경에서의 동시성 제어 방식</strong>을 복습해볼 예정입니다.</p>11:["$","$L1b",null,{"sidebar":["$","$L1c",null,{"groups":[{"name":"Engineering","categories":[{"name":"Architecture","count":1}]},{"name":"Learning","categories":[{"name":"API","count":1},{"name":"Docker","count":1},{"name":"Git","count":1},{"name":"JPA","count":1},{"name":"Kafka","count":1},{"name":"Kubernetes","count":1},{"name":"MySQL","count":2},{"name":"RabbitMQ","count":1},{"name":"Redis","count":1},{"name":"Security","count":1},{"name":"SpringBoot","count":2},{"name":"SpringSecurity","count":1},{"name":"Testing","count":1}]},{"name":"Archive","categories":[{"name":"Books","count":1}]}],"recentPosts":[{"slug":"revisiting-db-locks","title":"초심 찾기! 동시성 처리를 위한 DB Lock 다시 한번 복습해보자","date":"2026-04-30","category":"MySQL","tags":"$0:f:0:1:1:props:children:1:props:children:1:props:children:props:children:props:recentPosts:0:tags","excerpt":"DB 동시성 제어를 위한 Lock 메커니즘을 오랜만에 다시 복습하며 정리해본다.","thumbnail":"/images/thumbnails/database.png"},{"slug":"minimum-practical-knowledge-for-developers","title":"개발자를 위한 최소한의 실무 지식 독서 회고","date":"2026-04-18","category":"Books","tags":"$0:f:0:1:1:props:children:1:props:children:1:props:children:props:children:props:recentPosts:1:tags","excerpt":"개발자로서 실무에서 꼭 알아야 할 기초 지식들을 정리한 책, '개발자를 위한 최소한의 실무 지식'을 읽고 느낀 점과 핵심 내용을 정리합니다.","thumbnail":"/images/thumbnails/books.png"},{"slug":"spring-architecture","title":"아키텍처 규칙 강제하기(feat MultiModule, ArchUnit, AI Agent)","date":"2026-04-08","category":"Architecture","tags":"$0:f:0:1:1:props:children:1:props:children:1:props:children:props:children:props:recentPosts:2:tags","excerpt":"아키텍처 규칙은 문서로 공유한다고 지켜지지 않는다. 멀티모듈, ArchUnit, AI Agent SKILL을 활용해 규칙을 코드와 시스템 수준에서 강제하는 방법을 정리해본다.","thumbnail":"/images/thumbnails/spring.png"},{"slug":"spring-security-architecture","title":"[Example] Spring Security 동작 원리, 프로세스 이해하기","date":"2026-03-15","category":"SpringSecurity","tags":"$0:f:0:1:1:props:children:1:props:children:1:props:children:props:children:props:recentPosts:3:tags","excerpt":"Spring Security가 필터 기반으로 동작하는 이유와 주요 필터들의 역할을 파해쳐보자. 위임 필터와 필터 체인 대리자(FilterChainProxy)의 관계를 정리한다.","thumbnail":"/images/thumbnails/security.png"},{"slug":"spring-aop-private-method","title":"[Example] Spring AOP를 private 메서드에 적용할 수 없는 이유 (feat. @Transactional)","date":"2026-02-07","category":"SpringBoot","tags":"$0:f:0:1:1:props:children:1:props:children:1:props:children:props:children:props:recentPosts:4:tags","excerpt":"사내에서 Spring AOP를 활용한 FeatureFlag 도입을 맡게 되었다. 커스텀 어노테이션과 Spring AOP를 조합해 메서드 단위로 기능을 ON/OFF하거나 분기 처리할 수 있는 구조를 설계했다.","thumbnail":"/images/thumbnails/spring-boot-java.png"}]}],"children":[["$","p",null,{"className":"text-[14px] text-[var(--c-muted)] mb-3","children":["MySQL"," · ","2026-04-30"," · ",8,"분 읽기"]}],["$","h1",null,{"className":"text-[28px] font-medium leading-[1.4] text-[var(--c-text)] mb-8 pb-6 border-b border-[var(--c-border)]","children":"초심 찾기! 동시성 처리를 위한 DB Lock 다시 한번 복습해보자"}],["$","$L1d",null,{"items":[{"id":"들어가며","text":"들어가며","level":2},{"id":"ai-agent-시대-개발자에게-진짜-필요한-능력","text":"AI Agent 시대, 개발자에게 진짜 필요한 능력","level":2},{"id":"동시성-문제","text":"동시성 문제","level":2},{"id":"record-lock-row-lock","text":"Record Lock (Row Lock)","level":2},{"id":"락-상태-확인하기","text":"락 상태 확인하기","level":3},{"id":"-참고","text":"🍀 참고","level":3},{"id":"락을-오래-점유하면-생기는-문제","text":"락을 오래 점유하면 생기는 문제","level":2},{"id":"조회수-좋아요-기능-예시","text":"조회수, 좋아요 기능 예시","level":2},{"id":"데이터-구조-분리를-통한-lock-경합-완화","text":"데이터 구조 분리를 통한 Lock 경합 완화","level":2},{"id":"비관적-락-pessimistic-lock","text":"비관적 락 (Pessimistic Lock)","level":2},{"id":"방법-1--update-한-번에-처리","text":"방법 1 — UPDATE 한 번에 처리","level":3},{"id":"방법-2--select-for-update","text":"방법 2 — SELECT FOR UPDATE","level":3},{"id":"낙관적-락-optimistic-lock","text":"낙관적 락 (Optimistic Lock)","level":2},{"id":"동작-방식","text":"동작 방식","level":3},{"id":"마무리","text":"마무리","level":2}]}],["$","$L1e",null,{"html":"$1f"}],"$L20","$L21","$L22"]}]
+23:I[654,["619","static/chunks/619-ba102abea3e3d0e4.js","239","static/chunks/239-5ec26e1034bc5e1c.js","501","static/chunks/501-ddd2f7f77592f4dc.js","858","static/chunks/app/posts/%5Bslug%5D/page-20dea2cd6118e8ed.js"],"default"]
+20:["$","$L23",null,{}]
+21:["$","div",null,{"children":[["$","div",null,{"className":"py-4 border-b border-[var(--c-border)] mb-6","children":["$","h3",null,{"className":"text-[18px] text-[var(--c-muted)] font-normal","children":["'","MySQL"," ","","' 카테고리의 다른 글"]}]}],["$","ul",null,{"className":"space-y-4","children":[[["$","li","mysql-index",{"className":"flex justify-between items-center text-[15px]","children":[["$","$L7",null,{"href":"/posts/mysql-index","className":"text-[var(--c-muted)] hover:text-[var(--c-text)] transition-colors line-clamp-1 mr-4","children":"[Example] MySQL 인덱스 제대로 이해하기 - 왜 느린지 EXPLAIN으로 파악하기"}],["$","span",null,{"className":"text-[var(--c-dot)] text-[13px] whitespace-nowrap","children":"2025.09.22"}]]}]],false]}]]}]
+22:["$","div",null,{"className":"flex flex-wrap gap-x-2 gap-y-1 mt-14 pt-8 border-t border-[var(--c-border)] font-serif","children":[["$","div","MySQL",{"className":"flex items-center","children":[["$","$L7",null,{"href":"/tags/MySQL","className":"text-[17px] text-[var(--c-tag-link)] hover:underline","children":["#","MySQL"]}],["$","span",null,{"className":"ml-2 text-[var(--c-muted)]","children":","}]]}],["$","div","동시성",{"className":"flex items-center","children":[["$","$L7",null,{"href":"/tags/%EB%8F%99%EC%8B%9C%EC%84%B1","className":"text-[17px] text-[var(--c-tag-link)] hover:underline","children":["#","동시성"]}],["$","span",null,{"className":"ml-2 text-[var(--c-muted)]","children":","}]]}],["$","div","JPA",{"className":"flex items-center","children":[["$","$L7",null,{"href":"/tags/JPA","className":"text-[17px] text-[var(--c-tag-link)] hover:underline","children":["#","JPA"]}],false]}]]}]
+17:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+13:null
+15:{"metadata":[["$","title","0",{"children":"Freak Blog"}],["$","meta","1",{"name":"description","content":"개발하며 배운 것들을 기록하는 블로그"}]],"error":null,"digest":"$undefined"}
+1a:"$15:metadata"

@@ -14,6 +14,8 @@ const MAX_COLLAPSED_HEIGHT = 280
 const bodyEl = ref<HTMLElement | null>(null)
 const isLong = ref(false)
 
+const isProfileOpen = ref(false)
+
 function measure() {
   if (!bodyEl.value || isLong.value) return
   if (bodyEl.value.scrollHeight > MAX_COLLAPSED_HEIGHT + 12) {
@@ -66,15 +68,37 @@ const absolute = computed(() => formatAbsolute(props.entry.date))
 
 <template>
   <article class="feed-card rounded-xl px-7 py-6 cursor-default">
-    <header class="flex items-center gap-2 text-[12px] text-[var(--c-muted)] mb-4">
-      <span
-        class="inline-flex items-center px-2 py-0.5 rounded-full text-[var(--c-text)] font-medium"
-        :style="{ backgroundColor: 'var(--c-bg)' }"
+    <header class="flex items-center gap-3 mb-4">
+      <img
+        v-if="SITE_AUTHOR.imagePath"
+        :src="resolveImageSrc(SITE_AUTHOR.imagePath)"
+        :alt="SITE_AUTHOR.name"
+        class="w-9 h-9 rounded-full object-cover shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
+        @click="isProfileOpen = true"
       >
-        {{ relative }}
-      </span>
-      <span class="text-[var(--c-dot)]">·</span>
-      <span>{{ absolute }}</span>
+      <div
+        v-else
+        class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 text-[14px] font-medium select-none"
+        :style="{ backgroundColor: 'var(--c-icon-accent)', color: '#fff' }"
+        aria-hidden="true"
+      >
+        {{ SITE_AUTHOR.initial }}
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap min-w-0">
+        <span class="text-[14px] font-medium text-[var(--c-text)] leading-tight">
+          {{ SITE_AUTHOR.name }}
+        </span>
+        <span class="text-[var(--c-dot)] text-[11px]">·</span>
+        <span
+          class="inline-flex items-center px-1.5 py-0 rounded-full text-[11px] text-[var(--c-text)] font-medium"
+          :style="{ backgroundColor: 'var(--c-bg)' }"
+        >
+          {{ relative }}
+        </span>
+        <span class="text-[var(--c-dot)] text-[11px]">·</span>
+        <span class="text-[11px] text-[var(--c-muted)]">{{ absolute }}</span>
+      </div>
     </header>
 
     <div
@@ -112,4 +136,12 @@ const absolute = computed(() => formatAbsolute(props.entry.date))
       </NuxtLink>
     </div>
   </article>
+
+  <ProfileImageLightbox
+    v-if="SITE_AUTHOR.imagePath"
+    :src="resolveImageSrc(SITE_AUTHOR.imagePath)"
+    :alt="SITE_AUTHOR.name"
+    :open="isProfileOpen"
+    @close="isProfileOpen = false"
+  />
 </template>

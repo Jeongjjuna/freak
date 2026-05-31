@@ -18,15 +18,17 @@ onBeforeUnmount(() => {
 const toggle = () => {
   const next = !rain.value
   rain.value = next
-  if (next) {
-    document.documentElement.classList.add('rain')
-    document.documentElement.classList.remove('sakura')
-    localStorage.setItem('weather-theme', 'rain')
-    localStorage.setItem('color-theme', 'original')
-  } else {
-    document.documentElement.classList.remove('rain')
-    localStorage.setItem('weather-theme', 'none')
-  }
+  withoutThemeTransition(() => {
+    if (next) {
+      document.documentElement.classList.add('rain')
+      document.documentElement.classList.remove('sakura')
+      localStorage.setItem('weather-theme', 'rain')
+      localStorage.setItem('color-theme', 'original')
+    } else {
+      document.documentElement.classList.remove('rain')
+      localStorage.setItem('weather-theme', 'none')
+    }
+  })
 }
 </script>
 

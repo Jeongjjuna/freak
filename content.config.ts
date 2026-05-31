@@ -14,5 +14,13 @@ export default defineContentConfig({
         thumbnail: z.string().optional(),
       }),
     }),
+    feeds: defineCollection({
+      type: 'page',
+      source: 'feeds/**/*.md',
+      schema: z.object({
+        date: z.string(),
+        tags: z.array(z.string()).default([]),
+      }),
+    }),
   },
 })

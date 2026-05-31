@@ -18,15 +18,17 @@ onBeforeUnmount(() => {
 const toggle = () => {
   const next = !sakura.value
   sakura.value = next
-  if (next) {
-    document.documentElement.classList.add('sakura')
-    document.documentElement.classList.remove('rain')
-    localStorage.setItem('color-theme', 'sakura')
-    localStorage.setItem('weather-theme', 'none')
-  } else {
-    document.documentElement.classList.remove('sakura')
-    localStorage.setItem('color-theme', 'original')
-  }
+  withoutThemeTransition(() => {
+    if (next) {
+      document.documentElement.classList.add('sakura')
+      document.documentElement.classList.remove('rain')
+      localStorage.setItem('color-theme', 'sakura')
+      localStorage.setItem('weather-theme', 'none')
+    } else {
+      document.documentElement.classList.remove('sakura')
+      localStorage.setItem('color-theme', 'original')
+    }
+  })
 }
 </script>
 

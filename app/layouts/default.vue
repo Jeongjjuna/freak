@@ -27,7 +27,8 @@ watch(layoutData, (v) => {
     <SiteHeader />
     <nav class="max-w-290 mx-auto px-6">
       <div class="py-3 flex items-center gap-10 pl-11 max-[1200px]:pl-0 max-[1200px]:mx-3 border-t border-b border-[var(--c-border)]">
-        <NuxtLink to="/" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">홈</NuxtLink>
+        <NuxtLink to="/" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">피드</NuxtLink>
+        <NuxtLink to="/blog" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">블로그</NuxtLink>
         <NuxtLink to="/tags" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">태그</NuxtLink>
       </div>
     </nav>

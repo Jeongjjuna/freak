@@ -431,6 +431,126 @@
     font-weight: 600;
 }
 
+/* 피드 카드용 컴팩트 prose 변형 */
+.prose-feed {
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.prose-feed h1,
+.prose-feed h2,
+.prose-feed h3,
+.prose-feed h4 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    border-left: none;
+    padding-left: 0;
+}
+
+.prose-feed h1 { font-size: 17px; }
+.prose-feed h2 { font-size: 16px; }
+.prose-feed h3 { font-size: 15px; }
+
+.prose-feed p {
+    margin-bottom: 12px;
+}
+
+.prose-feed ul,
+.prose-feed ol {
+    margin-bottom: 12px;
+}
+
+.prose-feed li {
+    margin-bottom: 4px;
+}
+
+.prose-feed pre {
+    padding: 36px 0 18px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.prose-feed pre code {
+    font-size: 12.5px;
+}
+
+.prose-feed blockquote {
+    margin: 12px 0;
+}
+
+.prose-feed img {
+    margin: 10px 0;
+}
+
+/* 테마 토글 순간 모든 transition 잠시 차단 — feed-card 등이 늦게 바뀌는 현상 방지 */
+.no-theme-transition,
+.no-theme-transition *,
+.no-theme-transition *::before,
+.no-theme-transition *::after {
+    transition: none !important;
+}
+
+/* 피드 카드 호버 효과 (모든 테마에서 미묘하게 진해지도록 color-mix) */
+.feed-card {
+    background-color: var(--c-surface);
+    transition: background-color 0.15s ease;
+}
+
+.feed-card:hover {
+    background-color: color-mix(in srgb, var(--c-surface) 88%, var(--c-text) 12%);
+}
+
+/* 긴 본문 클립 시 하단 페이드 그라데이션 (카드 배경에 맞춰 변화) */
+.feed-body-fade {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 56px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, var(--c-surface));
+    transition: background 0.15s ease;
+}
+
+.feed-card:hover .feed-body-fade {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        color-mix(in srgb, var(--c-surface) 88%, var(--c-text) 12%)
+    );
+}
+
+/* 카드 사이 미세 구분선 (카드 가로 폭과 동일) */
+.feed-divider {
+    height: 1px;
+    margin: 14px 0;
+    background-color: var(--c-border);
+    opacity: 0.6;
+}
+
+/* 피드 스크롤 컨테이너용 얇은 스크롤바 */
+.feed-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-border) transparent;
+}
+
+.feed-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.feed-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.feed-scroll::-webkit-scrollbar-thumb {
+    background: var(--c-border);
+    border-radius: 3px;
+}
+
+.feed-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--c-muted);
+}
+
 /* 검색 입력창 placeholder */
 input::placeholder {
     color: var(--c-placeholder);

@@ -8,13 +8,15 @@ onMounted(() => {
 const toggle = () => {
   const next = !dark.value
   dark.value = next
-  if (next) {
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', 'light')
-  }
+  withoutThemeTransition(() => {
+    if (next) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  })
 }
 </script>
 

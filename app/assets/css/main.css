@@ -28,6 +28,16 @@
     100% { transform: translateY(110vh)  translateX(0)                        rotate(360deg); opacity: 0.1; }
 }
 
+/* ── 레이아웃 변수 (헤더 + nav strip 높이) ── */
+:root {
+    --menu-h: 134px;
+}
+@media (max-width: 640px) {
+    :root {
+        --menu-h: 130px;
+    }
+}
+
 /* ── 색상 테마 변수 ── */
 :root {
     --c-bg:          #ffffff;

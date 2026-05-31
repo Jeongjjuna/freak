@@ -38,7 +38,11 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div v-if="isRain && drops.length > 0" class="fixed inset-0 pointer-events-none z-40 overflow-hidden">
+  <div
+    v-if="isRain && drops.length > 0"
+    class="fixed left-0 right-0 bottom-0 pointer-events-none z-40 overflow-hidden"
+    :style="{ top: 'var(--menu-h)' }"
+  >
     <div
       v-for="d in drops"
       :key="d.id"

@@ -70,13 +70,13 @@ const headerStyle = computed(() => ({
           <RainToggle />
           <ThemeToggle />
           <button
-            class="min-[1200px]:hidden flex flex-col gap-1.25 w-6 px-0.5 group cursor-pointer"
+            class="min-[1200px]:hidden flex flex-col gap-[5px] w-6 px-0.5 group cursor-pointer"
             aria-label="메뉴"
-            @click="drawer.open"
+            @click="drawer.open()"
           >
-            <span class="w-full h-0.75 rounded-full" :style="{ backgroundColor: 'var(--c-icon)' }" />
-            <span class="w-full h-0.75 rounded-full" :style="{ backgroundColor: 'var(--c-icon)' }" />
-            <span class="w-full h-0.75 rounded-full" :style="{ backgroundColor: 'var(--c-icon)' }" />
+            <span class="w-full h-[3px] rounded-full" :style="{ backgroundColor: 'var(--c-icon)' }" />
+            <span class="w-full h-[3px] rounded-full" :style="{ backgroundColor: 'var(--c-icon)' }" />
+            <span class="w-full h-[3px] rounded-full" :style="{ backgroundColor: 'var(--c-icon)' }" />
           </button>
         </div>
       </div>

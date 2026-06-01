@@ -1,0 +1,1 @@
+import{f as o,G as s,k as r,K as n}from"./ClveoOVI.js";const t={};function c(e,a){return s(),r("code",null,[n(e.$slots,"default")])}const _=Object.assign(o(t,[["render",c]]),{__name:"ProseCode"});export{_ as default};

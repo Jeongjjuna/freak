@@ -1,0 +1,1 @@
+import{f as s,G as r,k as n,K as o}from"./CmoM0Ay-.js";const t={};function a(e,c){return r(),n("li",null,[o(e.$slots,"default")])}const _=Object.assign(s(t,[["render",a]]),{__name:"ProseLi"});export{_ as default};

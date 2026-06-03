@@ -490,17 +490,19 @@
     transition: none !important;
 }
 
-/* 피드 카드 호버 효과 (모든 테마에서 미묘하게 진해지도록 color-mix) */
+/* 피드 카드 호버 효과 (배경은 그대로 두고 외곽선 + 미세 그림자만) */
 .feed-card {
     background-color: var(--c-surface);
-    transition: background-color 0.15s ease;
+    transition: box-shadow 0.18s ease;
 }
 
 .feed-card:hover {
-    background-color: color-mix(in srgb, var(--c-surface) 88%, var(--c-text) 12%);
+    box-shadow:
+        0 0 0 1.5px var(--c-border),
+        0 4px 18px rgba(0, 0, 0, 0.10);
 }
 
-/* 긴 본문 클립 시 하단 페이드 그라데이션 (카드 배경에 맞춰 변화) */
+/* 긴 본문 클립 시 하단 페이드 그라데이션 */
 .feed-body-fade {
     position: absolute;
     left: 0;
@@ -509,15 +511,6 @@
     height: 56px;
     pointer-events: none;
     background: linear-gradient(to bottom, transparent, var(--c-surface));
-    transition: background 0.15s ease;
-}
-
-.feed-card:hover .feed-body-fade {
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        color-mix(in srgb, var(--c-surface) 88%, var(--c-text) 12%)
-    );
 }
 
 /* 카드 사이 미세 구분선 (카드 가로 폭과 동일) */

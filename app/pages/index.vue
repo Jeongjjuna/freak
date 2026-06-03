@@ -63,7 +63,7 @@ useHead({
 
       <div
         ref="scrollEl"
-        class="feed-scroll overflow-y-auto pr-4"
+        class="feed-scroll overflow-y-auto pl-2 pr-4 py-2"
         :style="{ maxHeight: 'calc(100vh - 280px)', minHeight: '400px' }"
       >
         <div v-if="displayed.length > 0" class="animate-fade-in">

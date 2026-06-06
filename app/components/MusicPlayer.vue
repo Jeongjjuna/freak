@@ -1,11 +1,12 @@
 <script setup lang="ts">
-const SONG = {
-  title: '꿈을꿨어요',
-  artist: '카더가든',
-}
+import { PLAYLIST } from '~/utils/playlist'
 
 const store = useAudioStore()
 const player = useAudioPlayer()
+
+const currentTrack = computed(() =>
+  PLAYLIST[store.currentTrackIndex] ?? PLAYLIST[0]!,
+)
 
 onMounted(() => {
   player.init()
@@ -40,10 +41,10 @@ const formatTime = (sec: number) => {
 
       <div class="flex-1 min-w-0">
         <p class="text-[13px] font-medium text-[var(--c-text)] truncate">
-          {{ SONG.title }}
+          {{ currentTrack.title }}
         </p>
         <p class="text-[11px] text-[var(--c-muted)] truncate">
-          {{ SONG.artist }}
+          {{ currentTrack.artist }}
         </p>
       </div>
 
@@ -59,6 +60,23 @@ const formatTime = (sec: number) => {
         </svg>
         <svg v-else width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
           <path d="M3 1.5l7 4.5-7 4.5V1.5z" />
+        </svg>
+      </button>
+
+      <button
+        class="shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-opacity hover:opacity-70"
+        :style="{
+          background: 'transparent',
+          color: 'var(--c-muted)',
+          border: '1px solid var(--c-border)',
+        }"
+        aria-label="다음 곡"
+        @click="player.next"
+      >
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+          <path d="M1 1.5l4 3-4 3v-6z" />
+          <path d="M5.5 1.5l4 3-4 3v-6z" />
+          <rect x="9.7" y="1.5" width="1" height="6" rx="0.3" />
         </svg>
       </button>
 

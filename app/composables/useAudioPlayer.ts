@@ -1,18 +1,18 @@
+import { PLAYLIST } from '~/utils/playlist'
 import { useAudioStore } from '~/stores/audio'
 
 let audioEl: HTMLAudioElement | null = null
 let initialized = false
 
-const SONG_SRC = '/freak/music/song_01.mp3'
-
 function ensureAudio() {
   if (typeof window === 'undefined') return null
   if (audioEl) return audioEl
 
-  audioEl = new Audio(SONG_SRC)
-  audioEl.preload = 'metadata'
-
   const store = useAudioStore()
+  const initialSrc = PLAYLIST[store.currentTrackIndex]?.src ?? PLAYLIST[0]!.src
+
+  audioEl = new Audio(initialSrc)
+  audioEl.preload = 'metadata'
 
   audioEl.addEventListener('timeupdate', () => {
     if (!audioEl) return
@@ -33,7 +33,8 @@ function ensureAudio() {
       audioEl.currentTime = 0
       void audioEl.play()
     } else {
-      store.setPlaying(false)
+      // 자동으로 다음 곡 (모듈러 순환)
+      playTrack(store.currentTrackIndex + 1)
     }
   })
 
@@ -43,6 +44,26 @@ function ensureAudio() {
 
   initialized = true
   return audioEl
+}
+
+function playTrack(index: number) {
+  const el = ensureAudio()
+  if (!el) return
+  const store = useAudioStore()
+  const total = PLAYLIST.length
+  if (total === 0) return
+  const next = ((index % total) + total) % total
+  const track = PLAYLIST[next]!
+
+  store.setCurrentTrackIndex(next)
+  el.src = track.src
+  el.load()
+  el.currentTime = 0
+  store.setCurrentTime(0)
+  store.setProgress(0)
+  store.setDuration(0)
+  void el.play()
+  store.setPlaying(true)
 }
 
 export function useAudioPlayer() {
@@ -67,6 +88,10 @@ export function useAudioPlayer() {
     store.toggleLoop()
   }
 
+  const next = () => {
+    playTrack(store.currentTrackIndex + 1)
+  }
+
   const handleSeek = (e: MouseEvent) => {
     const el = ensureAudio()
     if (!el) return
@@ -84,6 +109,7 @@ export function useAudioPlayer() {
     init,
     togglePlay,
     toggleLoop,
+    next,
     handleSeek,
   }
 }

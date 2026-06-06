@@ -1,1 +1,0 @@
-import{f as s,G as r,k as t,K as n}from"./CmoM0Ay-.js";const o={};function a(e,c){return r(),t("th",null,[n(e.$slots,"default")])}const _=Object.assign(s(o,[["render",a]]),{__name:"ProseTh"});export{_ as default};

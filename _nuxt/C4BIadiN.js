@@ -1,0 +1,1 @@
+import{f as s,G as r,k as n,K as o}from"./BDXa_1WM.js";const t={};function a(e,c){return r(),n("ul",null,[o(e.$slots,"default")])}const _=Object.assign(s(t,[["render",a]]),{__name:"ProseUl"});export{_ as default};

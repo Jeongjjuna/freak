@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { GraphNode, GraphFeedRef } from '~/utils/graphData'
+import type { GraphNode, GraphItemRef } from '~/utils/graphData'
 
 defineProps<{
   node: GraphNode | null
 }>()
 
 const emit = defineEmits<{
-  (e: 'select-feed', feed: GraphFeedRef): void
+  (e: 'select-item', item: GraphItemRef): void
 }>()
 
 function pad(n: number) {
@@ -16,6 +16,9 @@ function formatDate(iso: string): string {
   const d = new Date(iso)
   if (Number.isNaN(d.getTime())) return iso
   return `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}`
+}
+function kindLabel(kind: GraphItemRef['kind']): string {
+  return kind === 'post' ? '블로그' : '피드'
 }
 </script>
 
@@ -43,16 +46,28 @@ function formatDate(iso: string): string {
 
       <div class="feed-scroll overflow-y-auto px-2 py-2">
         <button
-          v-for="feed in node.feeds"
-          :key="feed.path ?? feed.id ?? feed.slug"
-          class="w-full text-left px-3 py-2.5 rounded-md flex flex-col gap-1 hover:bg-[var(--c-hover)] transition-colors cursor-pointer"
-          @click="emit('select-feed', feed)"
+          v-for="item in node.items"
+          :key="(item.path ?? item.id ?? '') + ':' + item.kind + ':' + item.slug"
+          class="w-full text-left px-3 py-2.5 rounded-md flex items-start gap-2 hover:bg-[var(--c-hover)] transition-colors cursor-pointer"
+          @click="emit('select-item', item)"
         >
-          <span class="text-[13px] text-[var(--c-text)] leading-snug line-clamp-2">
-            {{ feed.title }}
+          <span
+            class="text-[10px] font-medium leading-none px-1.5 py-1 rounded shrink-0 mt-0.5"
+            :style="{
+              backgroundColor: 'var(--c-bg)',
+              color: 'var(--c-muted)',
+              border: '1px solid var(--c-border)',
+            }"
+          >
+            {{ kindLabel(item.kind) }}
           </span>
-          <span class="text-[11px] text-[var(--c-muted)]">
-            {{ formatDate(feed.date) }}
+          <span class="flex flex-col gap-1 min-w-0 flex-1">
+            <span class="text-[13px] text-[var(--c-text)] leading-snug line-clamp-2">
+              {{ item.title }}
+            </span>
+            <span class="text-[11px] text-[var(--c-muted)]">
+              {{ formatDate(item.date) }}
+            </span>
           </span>
         </button>
       </div>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { GraphNode, GraphFeedRef } from '~/utils/graphData'
+import type { GraphNode, GraphItemRef } from '~/utils/graphData'
 import type { FeedDoc } from '~/types/feed'
 
-const { data: graph } = await useAsyncData('feed-tag-graph', buildFeedTagGraph)
+const { data: graph } = await useAsyncData('tag-graph', buildTagGraph)
 
 const nodesById = computed(() => {
   const map = new Map<string, GraphNode>()
@@ -20,9 +20,15 @@ const hoveredNode = computed<GraphNode | null>(() => {
 
 const selectedFeed = ref<FeedDoc | null>(null)
 
-async function openFeedDetail(feed: GraphFeedRef) {
-  if (!feed.path) {
-    const slug = feed.slug || ''
+async function openItem(item: GraphItemRef) {
+  if (item.kind === 'post') {
+    if (!item.slug) return
+    await navigateTo(`/posts/${item.slug}`)
+    return
+  }
+
+  if (!item.path) {
+    const slug = item.slug || ''
     if (!slug) return
     // @ts-expect-error queryCollection auto-imported
     const doc = await queryCollection('feeds').path(`/feeds/${slug}`).first()
@@ -30,7 +36,7 @@ async function openFeedDetail(feed: GraphFeedRef) {
     return
   }
   // @ts-expect-error queryCollection auto-imported
-  const doc = await queryCollection('feeds').path(feed.path).first()
+  const doc = await queryCollection('feeds').path(item.path).first()
   selectedFeed.value = (doc as FeedDoc | null) ?? null
 }
 
@@ -46,7 +52,7 @@ useHead({ title: '그래프 | Freak Blog' })
     <div class="max-w-290 mx-auto px-6 py-4">
       <div class="flex items-baseline gap-2">
         <h1 class="text-[20px] font-medium text-[var(--c-text)]">그래프</h1>
-        <span class="text-[13px] text-[var(--c-muted)]">피드 태그 네트워크</span>
+        <span class="text-[13px] text-[var(--c-muted)]">피드 · 블로그 태그 네트워크</span>
       </div>
     </div>
 
@@ -70,7 +76,7 @@ useHead({ title: '그래프 | Freak Blog' })
 
       <TagInfoCard
         :node="hoveredNode"
-        @select-feed="openFeedDetail"
+        @select-item="openItem"
       />
     </div>
 

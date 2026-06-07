@@ -16,3 +16,8 @@ export async function fetchAllFeeds(): Promise<FeedDoc[]> {
     .slice()
     .sort((a, b) => new Date(b.date ?? '').getTime() - new Date(a.date ?? '').getTime())
 }
+
+export async function fetchFeedsByTag(tag: string): Promise<FeedDoc[]> {
+  const feeds = await fetchAllFeeds()
+  return feeds.filter(f => (f.tags ?? []).includes(tag))
+}

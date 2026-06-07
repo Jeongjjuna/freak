@@ -91,9 +91,10 @@ export async function fetchGroupedCategories(): Promise<CategoryGroup[]> {
 }
 
 export async function fetchAllTags(): Promise<CategoryCount[]> {
-  const posts = await fetchAllPosts()
+  const [posts, feeds] = await Promise.all([fetchAllPosts(), fetchAllFeeds()])
   const map = new Map<string, number>()
   posts.forEach(p => p.tags.forEach(t => map.set(t, (map.get(t) ?? 0) + 1)))
+  feeds.forEach(f => (f.tags ?? []).forEach(t => map.set(t, (map.get(t) ?? 0) + 1)))
   return Array.from(map.entries())
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count)

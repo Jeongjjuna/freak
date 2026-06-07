@@ -30,6 +30,7 @@ watch(layoutData, (v) => {
         <NuxtLink to="/" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">피드</NuxtLink>
         <NuxtLink to="/blog" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">블로그</NuxtLink>
         <NuxtLink to="/tags" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">태그</NuxtLink>
+        <NuxtLink to="/graph" class="text-[15px] text-[var(--c-text)] hover:opacity-60 transition-opacity">그래프</NuxtLink>
       </div>
     </nav>
     <slot />

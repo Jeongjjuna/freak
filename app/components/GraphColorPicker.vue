@@ -7,12 +7,12 @@ interface ColorPreset {
 
 const NODE_COLOR_PRESETS: readonly ColorPreset[] = [
   { id: 'default', label: '기본', value: null },
-  { id: 'blue', label: '파랑', value: '#3182f6' },
-  { id: 'violet', label: '보라', value: '#7c3aed' },
-  { id: 'emerald', label: '초록', value: '#10b981' },
-  { id: 'amber', label: '주황', value: '#f59e0b' },
-  { id: 'pink', label: '분홍', value: '#ec4899' },
-] as const
+  { id: 'blue', label: '파랑', value: '#bfdbfe' },
+  { id: 'violet', label: '보라', value: '#ddd6fe' },
+  { id: 'emerald', label: '초록', value: '#bbf7d0' },
+  { id: 'amber', label: '주황', value: '#fde68a' },
+  { id: 'pink', label: '분홍', value: '#fbcfe8' },
+];
 
 const props = defineProps<{
   modelValue: string | null

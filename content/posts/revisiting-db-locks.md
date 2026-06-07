@@ -2,7 +2,7 @@
 title: "초심 찾기! 동시성 처리를 위한 DB Lock 다시 한번 복습해보자"
 date: "2026-04-30"
 category: "MySQL"
-tags: [ "MySQL", "동시성", "JPA" ]
+tags: ["MySQL", "동시성", "JPA", "데이터베이스"]
 excerpt: "DB 동시성 제어를 위한 Lock 메커니즘을 오랜만에 다시 복습하며 정리해본다."
 ---
 

@@ -2,7 +2,7 @@
 title: "[Example] Docker 기초부터 실전까지 - 컨테이너 이해하기"
 date: "2025-12-15"
 category: "Docker"
-tags: ["Docker", "Container", "DevOps", "인프라"]
+tags: ["Docker", "컨테이너", "DevOps", "인프라"]
 excerpt: "Docker를 처음 접하면 가상머신과 뭐가 다른지, 왜 써야 하는지 막막하게 느껴진다. 이번 글에서는 Docker의 핵심 개념과 실제 사용법을 정리해본다."
 ---
 

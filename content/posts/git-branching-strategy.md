@@ -2,7 +2,7 @@
 title: "[Example] Git 브랜치 전략 - Git Flow vs Trunk Based"
 date: "2025-08-15"
 category: "Git"
-tags: ["Git", "Git Flow", "Trunk Based", "협업"]
+tags: ["Git", "협업"]
 excerpt: "팀마다 브랜치 전략이 다르다. Git Flow와 Trunk Based Development의 차이를 정리하고, 어떤 상황에 무엇을 선택해야 할지 생각해봤다."
 ---
 

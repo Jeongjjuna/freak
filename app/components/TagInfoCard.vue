@@ -7,6 +7,9 @@ defineProps<{
 
 const emit = defineEmits<{
   (e: 'select-item', item: GraphItemRef): void
+  (e: 'close'): void
+  (e: 'card-enter'): void
+  (e: 'card-leave'): void
 }>()
 
 function pad(n: number) {
@@ -31,17 +34,33 @@ function kindLabel(kind: GraphItemRef['kind']): string {
         backgroundColor: 'var(--c-surface)',
         boxShadow: '0 0 0 1px var(--c-border), 0 8px 28px rgba(0,0,0,0.10)',
       }"
+      @mouseenter="emit('card-enter')"
+      @mouseleave="emit('card-leave')"
     >
       <header
-        class="flex items-baseline gap-2 px-5 py-3 border-b shrink-0"
+        class="flex items-center gap-2 px-5 py-3 border-b shrink-0"
         :style="{ borderColor: 'var(--c-border)' }"
       >
-        <h3 class="text-[15px] font-medium text-[var(--c-text)] truncate">
+        <NuxtLink
+          :to="`/tags/${encodeURIComponent(node.id)}`"
+          class="text-[15px] font-medium text-[var(--c-text)] truncate hover:underline"
+        >
           #{{ node.id }}
-        </h3>
+        </NuxtLink>
         <span class="text-[12px] text-[var(--c-muted)] shrink-0">
           ({{ node.count }})
         </span>
+        <button
+          class="ml-auto w-6 h-6 flex items-center justify-center hover:opacity-60 transition-opacity cursor-pointer shrink-0"
+          :style="{ color: 'var(--c-toggle)' }"
+          aria-label="닫기"
+          @click="emit('close')"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
       </header>
 
       <div class="feed-scroll overflow-y-auto px-2 py-2">

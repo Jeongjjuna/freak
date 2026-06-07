@@ -12,10 +12,78 @@ const nodesById = computed(() => {
   return map
 })
 
-const hoveredId = ref<string | null>(null)
-const hoveredNode = computed<GraphNode | null>(() => {
-  if (!hoveredId.value) return null
-  return nodesById.value.get(hoveredId.value) ?? null
+const hoveredTagId = ref<string | null>(null)
+const pinnedTagId = ref<string | null>(null)
+
+const displayedTagId = computed<string | null>(() => hoveredTagId.value ?? pinnedTagId.value)
+const displayedNode = computed<GraphNode | null>(() => {
+  const id = displayedTagId.value
+  if (!id) return null
+  return nodesById.value.get(id) ?? null
+})
+
+let leaveTimer: ReturnType<typeof setTimeout> | null = null
+function cancelLeave() {
+  if (leaveTimer) {
+    clearTimeout(leaveTimer)
+    leaveTimer = null
+  }
+}
+function scheduleLeave() {
+  cancelLeave()
+  leaveTimer = setTimeout(() => {
+    hoveredTagId.value = null
+  }, 150)
+}
+
+function onNodeHover(id: string | null) {
+  if (id) {
+    cancelLeave()
+    hoveredTagId.value = id
+  } else {
+    scheduleLeave()
+  }
+}
+
+function onNodeClick(id: string | null) {
+  cancelLeave()
+  if (id) {
+    pinnedTagId.value = id
+    hoveredTagId.value = id
+  } else {
+    pinnedTagId.value = null
+    hoveredTagId.value = null
+  }
+}
+
+function onCardClose() {
+  cancelLeave()
+  pinnedTagId.value = null
+  hoveredTagId.value = null
+}
+
+function onCardEnter() {
+  cancelLeave()
+}
+
+function onCardLeave() {
+  scheduleLeave()
+}
+
+const NODE_COLOR_STORAGE_KEY = 'graph-node-color'
+const nodeColor = ref<string | null>(null)
+
+onMounted(() => {
+  if (typeof localStorage === 'undefined') return
+  const stored = localStorage.getItem(NODE_COLOR_STORAGE_KEY)
+  if (stored && stored !== 'default') {
+    nodeColor.value = stored
+  }
+})
+
+watch(nodeColor, (v) => {
+  if (typeof localStorage === 'undefined') return
+  localStorage.setItem(NODE_COLOR_STORAGE_KEY, v ?? 'default')
 })
 
 const selectedFeed = ref<FeedDoc | null>(null)
@@ -40,19 +108,16 @@ async function openItem(item: GraphItemRef) {
   selectedFeed.value = (doc as FeedDoc | null) ?? null
 }
 
-function onClickNode(tag: string) {
-  navigateTo(`/tags/${encodeURIComponent(tag)}`)
-}
-
 useHead({ title: '그래프 | Freak Blog' })
 </script>
 
 <template>
   <div class="w-full">
     <div class="max-w-290 mx-auto px-6 py-4">
-      <div class="flex items-baseline gap-2">
+      <div class="flex items-center gap-2">
         <h1 class="text-[20px] font-medium text-[var(--c-text)]">그래프</h1>
         <span class="text-[13px] text-[var(--c-muted)]">피드 · 블로그 태그 네트워크</span>
+        <GraphColorPicker v-model="nodeColor" class="ml-auto" />
       </div>
     </div>
 
@@ -64,8 +129,10 @@ useHead({ title: '그래프 | Freak Blog' })
         <TagGraph
           v-if="graph"
           :data="graph"
-          @hover-node="hoveredId = $event"
-          @click-node="onClickNode"
+          :selected-id="pinnedTagId"
+          :node-color="nodeColor"
+          @hover-node="onNodeHover"
+          @click-node="onNodeClick"
         />
         <template #fallback>
           <div class="w-full h-full flex items-center justify-center text-[13px] text-[var(--c-muted)]">
@@ -75,8 +142,11 @@ useHead({ title: '그래프 | Freak Blog' })
       </ClientOnly>
 
       <TagInfoCard
-        :node="hoveredNode"
+        :node="displayedNode"
         @select-item="openItem"
+        @close="onCardClose"
+        @card-enter="onCardEnter"
+        @card-leave="onCardLeave"
       />
     </div>
 

@@ -2,7 +2,7 @@
 title: "[Example] JWT 인증 구현과 refresh token 전략"
 date: "2025-07-28"
 category: "Security"
-tags: ["JWT", "Security", "Spring", "인증"]
+tags: ["JWT", "보안", "Spring", "인증"]
 excerpt: "JWT는 stateless 인증의 대표 방식이다. access token만 쓰면 생기는 문제와 refresh token을 어떻게 관리해야 하는지 정리했다."
 ---
 

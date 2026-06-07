@@ -2,7 +2,7 @@
 title: "[Example] Kafka 입문 - 왜 쓰고, 어떻게 동작하나"
 date: "2025-09-08"
 category: "Kafka"
-tags: ["Kafka", "MessageQueue", "Backend", "분산시스템"]
+tags: ["Kafka", "메시지큐", "백엔드", "분산시스템"]
 excerpt: "RabbitMQ와 달리 Kafka는 로그 기반 메시지 큐다. 왜 대용량 스트리밍에서 Kafka가 선택받는지 구조부터 이해해본다."
 ---
 

@@ -2,7 +2,7 @@
 title: "[Example] JPA N+1 문제, 제대로 이해하고 해결하기"
 date: "2025-11-05"
 category: "JPA"
-tags: ["JPA", "Spring", "Hibernate", "성능최적화"]
+tags: ["JPA", "Spring", "성능최적화"]
 excerpt: "JPA를 쓰다 보면 반드시 만나는 N+1 문제. 왜 발생하는지, 어떻게 해결하는지 실제 쿼리 로그와 함께 살펴본다."
 ---
 

@@ -2,7 +2,7 @@
 title: "[Example] Spring Security 동작 원리, 프로세스 이해하기"
 date: "2026-03-15"
 category: "SpringSecurity"
-tags: ["Spring Security", "Authentication", "Filter", "Java"]
+tags: ["Spring Security", "인증", "Spring", "보안", "Java"]
 excerpt: "Spring Security가 필터 기반으로 동작하는 이유와 주요 필터들의 역할을 파해쳐보자. 위임 필터와 필터 체인 대리자(FilterChainProxy)의 관계를 정리한다."
 ---
 

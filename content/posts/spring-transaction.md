@@ -2,7 +2,7 @@
 title: "[Example] Spring @Transactional 동작 원리와 흔한 실수들"
 date: "2025-10-10"
 category: "SpringBoot"
-tags: ["Spring", "Transaction", "JPA", "Backend"]
+tags: ["Spring", "Transaction", "JPA", "백엔드"]
 excerpt: "@Transactional만 붙이면 다 되는 줄 알았다. 트랜잭션이 동작하지 않는 상황들을 실제 사례와 함께 정리한다."
 ---
 

@@ -3,11 +3,13 @@ import type { GraphData } from '~/utils/graphData'
 
 const props = defineProps<{
   data: GraphData
+  selectedId?: string | null
+  nodeColor?: string | null
 }>()
 
 const emit = defineEmits<{
   (e: 'hover-node', id: string | null): void
-  (e: 'click-node', id: string): void
+  (e: 'click-node', id: string | null): void
 }>()
 
 const containerEl = ref<HTMLElement | null>(null)
@@ -51,11 +53,12 @@ function buildElements(data: GraphData) {
 function applyStyles() {
   if (!cy) return
   const c = readThemeColors()
+  const nodeBg = props.nodeColor || c.accent
   cy.style()
     .resetToDefault()
     .selector('node')
     .style({
-      'background-color': c.accent,
+      'background-color': nodeBg,
       'label': 'data(id)',
       'color': c.text,
       'font-size': 11,
@@ -63,6 +66,7 @@ function applyStyles() {
       'text-valign': 'bottom',
       'text-halign': 'center',
       'text-margin-y': 4,
+      'text-wrap': 'none',
       'text-outline-color': c.bg,
       'text-outline-width': 2,
       'width': (ele: any) => Math.sqrt(ele.data('count')) * 12 + 14,
@@ -94,7 +98,7 @@ function applyStyles() {
     })
     .selector('edge.highlighted')
     .style({
-      'line-color': c.accent,
+      'line-color': nodeBg,
       'opacity': 1,
     })
     .update()
@@ -135,6 +139,7 @@ async function mountGraph() {
       idealEdgeLength: 110,
       edgeElasticity: 0.45,
       randomize: true,
+      nodeDimensionsIncludeLabels: true,
     } as any,
   })
 
@@ -146,7 +151,7 @@ async function mountGraph() {
     emit('hover-node', id)
   })
   cy.on('mouseout', 'node', () => {
-    highlightNeighborhood(null)
+    highlightNeighborhood(props.selectedId ?? null)
     emit('hover-node', null)
   })
   cy.on('tap', 'node', (evt: any) => {
@@ -156,6 +161,7 @@ async function mountGraph() {
     if (evt.target === cy) {
       highlightNeighborhood(null)
       emit('hover-node', null)
+      emit('click-node', null)
     }
   })
 
@@ -185,7 +191,16 @@ watch(() => props.data, (next) => {
     animate: true,
     animationDuration: 500,
     randomize: true,
+    nodeDimensionsIncludeLabels: true,
   } as any).run()
+})
+
+watch(() => props.selectedId, (id) => {
+  highlightNeighborhood(id ?? null)
+})
+
+watch(() => props.nodeColor, () => {
+  applyStyles()
 })
 </script>
 

@@ -2,7 +2,7 @@
 title: "[Example] Testcontainers로 실제 DB 쓰는 통합 테스트 작성하기"
 date: "2025-07-10"
 category: "Testing"
-tags: ["Testcontainers", "Testing", "Spring", "JPA"]
+tags: ["Testcontainers", "테스트", "Spring", "JPA"]
 excerpt: "H2로 테스트하다 프로덕션에서 터지는 경험을 한 번쯤 해봤을 것이다. Testcontainers를 쓰면 실제 MySQL로 테스트할 수 있다."
 ---
 

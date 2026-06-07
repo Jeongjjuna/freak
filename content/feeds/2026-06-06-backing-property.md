@@ -1,6 +1,6 @@
 ---
 date: "2026-06-03T23:10:00+09:00"
-tags: ["Kotlin", "Backing Property", "캡슐화"]
+tags: ["Kotlin", "캡슐화"]
 ---
 
 ## 백킹 프로퍼티 (Backing Property)

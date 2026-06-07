@@ -2,7 +2,7 @@
 title: "[Example] Kubernetes 핵심 개념 정리 - Pod부터 Ingress까지"
 date: "2025-10-28"
 category: "Kubernetes"
-tags: ["Kubernetes", "K8s", "DevOps", "Container"]
+tags: ["Kubernetes", "DevOps", "컨테이너", "인프라"]
 excerpt: "Docker를 쓰다 보면 자연스럽게 Kubernetes로 넘어가게 된다. 처음엔 개념이 많아 막막하지만, 핵심 리소스 몇 가지만 이해하면 전체 그림이 보인다."
 ---
 

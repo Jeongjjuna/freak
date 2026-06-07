@@ -2,7 +2,7 @@
 title: "[Example] Redis 캐시 전략 - Cache Aside부터 Write Through까지"
 date: "2025-11-20"
 category: "Redis"
-tags: ["Redis", "Cache", "Backend", "성능최적화"]
+tags: ["Redis", "백엔드", "성능최적화", "데이터베이스"]
 excerpt: "캐시를 도입하면 성능이 좋아진다는 건 알지만, 어떤 전략을 써야 할지 막막하다. 대표적인 캐시 전략 네 가지를 코드와 함께 정리해본다."
 ---
 

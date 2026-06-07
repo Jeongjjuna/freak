@@ -1,1 +1,0 @@
-import{f as s,I as r,k as t,M as n}from"./CEsOTmlO.js";const o={};function a(e,c){return r(),t("td",null,[n(e.$slots,"default")])}const _=Object.assign(s(o,[["render",a]]),{__name:"ProseTd"});export{_ as default};

@@ -152,8 +152,6 @@ WHERE id = 123;
 동일 레코드에 대한 동시 수정 요청을 원자적으로 수행한다는 것을 알 수 있습니다.
 
 
-블로그에서 바로 쓰기 좋은 짧고 깔끔한 단일 콜아웃 버전으로 정리해줄게.
-
 ### 🍀 참고
 ```mysql
 UPDATE article SET like_count = like_count + 1 WHERE title = 'lock test article';

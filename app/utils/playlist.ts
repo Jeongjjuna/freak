@@ -17,4 +17,9 @@ export const PLAYLIST: Track[] = [
     title: '기다린 만큼 더',
     artist: '검정치마',
   },
+  {
+    src: '/freak/music/song_03.mp3',
+    title: '사랑하게 될거야',
+    artist: '한로로',
+  },
 ]

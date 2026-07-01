@@ -24,7 +24,12 @@ const post: PostMeta = {
   category: (doc.value as any).category ?? '',
   tags: (doc.value as any).tags ?? [],
   excerpt: (doc.value as any).excerpt ?? '',
-  thumbnail: (doc.value as any).thumbnail,
+  thumbnail: getPostThumbnailSrc(
+    (doc.value as any).thumbnail,
+    (doc.value as any).category ?? '',
+    (doc.value as any).rawbody,
+    (doc.value as any).body,
+  ),
 }
 
 const toc = computed<TocItem[]>(() => {

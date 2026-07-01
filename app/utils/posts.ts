@@ -32,15 +32,38 @@ function toPostMeta(doc: PostDoc): PostMeta {
     category: doc.category ?? '',
     tags: doc.tags ?? [],
     excerpt: doc.excerpt ?? '',
-    thumbnail: getThumbnailSrc(doc.thumbnail, doc.category ?? ''),
+    thumbnail: getPostThumbnailSrc(doc.thumbnail, doc.category ?? '', doc.rawbody, doc.body),
   }
+}
+
+async function toPostMetaWithBodyFallback(doc: PostDoc): Promise<PostMeta> {
+  if (doc.thumbnail) {
+    return toPostMeta(doc)
+  }
+
+  const slug = slugFromPath(doc.path, doc.stem)
+  if (!slug) {
+    return toPostMeta(doc)
+  }
+
+  // queryCollection('posts').all() may omit or trim body data, so load the
+  // full document when the thumbnail needs to be inferred from inline images.
+  // @ts-expect-error queryCollection is auto-imported from @nuxt/content
+  const fullDoc = (await queryCollection('posts').path(`/posts/${slug}`).first()) as PostDoc | null
+
+  return toPostMeta({
+    ...doc,
+    body: fullDoc?.body,
+    rawbody: fullDoc?.rawbody,
+  })
 }
 
 export async function fetchAllPosts(): Promise<PostMeta[]> {
   // @ts-expect-error queryCollection is auto-imported from @nuxt/content
   const docs = (await queryCollection('posts').all()) as PostDoc[]
-  return docs
-    .map(toPostMeta)
+  const posts = await Promise.all(docs.map(toPostMetaWithBodyFallback))
+
+  return posts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 

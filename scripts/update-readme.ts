@@ -37,11 +37,39 @@ function categoryToFilename(category: string): string {
     mysql: 'database',
     api: 'backend',
     rabbitmq: 'devops',
+    books: 'books',
   };
 
   const fallback = c.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   return mapping[c] ?? (fallback || 'backend');
+}
+
+function normalizeContentImageSrc(src: string): string {
+  const trimmed = src.trim();
+  if (!trimmed) return '';
+  if (/^https?:\/\//.test(trimmed) || trimmed.startsWith('/')) return trimmed;
+
+  const publicPath = trimmed.match(/(?:^|\/)public\/(.+)$/);
+  if (publicPath?.[1]) {
+    return `/${publicPath[1]}`;
+  }
+
+  return trimmed;
+}
+
+function extractFirstMarkdownImageSrc(markdown: string): string {
+  const imageMatch = markdown.match(/!\[[^\]]*]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/);
+  if (imageMatch?.[1]) {
+    return normalizeContentImageSrc(imageMatch[1]);
+  }
+
+  const htmlImageMatch = markdown.match(/<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/i);
+  if (htmlImageMatch?.[1]) {
+    return normalizeContentImageSrc(htmlImageMatch[1]);
+  }
+
+  return '';
 }
 
 function toStringValue(value: unknown): string {
@@ -68,7 +96,10 @@ function parsePost(filename: string): PostSummary {
   const date = toStringValue(data.date);
   const category = toStringValue(data.category);
   const excerpt = toStringValue(data.excerpt);
-  const thumbnail = toStringValue(data.thumbnail) || `/images/thumbnails/${categoryToFilename(category)}.png`;
+  const thumbnail =
+    toStringValue(data.thumbnail) ||
+    extractFirstMarkdownImageSrc(raw) ||
+    `/images/thumbnails/${categoryToFilename(category)}.png`;
 
   if (!title) {
     throw new Error(`${filename}: title front matter가 비어 있습니다.`);

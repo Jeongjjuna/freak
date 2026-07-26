@@ -59,6 +59,8 @@
     --c-dot:         #909090;
     --c-tag-link:    #023e8a;
     --c-toggle:      #666666;
+    --c-strong-bg:   #fff9be;
+    --c-strong-text: #1a1a1a;
 }
 
 .dark {
@@ -81,6 +83,8 @@
     --c-dot:         #6b7280;
     --c-tag-link:    #7eb3f8;
     --c-toggle:      #94a3b8;
+    --c-strong-bg:   #374151;
+    --c-strong-text: #fbbf24;
 }
 
 .sakura {
@@ -102,6 +106,8 @@
     --c-dot:         #c4a0b0;
     --c-tag-link:    #c45c7a;
     --c-toggle:      #b090a0;
+    --c-strong-bg:   #fce7f3;
+    --c-strong-text: #9d174d;
 }
 
 .sakura.dark {
@@ -123,6 +129,8 @@
     --c-dot:         #a07890;
     --c-tag-link:    #f0a0c0;
     --c-toggle:      #c49ab0;
+    --c-strong-bg:   #4c1d35;
+    --c-strong-text: #f9a8d4;
 }
 
 .rain {
@@ -144,6 +152,8 @@
     --c-dot:         #a0aec0;
     --c-tag-link:    #3182ce;
     --c-toggle:      #718096;
+    --c-strong-bg:   #dbeafe;
+    --c-strong-text: #1e40af;
 }
 
 .rain.dark {
@@ -165,6 +175,8 @@
     --c-dot:         #6e7681;
     --c-tag-link:    #58a6ff;
     --c-toggle:      #8b949e;
+    --c-strong-bg:   #1e3a8a;
+    --c-strong-text: #93c5fd;
 }
 
 @layer base {
@@ -239,10 +251,10 @@
 }
 
 .prose strong {
-    background-color: #fff9be;
+    background-color: var(--c-strong-bg);
     padding: 1px 3px 3px;
     border-radius: 6px;
-    color: #1a1a1a;
+    color: var(--c-strong-text);
     font-weight: normal;
     vertical-align: baseline;
 }

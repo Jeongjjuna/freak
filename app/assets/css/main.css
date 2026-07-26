@@ -371,15 +371,18 @@
 
 .prose pre code {
     background: none;
-    padding: 0;
+    padding: 0 16px;
     font-size: 13.5px;
     color: inherit;
     display: grid;
     counter-reset: line;
 }
 
+.prose pre code > * {
+    padding: 2px 24px 2px 0;
+}
+
 .prose pre .line {
-    padding: 0 24px 0 16px;
     border-left: 3px solid transparent;
 }
 
@@ -396,7 +399,6 @@
 }
 
 .prose pre [data-line] {
-    padding: 0 24px 0 16px;
     border-left: 3px solid transparent;
 }
 
@@ -565,13 +567,19 @@ input::placeholder {
     .prose h1 { font-size: 20px; }
     .prose h2 { font-size: 17px; }
     .prose h3 { font-size: 15px; }
-    .prose pre [data-line] { padding: 0 12px 0 8px; }
+    .prose pre code {
+        padding: 0 8px;
+    }
+    .prose pre code > * {
+        padding: 2px 12px 2px 0;
+    }
+    .prose pre [data-line] { border-left: 3px solid transparent; }
     .prose pre [data-line]::before {
         width: 1.2rem;
         margin-right: 0.8rem;
         padding-right: 0.5rem;
     }
-    .prose pre .line { padding: 0 12px 0 8px; }
+    .prose pre .line { border-left: 3px solid transparent; }
     .prose pre .line::before {
         width: 1.2rem;
         margin-right: 0.8rem;

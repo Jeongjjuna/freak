@@ -1,8 +1,9 @@
 ---
 title: "이벤트 시스템 설계 및 개발 회고"
 date: "2025-08-01"
-category: "Architecture"
-tags: ["SpringBoot", "Spring", "Nats", "Airflow", "아키텍처"]
+thumbnail: "review.png"
+category: "Review"
+tags: ["SpringBoot", "NATS", "Airflow", "Idempotency", "아키텍처"]
 excerpt: "이벤트 시스템을 설계하고 개발하여 느꼈던 경험과 후기를 적어봅니다."
 ---
 

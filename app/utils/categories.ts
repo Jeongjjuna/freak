@@ -19,6 +19,8 @@ export const CATEGORY_GROUPS = {
     'Linux',
     'Docker',
     'Git',
+    'Kotlin',
+    'Frontend',
     'Kubernetes',
     'Security',
     'Testing',
@@ -27,7 +29,7 @@ export const CATEGORY_GROUPS = {
   Archive: [
     'Books',
     'Activities',
-    'Thoughts',
+    'Review',
   ],
 } as const
 

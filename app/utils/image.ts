@@ -26,6 +26,17 @@ export function getThumbnailSrc(thumbnailField: string | undefined, category: st
     api: 'backend',
     rabbitmq: 'devops',
     books: 'books',
+    review: 'review',
+    kotlin: 'kotlin',
+    troubleshooting: 'backend',
+    performance: 'backend',
+    algorithm: 'backend',
+    springbatch: 'spring',
+    jpa: 'jpa',
+    linux: 'backend',
+    git: 'git',
+    testing: 'testing',
+    frontend: 'frontend',
   }
 
   const filename = mapping[c] || category

@@ -11,13 +11,13 @@ excerpt: "2025 토스 컨퍼런스에 참석하고, 다양한 분야의 세션�
 
 좋은 기회로 토스 컨퍼런스에 참여하게 되었습니다.
 
-![img.png](/images/posts/img.png)
+![img.png](/images/posts/toss-conference-review/img.png)
 
 백엔드, 프론트엔드, 디자인 등 다양한 분야의 세션이 준비되어 있었고, 저는 현재 업무와 가장 연관성이 높은 백엔드 개발 관련 세션들을 중심으로 참여했습니다.
 
 특히 최근 사내 공통 라이브러리 작업을 진행하고 있었기 때문에 "**SpringBoot 확장 라이브러리 : 자율과 안전을 위한 가드레일 전략**" 세션을 가장 기대했습니다.
 
-![img_1.png](/images/posts/img_1.png)
+![img_1.png](/images/posts/toss-conference-review/img_1.png)
 
 
 ## 기술 경험을 공유하는 문화
@@ -34,7 +34,7 @@ excerpt: "2025 토스 컨퍼런스에 참석하고, 다양한 분야의 세션�
 현장에는 여러 회사에서 함께 참여한 모습도 많이 보였는데, 구성원들이 함께 기술 행사를 경험하고 인사이트를 공유하는 문화가 조금 부럽기도 했습니다.
 
 
-![img_2.png](/images/posts/img_2.png)
+![img_2.png](/images/posts/toss-conference-review/img_2.png)
 
 
 

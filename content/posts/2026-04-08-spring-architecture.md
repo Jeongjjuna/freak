@@ -477,7 +477,7 @@ class ArchitectureTest {
 규칙을 한 번 정의해두면 이후 모든 테스트 실행 과정에서 자동으로 검증됩니다.
 구조를 위반하면 테스트가 실패하며, 어떤 클래스가 규칙을 깨뜨렸는지도 명확히 알려줍니다.
 
-![archunit_01.png](/images/posts/archunit_01.png)
+![archunit_01.png](/images/posts/spring-architecture/archunit_01.png)
 
 **실제로 적용해본 결과:**
 

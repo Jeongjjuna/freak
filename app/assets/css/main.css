@@ -415,9 +415,17 @@
 }
 
 .prose img {
-    max-width: 100%;
-    border-radius: 4px;
-    margin: 16px 0;
+    display: block;
+    max-width: 650px;
+    width: 90%;
+    height: auto;
+    margin: 32px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dark .prose img {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .prose hr {
@@ -493,7 +501,12 @@
 }
 
 .prose-feed img {
-    margin: 10px 0;
+    display: block;
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    margin: 16px auto;
+    border-radius: 6px;
 }
 
 /* 테마 토글 순간 모든 transition 잠시 차단 — feed-card 등이 늦게 바뀌는 현상 방지 */

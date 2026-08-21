@@ -145,15 +145,11 @@ function formatDate(dateStr: string): string {
 }
 
 function getThumbnailUrl(post: PostSummary): string {
-  if (post.thumbnail) {
-    return /^https?:\/\//.test(post.thumbnail)
-      ? post.thumbnail
-      : `${BLOG_BASE}${post.thumbnail}`;
+  if (/^https?:\/\//.test(post.thumbnail)) {
+    return post.thumbnail;
   }
 
-  const label = encodeURIComponent(post.category || 'Blog');
-
-  return `https://placehold.co/400x200/f0f4f8/3a4954?text=${label}`;
+  return `${BLOG_BASE}/images/thumbnails/${post.thumbnail.replace(/^\/+/, '')}`;
 }
 
 function truncate(str: string, maxLen = 60): string {

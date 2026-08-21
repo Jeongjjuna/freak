@@ -149,6 +149,10 @@ function getThumbnailUrl(post: PostSummary): string {
     return post.thumbnail;
   }
 
+  if (post.thumbnail.startsWith('/images/thumbnails/')) {
+    return `${BLOG_BASE}${post.thumbnail}`;
+  }
+
   return `${BLOG_BASE}/images/thumbnails/${post.thumbnail.replace(/^\/+/, '')}`;
 }
 

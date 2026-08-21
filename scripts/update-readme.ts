@@ -145,15 +145,22 @@ function formatDate(dateStr: string): string {
 }
 
 function getThumbnailUrl(post: PostSummary): string {
+  let url = '';
   if (/^https?:\/\//.test(post.thumbnail)) {
-    return post.thumbnail;
+    url = post.thumbnail;
+  } else {
+    // 경로 정규화: / 로 시작하지 않으면 기본 썸네일 폴더로 간주
+    const path = post.thumbnail.startsWith('/')
+      ? post.thumbnail
+      : `/images/thumbnails/${post.thumbnail}`;
+    // public/ 경로 포함 확인 (GitHub raw URL용)
+    const repoPath = path.startsWith('/public/') ? path : `/public${path}`;
+    url = `https://raw.githubusercontent.com/Jeongjjuna/freak/main${repoPath}`;
   }
 
-  if (post.thumbnail.startsWith('/')) {
-    return `${BLOG_BASE}${post.thumbnail}`;
-  }
-
-  return `${BLOG_BASE}/images/thumbnails/${post.thumbnail}`;
+  // GitHub README에서 object-fit: cover 효과를 내기 위해 weserv.nl 프록시를 사용합니다.
+  // w=600, h=640으로 설정하여 약 15:16 비율의 고정된 종횡비를 제공합니다.
+  return `https://images.weserv.nl/?url=${encodeURIComponent(url)}&w=600&h=640&fit=cover&a=t`;
 }
 
 function truncate(str: string, maxLen = 60): string {
@@ -181,7 +188,7 @@ function generateHtmlTable(posts: PostSummary[]): string {
 
       return `<td valign="top" width="33.3%">
     <a href="${escapeHtml(url)}">
-        <img src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}" width="100%" height="255" style="object-fit: contain; object-position: top; border-radius: 8px;"/>
+        <img src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}" width="100%" style="border-radius: 8px;"/>
     </a>
     <div align="left">
         <br/>

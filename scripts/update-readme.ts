@@ -181,7 +181,7 @@ function generateHtmlTable(posts: PostSummary[]): string {
 
       return `<td valign="top" width="33.3%">
     <a href="${escapeHtml(url)}">
-        <img src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}" width="100%" height="160" style="object-fit: contain; object-position: top; border-radius: 8px;"/>
+        <img src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}" width="100%" height="255" style="object-fit: contain; object-position: top; border-radius: 8px;"/>
     </a>
     <div align="left">
         <br/>

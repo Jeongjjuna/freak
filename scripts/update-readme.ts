@@ -91,14 +91,14 @@ function assertReadableDirectory(dirPath: string, label: string): void {
 function parsePost(filename: string): PostSummary {
   const slug = filename.replace(/\.md$/, '');
   const raw = readFileSync(path.join(POSTS_DIR, filename), 'utf-8');
-  const { data } = matter(raw) as { data: FrontMatter };
+  const { data, content } = matter(raw) as { data: FrontMatter; content: string };
   const title = toStringValue(data.title);
   const date = toStringValue(data.date);
   const category = toStringValue(data.category);
   const excerpt = toStringValue(data.excerpt);
   const thumbnail =
     toStringValue(data.thumbnail) ||
-    extractFirstMarkdownImageSrc(raw) ||
+    extractFirstMarkdownImageSrc(content) ||
     `/images/thumbnails/${categoryToFilename(category)}.png`;
 
   if (!title) {

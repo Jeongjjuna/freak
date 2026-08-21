@@ -149,11 +149,11 @@ function getThumbnailUrl(post: PostSummary): string {
     return post.thumbnail;
   }
 
-  if (post.thumbnail.startsWith('/images/thumbnails/')) {
+  if (post.thumbnail.startsWith('/')) {
     return `${BLOG_BASE}${post.thumbnail}`;
   }
 
-  return `${BLOG_BASE}/images/thumbnails/${post.thumbnail.replace(/^\/+/, '')}`;
+  return `${BLOG_BASE}/images/thumbnails/${post.thumbnail}`;
 }
 
 function truncate(str: string, maxLen = 60): string {

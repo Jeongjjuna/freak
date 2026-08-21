@@ -179,16 +179,20 @@ function generateHtmlTable(posts: PostSummary[]): string {
       const excerpt = truncate(post.excerpt, 80);
       const date = formatDate(post.date);
 
-      return `<td valign="top" width="33.3%" align="center">
+      return `<td valign="top" width="33.3%">
     <a href="${escapeHtml(url)}">
-        <img src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}" width="100%"/><br/>
-        <br/>
-        <strong>${escapeHtml(post.title)}</strong>
+        <img src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}" width="100%"/>
     </a>
     <div align="left">
         <br/>
+        <a href="${escapeHtml(url)}">
+            <strong>${escapeHtml(post.title)}</strong>
+        </a>
+        <div>
+            <small>${escapeHtml(date)}</small>
+        </div>
+        <br/>
         <div>${escapeHtml(excerpt)}</div>
-        <small>${escapeHtml(date)}</small>
     </div>
 </td>`;
     });

@@ -1,7 +1,6 @@
 ---
 title: "Okky AI 바이브톤 참여 후기"
 date: "2026-02-22"
-thumbnail: "review.png"
 category: "Review"
 tags: ["바이브코딩", "해커톤", "네트워킹"]
 excerpt: "2026 Okky AI 바이브톤에서 느낀 점과 후기를 정리해봅니다."

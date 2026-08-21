@@ -176,23 +176,27 @@ function generateHtmlTable(posts: PostSummary[]): string {
     const cells = posts.slice(i, i + columns).map((post) => {
       const url = `${BLOG_BASE}/posts/${post.slug}/`;
       const img = getThumbnailUrl(post);
-      const excerpt = truncate(post.excerpt);
+      const excerpt = truncate(post.excerpt, 80);
       const date = formatDate(post.date);
 
-      return `<td valign="top">
-    <a align="center" href="${escapeHtml(url)}">
-        <img width="150px" src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}"/><br/>
-        <div>${escapeHtml(post.title)}</div>
+      return `<td valign="top" width="33.3%" align="center">
+    <a href="${escapeHtml(url)}">
+        <img src="${escapeHtml(img)}" alt="${escapeHtml(post.title)}" width="100%"/><br/>
+        <br/>
+        <strong>${escapeHtml(post.title)}</strong>
     </a>
-    <div>${escapeHtml(excerpt)}</div>
-    <div>${escapeHtml(date)}</div>
+    <div align="left">
+        <br/>
+        <div>${escapeHtml(excerpt)}</div>
+        <small>${escapeHtml(date)}</small>
+    </div>
 </td>`;
     });
 
     rows.push(`<tr>\n${cells.join('\n')}\n</tr>`);
   }
 
-  return `<table><tbody>${rows.join('\n')}</tbody></table>`;
+  return `<table width="100%"><tbody>${rows.join('\n')}</tbody></table>`;
 }
 
 function updateReadme(html: string): void {

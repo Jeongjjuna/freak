@@ -1,6 +1,7 @@
 ---
 title: "2026 잡코리아 바이브톤 회고"
 date: "2026-07-22"
+thumbnail: "review.png"
 category: "Review"
 tags: ["바이브코딩", "해커톤", "네트워킹"]
 excerpt: "2026년 잡코리아 바이브톤에 참여했던 경험을 기록해보려고 합니다."

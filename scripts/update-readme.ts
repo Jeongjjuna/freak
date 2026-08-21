@@ -97,7 +97,7 @@ function parsePost(filename: string): PostSummary {
   const category = toStringValue(data.category);
   const excerpt = toStringValue(data.excerpt);
   const thumbnail =
-    toStringValue(data.thumbnail) ||
+    normalizeContentImageSrc(toStringValue(data.thumbnail)) ||
     extractFirstMarkdownImageSrc(raw) ||
     `/images/thumbnails/${categoryToFilename(category)}.png`;
 
